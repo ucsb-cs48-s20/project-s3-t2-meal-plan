@@ -7,7 +7,6 @@ This project allows people to plan their meals of the week and take note of the 
 * Amanda Serex - amandaserex
 * Peter Brede - peterbrede
 * ChanChan Mao - chanchanmao
-* Francie Wei - FrancieNagiki
 
 # Tech Stack:
 * React
