@@ -3,7 +3,6 @@
 * Amanda Serex - amandaserex
 * Peter Brede - peterbrede
 * ChanChan Mao - chanchanmao
-* Francie Wei - FrancieNagiki
 
 # Agreements
 
