@@ -12,16 +12,16 @@ This project allows people to plan their meals of the week and take note of the 
 * Next.js/React
 
 # Initial Planning Ideas
-* weekly planner
-* be able to view the weekly planner and edit/add/remove meals/ingredients/etc.
-* Spoonacular API for finding recipes
-* One option is for users to list ingredients that they're going to use for their dish
-* Another option is for users to input any ingredients they have and find recipes that include any of those ingredients (API)
-* Shopping list feature that can add/delete ingredients
+With this weekly meal planner, users are able to view their personalized planner via log in and are able to edit/add/remove meals/ingredients/etc. Users can list ingredients that they're gong to use for their dishes/meals. Users are able to search for recipes given ingredients that they already or search for specific recipes (via Spoonacular API). There will also be a shopping list feature where the user can add/edit/remove ingredients or select ingredients from a recipe and have it automatically added to the list.
 
-Example Cases
+Example Case
 * Users can start planning their meals on Sunday and write out their plans for breakfast/lunch/dinner for the week and plan out the entire list of ingredients so that user can shop accordingly. User can input the amount of servings needed for each meal and the amount ingredients will be calculated according to ammount of servings
 
 For later:
-* set up a reminder/push notification system
+* favorite recipes section 
+* set up a reminder/push notification system 
+
+# Roles and Permissions
+* As a logged-in user, I can create a weekly planner and look at past weeks
+* As a user, I can search recipes without having to log in
 
