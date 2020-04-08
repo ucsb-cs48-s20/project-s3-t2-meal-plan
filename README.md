@@ -9,7 +9,7 @@ This project allows people to plan their meals of the week and take note of the 
 * ChanChan Mao - chanchanmao
 
 # Tech Stack:
-* React
+* Next.js/React
 
 # Initial Planning Ideas
 * weekly planner
