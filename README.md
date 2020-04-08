@@ -18,8 +18,9 @@ Example Case
 * Users can start planning their meals on Sunday and write out their plans for breakfast/lunch/dinner for the week and plan out the entire list of ingredients so that user can shop accordingly. User can input the amount of servings needed for each meal and the amount ingredients will be calculated according to ammount of servings
 
 For later:
-* favorite recipes section 
+* users can favorite recipes and collect it in a "favorites" section
 * set up a reminder/push notification system 
+* as a developer, we can have a "recipe of the day"
 
 # Roles and Permissions
 * As a logged-in user, I can create a weekly planner and look at past weeks
