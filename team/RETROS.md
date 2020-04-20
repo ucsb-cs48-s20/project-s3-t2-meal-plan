@@ -16,6 +16,11 @@
 * Learning connections between HTML and Next.js
 * Openly communicate with team members
 
-### Action Item
+## Action Item
 * By next week (Monday), we would like to have a basic, running webpage with basic UI and something running with MongoDB
 
+## Retro Assessment
+
+* We used a :), :(, Idea, Appreciation format of grouping ideas in order to clarify Start/Stop/Continue ideas.
+* Everybody participated and gave valuable opinions on their personal experience with their learning process.
+* Advice for the next person leading a retro: Have a standard outline for the retro that our team is used to so that everyone knows what to expect and prepare for. Nobody really knew (including myself) what to expect out of our first retro.
