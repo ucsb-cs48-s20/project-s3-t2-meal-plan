@@ -7,9 +7,9 @@ module.exports = {
     AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     AUTH0_SCOPE: "openid profile",
     REDIRECT_URI:
-      process.env.REDIRECT_URI || "http://localhost:3000/api/callback",
+      process.env.REDIRECT_URI || "https://cs48-s20-s3-t2-prod.herokuapp.com/api/callback",
     POST_LOGOUT_REDIRECT_URI:
-      process.env.POST_LOGOUT_REDIRECT_URI || "http://localhost:3000/",
+      process.env.POST_LOGOUT_REDIRECT_URI || "https://cs48-s20-s3-t2-prod.herokuapp.com/",
     SESSION_COOKIE_SECRET:
       // A default value is defined for development and CI
       // For production, a secure value should be defined as
