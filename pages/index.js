@@ -20,59 +20,121 @@ function HomePage(props) {
           <pre>{JSON.stringify(user, null, "\t")}</pre> */}
           <h1>Weekly Meal Planner</h1>
           <table>
+            <style jsx>
+              {`
+                td {
+                  padding-bottom: 20px;
+                }
+                h3 {
+                  padding-top: 20px;
+                  width: 150px;
+                }
+                h5 {
+                  text-decoration: underline;
+                }
+              `}
+            </style>
             <tr>
               <td>
-                <h3>Monday</h3>
+                <h3>MON</h3>
               </td>
               <td>
-                <h3>Tuesday</h3>
+                <h3>TUES</h3>
               </td>
               <td>
-                <h3>Wednesday</h3>
+                <h3>WED</h3>
               </td>
               <td>
-                <h3>Thursday</h3>
+                <h3>THUR</h3>
               </td>
               <td>
-                <h3>Friday</h3>
+                <h3>FRI</h3>
               </td>
               <td>
-                <h3>Saturday</h3>
+                <h3>SAT</h3>
               </td>
               <td>
-                <h3>Sunday</h3>
+                <h3>SUN</h3>
               </td>
             </tr>
             <tr>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
-              <td>Breakfast</td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
+              <td>
+                <h5>Breakfast</h5>
+              </td>
             </tr>
-            <br></br>
             <tr>
-              <td>Lunch</td>
-              <td>Lunch</td>
-              <td>Lunch</td>
-              <td>Lunch</td>
-              <td>Lunch</td>
-              <td>Lunch</td>
-              <td>Lunch</td>
+              <td>input</td>
             </tr>
-            <br></br>
             <tr>
-              <td>Dinner</td>
-              <td>Dinner</td>
-              <td>Dinner</td>
-              <td>Dinner</td>
-              <td>Dinner</td>
-              <td>Dinner</td>
-              <td>Dinner</td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
+              <td>
+                <h5>Lunch</h5>
+              </td>
             </tr>
-            <br></br>
+            <tr>
+              <td>input</td>
+            </tr>
+            <tr>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+              <td>
+                <h5>Dinner</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>input</td>
+            </tr>
           </table>
         </div>
       ) : (
