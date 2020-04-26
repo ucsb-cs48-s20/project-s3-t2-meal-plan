@@ -14,14 +14,14 @@ function RandomDog() {
     revalidateOnReconnect: false,
   });
 
-  if (!data) {
-    return <Spinner animation="border" />;
-  }
+  // if (!data) {
+  //   return <Spinner animation="border" />;
+  // }
 
   return (
     <div>
-      <p>Enjoy this doggo!</p>
-      <Image data-cy="doggo" src={data.image} />
+      <p>work in progress...</p>
+      {/* <Image data-cy="doggo" src={data.image} /> */}
     </div>
   );
 }
