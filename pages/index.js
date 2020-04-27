@@ -27,7 +27,7 @@ function HomePage(props) {
                 }
                 h3 {
                   padding-top: 20px;
-                  width: 150px;
+                  width: 160px;
                 }
                 h5 {
                   text-decoration: underline;
