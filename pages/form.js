@@ -6,16 +6,16 @@ import Button from "react-bootstrap/Button";
 
 import React, { Component } from "react";
 
-function idkyet() {
-  // edit this, mirrored off woof-private.js, idk what it's supposed to do
-  return (
-    <Layout>
-      <div>
-        <p>idk what this does</p>
-      </div>
-    </Layout>
-  );
-}
+// function idkyet() {
+//   // edit this, mirrored off woof-private.js, idk what it's supposed to do
+//   return (
+//     <Layout>
+//       <div>
+//         <p>idk what this does</p>
+//       </div>
+//     </Layout>
+//   );
+// }
 
 export const getServerSideProps = requiredAuth;
 
@@ -50,7 +50,7 @@ function EnterMeal(props) {
         <form action="/action_page.php">
           <h1>Enter a Meal</h1>
           <label htmlFor="day">
-            <b>Day of Week</b>
+            <b>Day of the Week</b>
           </label>
           <br></br>
           <select>
@@ -66,7 +66,7 @@ function EnterMeal(props) {
           <br></br>
 
           <label htmlFor="meal">
-            <b>Meal of Day</b>
+            <b>Meal of the Day</b>
           </label>
           <br></br>
           <select>

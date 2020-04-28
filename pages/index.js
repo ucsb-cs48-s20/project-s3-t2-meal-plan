@@ -13,7 +13,7 @@ function HomePage(props) {
     <Layout user={user}>
       <Head>
         <title>Meal Planner</title>
-        {/* title on tab */}
+        {/* how to change tab icon to smth else? */}
       </Head>
       {user ? (
         <div>
@@ -37,6 +37,7 @@ function HomePage(props) {
           </style>
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
+          {/* "enter meal" can either be a button on the homepage or a tab in the navbar */}
           <table>
             <tr>
               <td>
