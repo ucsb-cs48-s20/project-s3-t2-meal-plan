@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { optionalAuth } from "../utils/ssr";
 
 import Head from "next/head";
+import Button from "react-bootstrap/Button";
 
 export const getServerSideProps = optionalAuth;
 
@@ -16,24 +17,27 @@ function HomePage(props) {
       </Head>
       {user ? (
         <div>
-          {/* You're logged in! Here's what the server knows about you:
-          <pre>{JSON.stringify(user, null, "\t")}</pre> */}
+          <style jsx>
+            {`
+              h1 {
+                padding-top: 15px;
+                padding-bottom: 15px;
+              }
+              td {
+                padding-bottom: 20px;
+              }
+              h3 {
+                padding-top: 20px;
+                width: 160px;
+              }
+              h5 {
+                text-decoration: underline;
+              }
+            `}
+          </style>
           <h1>Weekly Meal Planner</h1>
+          <Button href="/form">Enter Meal</Button>
           <table>
-            <style jsx>
-              {`
-                td {
-                  padding-bottom: 20px;
-                }
-                h3 {
-                  padding-top: 20px;
-                  width: 160px;
-                }
-                h5 {
-                  text-decoration: underline;
-                }
-              `}
-            </style>
             <tr>
               <td>
                 <h3>MON</h3>
