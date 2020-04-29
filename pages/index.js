@@ -37,7 +37,6 @@ function HomePage(props) {
           </style>
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
-          {/* "enter meal" can either be a button on the homepage or a tab in the navbar */}
           <table>
             <tr>
               <td>

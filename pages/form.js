@@ -6,17 +6,6 @@ import Button from "react-bootstrap/Button";
 
 import React, { Component } from "react";
 
-// function idkyet() {
-//   // edit this, mirrored off woof-private.js, idk what it's supposed to do
-//   return (
-//     <Layout>
-//       <div>
-//         <p>idk what this does</p>
-//       </div>
-//     </Layout>
-//   );
-// }
-
 export const getServerSideProps = requiredAuth;
 
 function EnterMeal(props) {
@@ -99,7 +88,6 @@ function EnterMeal(props) {
             name="ingredients"
             required
           ></textarea>
-          {/* not sure how textarea will affect input */}
         </form>
         <br></br>
         <Button href="/">Add to Planner</Button>

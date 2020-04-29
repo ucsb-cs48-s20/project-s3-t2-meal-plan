@@ -21,9 +21,6 @@ function AppNavbar(props) {
             <Link href="/search" passHref={true}>
               <Nav.Link>Search for Recipes</Nav.Link>
             </Link>
-            {/* <Link href="/form" passHref={true}>
-              <Nav.Link>Form</Nav.Link>
-            </Link> */}
             {user && (
               <Link href="/shoppinglist" passHref={true}>
                 <Nav.Link>Shopping List</Nav.Link>
