@@ -8,6 +8,10 @@ This project allows people to plan their meals of the week and take note of the 
 * Peter Brede - peterbrede
 * ChanChan Mao - chanchanmao
 
+# Links:
+* https://cs48-s20-s3-t2-qa.herokuapp.com/
+* https://cs48-s20-s3-t2-prod.herokuapp.com/
+
 # Tech Stack:
 * Next.js/React
 
