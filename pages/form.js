@@ -36,7 +36,12 @@ function EnterMeal(props) {
             }
           `}
         </style>
-        <form action="/action_page.php">
+        <form
+          onSubmit={
+            console.log
+            //I am trying to figure out how to make this function
+          }
+        >
           <h1>Enter a Meal</h1>
           <label htmlFor="day">
             <b>Day of the Week</b>
@@ -88,9 +93,10 @@ function EnterMeal(props) {
             name="ingredients"
             required
           ></textarea>
+          <br></br>
+          <Button type="submit">Add to Planner</Button>
         </form>
-        <br></br>
-        <Button href="/">Add to Planner</Button>
+
         <p>
           By clicking this button, you will be redirected back to your planner
           with your added meal.

@@ -85,7 +85,7 @@ function HomePage(props) {
               </td>
             </tr>
             <tr>
-              <td>input</td>
+              <td></td>
             </tr>
             <tr>
               <td>
@@ -111,7 +111,7 @@ function HomePage(props) {
               </td>
             </tr>
             <tr>
-              <td>input</td>
+              <td></td>
             </tr>
             <tr>
               <td>
@@ -137,7 +137,7 @@ function HomePage(props) {
               </td>
             </tr>
             <tr>
-              <td>input</td>
+              <td></td>
             </tr>
           </table>
         </div>
