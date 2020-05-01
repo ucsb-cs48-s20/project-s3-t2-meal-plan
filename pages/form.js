@@ -5,6 +5,7 @@ import Head from "next/head";
 import Button from "react-bootstrap/Button";
 
 import React, { Component, useState } from "react";
+import fetch from "isomorphic-unfetch";
 
 export const getServerSideProps = requiredAuth;
 
@@ -16,9 +17,21 @@ function EnterMeal(props) {
   const [type, setType] = useState("");
   const [ingredients, setIngredients] = useState("");
 
-  const printValues = (e) => {
+  const saveRecipe = async (e) => {
     e.preventDefault();
-    console.log(day, type, mealname, ingredients);
+    console.log(day, type, mealname, ingredients.split(/[ ,]+/));
+    await fetch("/api/meal", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mealname: mealname,
+        day: day,
+        type: type,
+        ingredients: ingredients.split(/[ ,]+/),
+      }),
+    });
   };
 
   return (
@@ -46,7 +59,7 @@ function EnterMeal(props) {
             }
           `}
         </style>
-        <form onSubmit={printValues}>
+        <form onSubmit={saveRecipe}>
           <h1>Enter a Meal</h1>
           <label htmlFor="day">
             <b>Day of the Week</b>

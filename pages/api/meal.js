@@ -1,6 +1,6 @@
 import validate from "validate.js";
-import { authenticatedAction } from "../../../utils/api";
-import { initDatabase } from "../../../utils/mongodb";
+import { authenticatedAction } from "../../utils/api";
+import { initDatabase } from "../../utils/mongodb";
 
 export async function getRecipe(user) {
   const client = await initDatabase();
@@ -28,7 +28,7 @@ const recipeConstraints = {
       minimum: 4,
     },
   },
-  ingridents: {
+  ingredients: {
     presence: true,
   },
 };
@@ -54,7 +54,7 @@ async function createRecipe(req, user) {
   if (await ideas.findOne({ author: user._id })) {
     throw {
       status: 409,
-      message: "User has already submitted an idea",
+      message: "User has already submitted a recipe",
     };
   }
 
@@ -63,8 +63,8 @@ async function createRecipe(req, user) {
   return newRecipe;
 }
 
-async function performAction(recipe, user) {
-  const { user } = recipes.query;
+async function performAction(req, res) {
+  const { user } = req.query;
 
   switch (req.method) {
     case "GET":
