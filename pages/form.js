@@ -14,16 +14,15 @@ function EnterMeal(props) {
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");
-  //const [ingredients, setIngredients] = useState('');
+  const [ingredients, setIngredients] = useState("");
 
   const printValues = (e) => {
     e.preventDefault();
-    console.log(mealname, type);
+    console.log(day, type, mealname, ingredients);
   };
 
-  function myfunction() {
-    a = document.getElementById("myselect").value;
-    setType(a);
+  function myFunction() {
+    myType(document.getElementById("mySelect").value);
   }
 
   return (
@@ -57,7 +56,7 @@ function EnterMeal(props) {
             <b>Day of the Week</b>
           </label>
           <br></br>
-          <select>
+          <select onChange={(event) => setDay(event.target.value)}>
             <option>Select Day</option>
             <option value="mon">Monday</option>
             <option value="tues">Tuesday</option>
@@ -73,7 +72,7 @@ function EnterMeal(props) {
             <b>Meal of the Day</b>
           </label>
           <br></br>
-          <select id="myselect" onchange="myfunction">
+          <select onChange={(event) => setType(event.target.value)}>
             <option>Select Meal</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
@@ -100,8 +99,8 @@ function EnterMeal(props) {
           </label>
           <br></br>
           <textarea
-            //value={ingredients}
-            //onChange={event => setIngredients(event.target.value)}
+            value={ingredients}
+            onChange={(event) => setIngredients(event.target.value)}
             type="textarea"
             placeholder="Ingredients required for the recipe"
             name="ingredients"
