@@ -21,10 +21,6 @@ function EnterMeal(props) {
     console.log(day, type, mealname, ingredients);
   };
 
-  function myFunction() {
-    myType(document.getElementById("mySelect").value);
-  }
-
   return (
     <Layout user={user}>
       <Head>
