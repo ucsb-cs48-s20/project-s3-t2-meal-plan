@@ -4,12 +4,27 @@ import { requiredAuth } from "../utils/ssr";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
 
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 export const getServerSideProps = requiredAuth;
 
 function EnterMeal(props) {
   const user = props.user;
+
+  const [mealname, setMealname] = useState("");
+  const [day, setDay] = useState("");
+  const [type, setType] = useState("");
+  //const [ingredients, setIngredients] = useState('');
+
+  const printValues = (e) => {
+    e.preventDefault();
+    console.log(mealname, type);
+  };
+
+  function myfunction() {
+    a = document.getElementById("myselect").value;
+    setType(a);
+  }
 
   return (
     <Layout user={user}>
@@ -36,12 +51,7 @@ function EnterMeal(props) {
             }
           `}
         </style>
-        <form
-          onSubmit={
-            console.log
-            //I am trying to figure out how to make this function
-          }
-        >
+        <form onSubmit={printValues}>
           <h1>Enter a Meal</h1>
           <label htmlFor="day">
             <b>Day of the Week</b>
@@ -63,7 +73,7 @@ function EnterMeal(props) {
             <b>Meal of the Day</b>
           </label>
           <br></br>
-          <select>
+          <select id="myselect" onchange="myfunction">
             <option>Select Meal</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
@@ -76,6 +86,8 @@ function EnterMeal(props) {
           </label>
           <br></br>
           <input
+            value={mealname}
+            onChange={(event) => setMealname(event.target.value)}
             type="text"
             placeholder="Name of Recipe"
             name="name"
@@ -88,6 +100,8 @@ function EnterMeal(props) {
           </label>
           <br></br>
           <textarea
+            //value={ingredients}
+            //onChange={event => setIngredients(event.target.value)}
             type="textarea"
             placeholder="Ingredients required for the recipe"
             name="ingredients"
