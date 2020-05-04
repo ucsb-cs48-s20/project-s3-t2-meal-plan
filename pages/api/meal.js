@@ -42,6 +42,7 @@ async function createRecipe(req, user) {
       format: "flat",
     });
   } catch (err) {
+    console.log("err = " + err);
     throw {
       status: 400,
       message: err.join(", "),
@@ -49,16 +50,12 @@ async function createRecipe(req, user) {
   }
 
   const client = await initDatabase();
-  const ideas = client.collection("recipes");
-
-  if (await ideas.findOne({ author: user._id })) {
-    throw {
-      status: 409,
-      message: "User has already submitted a recipe",
-    };
-  }
+  const recipes = client.collection("recipes");
 
   await recipes.insertOne(newRecipe);
+  //console.log("client: "+JSON.stringify(client));
+  //console.log("recipes: "+JSON.stringify(recipes));
+  console.log("newRecipe: " + JSON.stringify(newRecipe));
 
   return newRecipe;
 }
@@ -70,7 +67,7 @@ async function performAction(req, res) {
     case "GET":
       return getRecipe(user);
     case "POST":
-      return createRecipe(user);
+      return createRecipe(req, user);
   }
 
   throw { status: 405 };

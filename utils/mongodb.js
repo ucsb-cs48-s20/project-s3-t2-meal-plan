@@ -12,7 +12,7 @@ export async function initDatabase() {
     await client.connect();
     connected = true;
   }
-  return client.db("database");
+  return client.db("s3-t2-mealplan-db");
 }
 
 export function serializeDocument(doc, options = {}) {
