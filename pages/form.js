@@ -11,7 +11,7 @@ export const getServerSideProps = requiredAuth;
 
 function EnterMeal(props) {
   const user = props.user;
-
+  const [username, setUsername] = useState(props.user.nickname);
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");
@@ -19,13 +19,14 @@ function EnterMeal(props) {
 
   const saveRecipe = async (e) => {
     e.preventDefault();
-    console.log(day, type, mealname, ingredients.split(/[ ,]+/));
+    console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
     await fetch("/api/meal", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        username: username,
         mealname: mealname,
         day: day,
         type: type,

@@ -16,6 +16,9 @@ export async function getRecipe(user) {
 }
 
 const recipeConstraints = {
+  username: {
+    presence: true,
+  },
   day: {
     presence: true,
   },
@@ -53,8 +56,7 @@ async function createRecipe(req, user) {
   const recipes = client.collection("recipes");
 
   await recipes.insertOne(newRecipe);
-  //console.log("client: "+JSON.stringify(client));
-  //console.log("recipes: "+JSON.stringify(recipes));
+
   console.log("newRecipe: " + JSON.stringify(newRecipe));
 
   return newRecipe;
