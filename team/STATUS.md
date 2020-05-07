@@ -6,7 +6,7 @@
 
 ## Brief description of MVP
 
-- Able to put in your meals for a given week and see them later if you log in.
+* Able to put in your meals for a given week and see them later if you log in.
 
 ## Production App placeholder
 
@@ -20,15 +20,13 @@ https://cs48-s20-s3-t2-prod.herokuapp.com
 
 (Enter only one of these)
 
-- Team is on track to complete all stories for MVP by noon a week from Thursday (05/07/2020)
+* Team is on track to complete all stories for MVP by noon a week from Thursday (05/07/2020)
 
 What obstacles remain to completing MVP:
-
-- Need a button that leads to a pop up page
-- Popup page has somewhere to put the ingredients
-- Once entered name of recipe is stored on main page
-- Those are stored with mongodb
+* Need a button that leads to a pop up page
+* Popup page has somewhere to put the ingredients
+* Once entered name of recipe is stored on main page
+* Those are stored with mongodb
 
 Support that would be helpful from course staff to completing MVP
-
-- Nothing at the moment
+* Nothing at the moment

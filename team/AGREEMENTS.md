@@ -1,3 +1,5 @@
+# Initial Team Agreements
+
 # Members:
 * Arun Ryu - arunryu
 * Amanda Serex - amandaserex
@@ -19,3 +21,7 @@ We agree to:
 
 # Time Zone
 * CALIFORNIA PST
+
+# 4/30/2020
+   
+Team decided to make repo public (open source under MIT license).
