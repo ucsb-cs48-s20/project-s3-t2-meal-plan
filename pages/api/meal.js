@@ -2,17 +2,19 @@ import validate from "validate.js";
 import { authenticatedAction } from "../../utils/api";
 import { initDatabase } from "../../utils/mongodb";
 
-export async function getRecipe(user) {
+export async function getRecipe(username, day, type) {
   const client = await initDatabase();
-  const users = client.collection("recipes");
+  const recipes = client.collection("recipes");
 
-  const query = {};
+  let query = recipes.find(
+    { username: { $eq: username }, day: { $eq: day }, type: { $eq: type } }
+    //{mealname: 1, _id: 0}
+  );
+  const recipeArray = await query.toArray();
 
-  if (user) {
-    query.user = user;
-  }
+  //console.log(recipeArray);
 
-  return user.find(query).toArray();
+  return recipeArray;
 }
 
 const recipeConstraints = {
@@ -67,7 +69,7 @@ async function performAction(req, res) {
 
   switch (req.method) {
     case "GET":
-      return getRecipe(user);
+      return getRecipe("peterbrede", "mon", "breakfast");
     case "POST":
       return createRecipe(req, user);
   }

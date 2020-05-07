@@ -3,11 +3,14 @@ import { optionalAuth } from "../utils/ssr";
 
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
+import useSWR from "swr";
 
 export const getServerSideProps = optionalAuth;
 
 function HomePage(props) {
   const user = props.user;
+
+  const { data } = useSWR("/api/meal");
 
   return (
     <Layout user={user}>
@@ -64,6 +67,7 @@ function HomePage(props) {
             <tr>
               <td>
                 <h5>Breakfast</h5>
+                <h6>{data[0].mealname}</h6>
               </td>
               <td>
                 <h5>Breakfast</h5>
