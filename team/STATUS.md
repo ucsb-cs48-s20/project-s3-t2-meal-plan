@@ -2,7 +2,7 @@
 
 ## Sprint Goal for Monday 04/27 through Monday 05/04
 
-* Finish the MVP
+- Finish the MVP
 
 ## Brief description of MVP
 
@@ -14,8 +14,7 @@ https://cs48-s20-s3-t2-prod.herokuapp.com
 
 (Then Enter only one of these)
 
-* Team is on track to complete production app placeholder by noon Thursday (04/30/2020)
-
+- Team is on track to complete production app placeholder by noon Thursday (04/30/2020)
 
 ## MVP Status
 

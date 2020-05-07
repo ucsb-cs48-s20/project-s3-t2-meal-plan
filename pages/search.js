@@ -18,7 +18,7 @@ function Search(props) {
         <title>Search for Recipes</title>
       </Head>
       <div>
-        <p>Search for Recipes work in progres...</p>
+        <p>Search for Recipes work in progress...</p>
       </div>
     </Layout>
   );
