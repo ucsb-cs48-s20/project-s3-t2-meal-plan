@@ -59,7 +59,6 @@ function HomePage(props) {
     <Layout user={user}>
       <Head>
         <title>Meal Planner</title>
-        {/* how to change tab icon to smth else? */}
       </Head>
       {user ? (
         <div>
@@ -110,31 +109,31 @@ function HomePage(props) {
             <tr>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[0][0]}</h6>
+                <p>{mealMatrix[0][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[1][0]}</h6>
+                <p>{mealMatrix[1][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[2][0]}</h6>
+                <p>{mealMatrix[2][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[3][0]}</h6>
+                <p>{mealMatrix[3][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[4][0]}</h6>
+                <p>{mealMatrix[4][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[5][0]}</h6>
+                <p>{mealMatrix[5][0]}</p>
               </td>
               <td>
                 <h5>Breakfast</h5>
-                <h6>{mealMatrix[6][0]}</h6>
+                <p>{mealMatrix[6][0]}</p>
               </td>
             </tr>
             <tr>
@@ -143,31 +142,31 @@ function HomePage(props) {
             <tr>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[0][1]}</h6>
+                <p>{mealMatrix[0][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[1][1]}</h6>
+                <p>{mealMatrix[1][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[2][1]}</h6>
+                <p>{mealMatrix[2][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[3][1]}</h6>
+                <p>{mealMatrix[3][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[4][1]}</h6>
+                <p>{mealMatrix[4][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[5][1]}</h6>
+                <p>{mealMatrix[5][1]}</p>
               </td>
               <td>
                 <h5>Lunch</h5>
-                <h6>{mealMatrix[6][1]}</h6>
+                <p>{mealMatrix[6][1]}</p>
               </td>
             </tr>
             <tr>
@@ -176,31 +175,31 @@ function HomePage(props) {
             <tr>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[0][2]}</h6>
+                <p>{mealMatrix[0][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[1][2]}</h6>
+                <p>{mealMatrix[1][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[2][2]}</h6>
+                <p>{mealMatrix[2][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[3][2]}</h6>
+                <p>{mealMatrix[3][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[4][2]}</h6>
+                <p>{mealMatrix[4][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[5][2]}</h6>
+                <p>{mealMatrix[5][2]}</p>
               </td>
               <td>
                 <h5>Dinner</h5>
-                <h6>{mealMatrix[6][2]}</h6>
+                <p>{mealMatrix[6][2]}</p>
               </td>
             </tr>
             <tr>

@@ -114,6 +114,9 @@ function EnterMeal(props) {
           ></textarea>
           <br></br>
           <Button type="submit">Add to Planner</Button>
+          <br></br>
+          <br></br>
+          <Button href="/">Back to Planner</Button>
         </form>
       </div>
     </Layout>
