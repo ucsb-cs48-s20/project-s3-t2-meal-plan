@@ -41,10 +41,6 @@ function EnterMeal(props) {
         <title>Enter Meal</title>
       </Head>
       <div>
-        <p>
-          work in progress... front-end done, not sure about back-end/database
-        </p>
-
         <style jsx>
           {`
             label {
@@ -119,11 +115,6 @@ function EnterMeal(props) {
           <br></br>
           <Button type="submit">Add to Planner</Button>
         </form>
-
-        <p>
-          By clicking this button, you will be redirected back to your planner
-          with your added meal.
-        </p>
       </div>
     </Layout>
   );

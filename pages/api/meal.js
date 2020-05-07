@@ -2,17 +2,12 @@ import validate from "validate.js";
 import { authenticatedAction } from "../../utils/api";
 import { initDatabase } from "../../utils/mongodb";
 
-export async function getRecipe(username, day, type) {
+export async function getRecipe(username) {
   const client = await initDatabase();
   const recipes = client.collection("recipes");
 
-  let query = recipes.find(
-    { username: { $eq: username }, day: { $eq: day }, type: { $eq: type } }
-    //{mealname: 1, _id: 0}
-  );
+  let query = recipes.find({ username: { $eq: username } });
   const recipeArray = await query.toArray();
-
-  //console.log(recipeArray);
 
   return recipeArray;
 }
@@ -64,12 +59,10 @@ async function createRecipe(req, user) {
   return newRecipe;
 }
 
-async function performAction(req, res) {
-  const { user } = req.query;
-
+async function performAction(req, user) {
   switch (req.method) {
     case "GET":
-      return getRecipe("peterbrede", "mon", "breakfast");
+      return getRecipe(user.nickname);
     case "POST":
       return createRecipe(req, user);
   }
