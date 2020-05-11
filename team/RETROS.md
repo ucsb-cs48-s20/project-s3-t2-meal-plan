@@ -29,21 +29,18 @@
 
 # Retro 05/04/20
 
-* Led by: name-goes-here
-* Present: name1, name2, ... , nameN
-* Absent: name1, name2, ...
+* Led by: Arun Ryu
+* Present:Everyone (Amanda Serex, Peter Brede, ChanChan Mao)
+* Absent: None
 
 ## Action item
 
-* a goal: identify something the team wants to get better at
-* a change: identify one thing that the team will change about how it works together
-* a measurement: identify at least one way to measure whether the change helped the team acheive the goal, or move closer to it.
+* a goal: All team members learn about the spoonacular API and figure out how data are used.
+* a change: 1. All team members learn about how to pull out data from MongoDb 
+            2. Attend office hours right away if there's any issue. 
+* a measurement: We set our goal and dead line for each goal, and if we achieve it, it means things are going well. 
 
-## Brief description of how retro went
+## Retro Assessment
 
-Retro leader fill this in.
-
-* A brief description of what retro outline or process you used.
-* A brief assessment of how it went.
-* What advice would you give to the next person leading a retro
-  based on what you learned today?
+* We used a five step retro, started with three words describing last iteration to reminds ourselves. Next, we do the Genie in a Bottle and The Worst We could Do to gather our concern and ideas to improve the next iteration. Finally, we did Divide the Dollar to evaluate how much the idea worth and conclude the most important idea. At the end, we close the retro by appreciations.
+* Maybe focus on step 4 more because I feel we can talk a bit more about the most important idea, and figure out more specific solutions. Ex. Instead of all team members learn about API, what can we do to learn API more successfully. 
