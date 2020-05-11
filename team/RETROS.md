@@ -27,6 +27,8 @@
 
 
 
+
+
 # Retro 05/04/20
 
 * Led by: Arun Ryu
@@ -36,8 +38,8 @@
 ## Action item
 
 * a goal: All team members learn about the spoonacular API and figure out how data are used.
-* a change: 1. All team members learn about how to pull out data from MongoDb 
-            2. Attend office hours right away if there's any issue. 
+* a change: * 1. All team members learn about how to pull out data from MongoDb 
+            * 2. Attend office hours right away if there's any issue. 
 * a measurement: We set our goal and dead line for each goal, and if we achieve it, it means things are going well. 
 
 ## Retro Assessment
