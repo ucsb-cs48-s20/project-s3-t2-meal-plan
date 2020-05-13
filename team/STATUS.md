@@ -31,12 +31,18 @@ What obstacles remain to completing MVP:
 Support that would be helpful from course staff to completing MVP
 * Nothing at the moment
 
-# Sprint, Monday 05/12/2020
+# Sprint Planning, Monday 05/12/2020
 * Leader: Amanda Serex
 * Present: All
 
-## Sprint Goal for Monday 05/12 through Monday 05/26 
-* demo is on 5/21
-
-- 
-
+## Sprint Goal for 05/12-05/21
+  
+Which of the 10 powerful questions did you ask?
+  
+Describe your sprint goal here.
+  
+Describe briefly how you came up with that goal.
+  
+## Discussion of previous Sprint Goal
+  
+Briefly: was the sprint goal acheived?  Was it too ambitious?  Too modest? 
