@@ -31,7 +31,9 @@ What obstacles remain to completing MVP:
 Support that would be helpful from course staff to completing MVP
 * Nothing at the moment
 
-# Status, Monday 05/12/2020
+# Sprint, Monday 05/12/2020
+* Leader: Amanda Serex
+* Present: All
 
 ## Sprint Goal for Monday 05/12 through Monday 05/26 
 * demo is on 5/21
