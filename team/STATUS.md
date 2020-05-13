@@ -46,4 +46,4 @@ Support that would be helpful from course staff to completing MVP
   
 ## Discussion of previous Sprint Goal
 * Our goal was a bit broad, however we were successful in achieving it, and we were all clear on what specifically was needed to do. Our sprint goal wasn't too ambitious nor too modest.
-Briefly: was the sprint goal acheived?  Was it too ambitious?  Too modest? 
+
