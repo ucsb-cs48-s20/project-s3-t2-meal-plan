@@ -19,7 +19,7 @@ function EnterMeal(props) {
 
   const saveRecipe = async (e) => {
     e.preventDefault();
-    console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
+    //console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
     await fetch("/api/meal", {
       method: "POST",
       headers: {
@@ -33,6 +33,7 @@ function EnterMeal(props) {
         ingredients: ingredients.split(/[ ,]+/),
       }),
     });
+    location.reload();
   };
 
   return (
@@ -65,9 +66,9 @@ function EnterMeal(props) {
           <select onChange={(event) => setDay(event.target.value)}>
             <option>Select Day</option>
             <option value="mon">Monday</option>
-            <option value="tues">Tuesday</option>
+            <option value="tue">Tuesday</option>
             <option value="wed">Wednesday</option>
-            <option value="thur">Thursday</option>
+            <option value="thu">Thursday</option>
             <option value="fri">Friday</option>
             <option value="sat">Saturday</option>
             <option value="sun">Sunday</option>
@@ -80,9 +81,9 @@ function EnterMeal(props) {
           <br></br>
           <select onChange={(event) => setType(event.target.value)}>
             <option>Select Meal</option>
-            <option value="breakfast">Breakfast</option>
+            <option value="break">Breakfast</option>
             <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
+            <option value="dinnr">Dinner</option>
           </select>
           <br></br>
 
