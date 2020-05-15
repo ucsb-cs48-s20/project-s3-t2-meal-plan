@@ -15,13 +15,20 @@ export async function getRecipe(username) {
 export async function removeRecipe(username, day, type) {
   const client = await initDatabase();
   const recipes = client.collection("recipes");
-
-  recipes.remove({
-    username: { $eq: username },
-    day: { $eq: day },
-    type: { $eq: type },
-  });
-  console.log("Ran removeRecipe");
+  // Check for clear all
+  if (day == "cle" && type == "arall") {
+    recipes.remove({
+      username: { $eq: username },
+    });
+    console.log("Ran removeAllRecipes");
+  } else {
+    recipes.remove({
+      username: { $eq: username },
+      day: { $eq: day },
+      type: { $eq: type },
+    });
+    console.log("Ran removeSingleRecipe");
+  }
 }
 
 const recipeConstraints = {
