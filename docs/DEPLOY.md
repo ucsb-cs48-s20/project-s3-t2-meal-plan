@@ -31,6 +31,6 @@ Now, you need to register a new application under your account
 - Under "Basic Information" you will find your personal values for your Auth0 keys, which you need to copy and paste into the respective areas in your ".env" file
 - Scroll down on the same page and enter the following values under "Application URI's"
 
-Application Login URI | (leave this blank)                        |
-Allowed Callback URLs | `http://localhost:3000/api/callback`, ` ` |
-Allowed Logout URLs   | `http://localhost:3000`, ` `              |
+Application Login URI : (leave this blank)                        
+Allowed Callback URLs : `http://localhost:3000/api/callback`
+Allowed Logout URLs   : `http://localhost:3000`           
