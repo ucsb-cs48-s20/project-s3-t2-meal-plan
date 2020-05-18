@@ -28,10 +28,9 @@ Now, you need to register a new application under your account
 * Locate the "Create application" button in the "Applications" page in the sidebar
 ** Give the application a name and select "Single page application"
 * Go to the settings tab under your app's configurations
-** Under "Basic Information" you will find your personal values for your Auth0 keys, which you need to copy and paste into the respective areas in your ".env" file
-** Scroll down on the same page and enter the following values under "Application URI's"
-| Field                 | Value                                |
-| --------------------- | ------------------------------------ |
-| Application Login URI | (leave this blank)                   |
-| Allowed Callback URLs | `http://localhost:3000/api/callback`, ` ` |
-| Allowed Logout URLs   | `http://localhost:3000`, ` `              |
+- Under "Basic Information" you will find your personal values for your Auth0 keys, which you need to copy and paste into the respective areas in your ".env" file
+- Scroll down on the same page and enter the following values under "Application URI's"
+
+Application Login URI | (leave this blank)                        |
+Allowed Callback URLs | `http://localhost:3000/api/callback`, ` ` |
+Allowed Logout URLs   | `http://localhost:3000`, ` `              |
