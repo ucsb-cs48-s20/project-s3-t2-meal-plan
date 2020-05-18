@@ -34,6 +34,7 @@ function EnterMeal(props) {
       }),
     });
     location.reload();
+    alert('Added Meal');
   };
 
   return (
