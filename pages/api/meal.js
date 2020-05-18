@@ -12,6 +12,25 @@ export async function getRecipe(username) {
   return recipeArray;
 }
 
+export async function removeRecipe(username, day, type) {
+  const client = await initDatabase();
+  const recipes = client.collection("recipes");
+  // Check for clear all
+  if (day == "cle" && type == "arall") {
+    recipes.remove({
+      username: { $eq: username },
+    });
+    console.log("Ran removeAllRecipes");
+  } else {
+    recipes.remove({
+      username: { $eq: username },
+      day: { $eq: day },
+      type: { $eq: type },
+    });
+    console.log("Ran removeSingleRecipe");
+  }
+}
+
 const recipeConstraints = {
   username: {
     presence: true,
@@ -24,9 +43,6 @@ const recipeConstraints = {
   },
   mealname: {
     presence: true,
-    length: {
-      minimum: 4,
-    },
   },
   ingredients: {
     presence: true,
@@ -65,6 +81,8 @@ async function performAction(req, user) {
       return getRecipe(user.nickname);
     case "POST":
       return createRecipe(req, user);
+    case "DELETE":
+      return removeRecipe(user.nickname, req.body.day, req.body.type);
   }
 
   throw { status: 405 };

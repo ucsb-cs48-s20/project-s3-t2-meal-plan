@@ -19,38 +19,40 @@ function HomePage(props) {
     ["", "", ""],
   ];
   const { data } = useSWR("/api/meal");
+
+  const removeRecipe = async (e) => {
+    e.preventDefault();
+    console.log(e.target.id.slice(0, 3));
+    console.log(e.target.id.slice(3, 12));
+    await fetch("/api/meal", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        day: e.target.id.slice(0, 3),
+        type: e.target.id.slice(3, 9),
+      }),
+    });
+    location.reload();
+  };
+
   if (data) {
     for (let i = 0; i < 21; i++) {
       if (data[i]) {
-        if (data[i].day == "mon") {
-          if (data[i].type == "breakfast") mealMatrix[0][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[0][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[0][2] = data[i].mealname;
-        } else if (data[i].day == "tues") {
-          if (data[i].type == "breakfast") mealMatrix[1][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[1][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[1][2] = data[i].mealname;
-        } else if (data[i].day == "wed") {
-          if (data[i].type == "breakfast") mealMatrix[2][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[2][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[2][2] = data[i].mealname;
-        } else if (data[i].day == "thur") {
-          if (data[i].type == "breakfast") mealMatrix[3][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[3][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[3][2] = data[i].mealname;
-        } else if (data[i].day == "fri") {
-          if (data[i].type == "breakfast") mealMatrix[4][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[4][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[4][2] = data[i].mealname;
-        } else if (data[i].day == "sat") {
-          if (data[i].type == "breakfast") mealMatrix[5][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[5][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[5][2] = data[i].mealname;
-        } else if (data[i].day == "sun") {
-          if (data[i].type == "breakfast") mealMatrix[6][0] = data[i].mealname;
-          if (data[i].type == "lunch") mealMatrix[6][1] = data[i].mealname;
-          if (data[i].type == "dinner") mealMatrix[6][2] = data[i].mealname;
-        }
+        let dayy = -1;
+        let typee = -1;
+        if (data[i].day == "mon") dayy = 0;
+        if (data[i].day == "tue") dayy = 1;
+        if (data[i].day == "wed") dayy = 2;
+        if (data[i].day == "thu") dayy = 3;
+        if (data[i].day == "fri") dayy = 4;
+        if (data[i].day == "sat") dayy = 5;
+        if (data[i].day == "sun") dayy = 6;
+        if (data[i].type == "break") typee = 0;
+        if (data[i].type == "lunch") typee = 1;
+        if (data[i].type == "dinnr") typee = 2;
+        if (dayy != -1 && typee != -1) mealMatrix[dayy][typee] = data[i];
       }
     }
   }
@@ -74,138 +76,262 @@ function HomePage(props) {
               h3 {
                 padding-top: 20px;
                 width: 160px;
+                color: #151b54;
               }
               h5 {
                 text-decoration: underline;
+                color: #151b54;
+              }
+              button {
+                color: black;
+                background-color: lightgray;
+                font-size: 20px;
+                text-align: right;
+              }
+              td {
+                vertical-align: top;
+                height: 150px;
+                border: 2px solid #151b54;
+                text-align: center;
+              }
+              th {
+                text-align: center;
+              }
+              h6 {
+                font-size: 20px;
+                color: #4863a0;
               }
             `}
           </style>
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
+
           <table>
             <tr>
-              <td>
+              <th>
                 <h3>MON</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>TUES</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>WED</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>THUR</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>FRI</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>SAT</h3>
-              </td>
-              <td>
+              </th>
+              <th>
                 <h3>SUN</h3>
-              </td>
+              </th>
             </tr>
+
             <tr>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[0][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="monbreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[0][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[1][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="tuebreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[1][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[2][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="wedbreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[2][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[3][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="thubreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[3][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[4][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="fribreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[4][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[5][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="satbreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[5][0].mealname}</h6>
               </td>
               <td>
-                <h5>Breakfast</h5>
-                <p>{mealMatrix[6][0]}</p>
+                <h5>
+                  Breakfast
+                  <button id="sunbreak" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[6][0].mealname}</h6>
               </td>
             </tr>
+
             <tr>
-              <td></td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="monlunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[0][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="tuelunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[1][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="wedlunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[2][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="thulunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[3][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="frilunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[4][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="satlunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[5][1].mealname}</h6>
+              </td>
+              <td>
+                <h5>
+                  Lunch
+                  <button id="sunlunch" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[6][1].mealname}</h6>
+              </td>
             </tr>
+
             <tr>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[0][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="mondinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[0][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[1][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="tuedinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[1][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[2][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="weddinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[2][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[3][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="thudinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[3][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[4][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="fridinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[4][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[5][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="satdinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[5][2].mealname}</h6>
               </td>
               <td>
-                <h5>Lunch</h5>
-                <p>{mealMatrix[6][1]}</p>
+                <h5>
+                  Dinner
+                  <button id="sundinnr" onClick={removeRecipe}>
+                    X
+                  </button>
+                </h5>
+                <h6>{mealMatrix[6][2].mealname}</h6>
               </td>
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[0][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[1][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[2][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[3][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[4][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[5][2]}</p>
-              </td>
-              <td>
-                <h5>Dinner</h5>
-                <p>{mealMatrix[6][2]}</p>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
             </tr>
           </table>
+          <Button id="clearall" onClick={removeRecipe}>
+            Clear all
+          </Button>
         </div>
       ) : (
         <div>
@@ -215,5 +341,4 @@ function HomePage(props) {
     </Layout>
   );
 }
-
 export default HomePage;
