@@ -11,6 +11,7 @@ This project allows people to plan their meals of the week and take note of the 
 # Links:
 * https://cs48-s20-s3-t2-qa.herokuapp.com/
 * https://cs48-s20-s3-t2-prod.herokuapp.com/
+* [Deployment Instructions](./docs/DEPLOY.md)
 
 # Tech Stack:
 * Next.js/React
