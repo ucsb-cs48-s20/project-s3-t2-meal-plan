@@ -1,0 +1,13 @@
+.recipe {
+  width: 480px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
