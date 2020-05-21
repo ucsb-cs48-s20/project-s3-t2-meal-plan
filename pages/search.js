@@ -81,7 +81,7 @@ function Search(props) {
             .formm {
               height: 80vh;
               overflow-y: auto;
-              width: 70vh;
+              width: 90vh;
             }
           `}
         </style>
@@ -98,10 +98,9 @@ function Search(props) {
           ></input>
           <Button type="submit">Search</Button>
         </form>
-        <h4 className="text-center mt-4 mb-3">Recipe List</h4>
         <div className="piece">
-          <div> {EnterMeal(props)} </div>
           <div className="formm">
+            <h1 className="text-center mt-4 mb-3">Recipe List</h1>
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
                 <Recipe
@@ -116,6 +115,7 @@ function Search(props) {
               ))}
             </div>
           </div>
+          <div> {EnterMeal(props)} </div>
         </div>
       </div>
     </Layout>
