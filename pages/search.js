@@ -5,8 +5,8 @@ import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
-
 import config from "../utils/config";
+import EnterMeal from "./form";
 
 export const getServerSideProps = optionalAuth;
 
@@ -63,20 +63,28 @@ function Search(props) {
             .form {
               min-height: 10vh;
               display: flex;
-              justify-content: center;
-              align-items: center;
+              justify-content: left;
+              align-items: left;
               margin-bottom: 20px;
             }
             .search-bar {
-              width: 50%;
+              width: 75%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;
               display: flex;
             }
+            .piece {
+              display: flex;
+              flex-direction: row;
+            }
+            .formm {
+              height: 80vh;
+              overflow-y: auto;
+              width: 90vh;
+            }
           `}
         </style>
-
         <label htmlFor="ingredients">
           <h3 className="mt-2">Search for Recipes</h3>
         </label>
@@ -90,19 +98,24 @@ function Search(props) {
           ></input>
           <Button type="submit">Search</Button>
         </form>
-        <h4 className="text-center mt-4 mb-3">Recipe List</h4>
-        <div className="d-flex justify-content-around flex-wrap">
-          {allRecipe.map((r) => (
-            <Recipe
-              key={r.recipe.label}
-              title={r.recipe.label}
-              label={r.recipe.label}
-              calory={r.recipe.calories}
-              image={r.recipe.image}
-              ingredients={r.recipe.ingredients}
-              url={r.recipe.url}
-            />
-          ))}
+        <div className="piece">
+          <div className="formm">
+            <h1 className="text-center mt-4 mb-3">Recipe List</h1>
+            <div className="d-flex justify-content-around flex-wrap">
+              {allRecipe.map((r) => (
+                <Recipe
+                  key={r.recipe.label}
+                  title={r.recipe.label}
+                  label={r.recipe.label}
+                  calory={r.recipe.calories}
+                  image={r.recipe.image}
+                  ingredients={r.recipe.ingredients}
+                  url={r.recipe.url}
+                />
+              ))}
+            </div>
+          </div>
+          <div> {EnterMeal(props)} </div>
         </div>
       </div>
     </Layout>
