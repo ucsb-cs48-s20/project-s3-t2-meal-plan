@@ -34,19 +34,23 @@ function EnterMeal(props) {
       }),
     });
     location.reload();
-    alert('Added Meal');
+    alert("Added Meal");
   };
 
   return (
-    <Layout user={user}>
+    //<Layout user={user}>
+    <div>
       <Head>
         <title>Enter Meal</title>
       </Head>
       <div>
         <style jsx>
           {`
+            form {
+              padding: 10px;
+            }
             label {
-              padding-top: 20px;
+              padding: 10px;
             }
             input,
             textarea {
@@ -121,7 +125,8 @@ function EnterMeal(props) {
           <Button href="/">Back to Planner</Button>
         </form>
       </div>
-    </Layout>
+    </div>
+    // </Layout>
   );
 }
 
