@@ -66,7 +66,7 @@ import AppNavbar from "../components/AppNavbar";
 
 export default {
   title: "AppNavbar",
-  componenet: AppNavbar,
+  component: AppNavbar,
 };
 
 export const loggedOut = () => {
