@@ -17,7 +17,14 @@ function HomePage(props) {
       </Head>
       {user ? (
         <>
-          <br></br>
+          <style jsx>
+            {`
+              h1 {
+                padding-top: 15px;
+                padding-bottom: 15px;
+              }
+            `}
+          </style>
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
           {Table(props)}
