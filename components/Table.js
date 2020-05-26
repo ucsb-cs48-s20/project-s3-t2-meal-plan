@@ -95,7 +95,6 @@ function Table(props) {
             }
           `}
         </style>
-        <h1>Weekly Meal Planner</h1>
         {Top()}
         <tr>
           <td>

@@ -17,6 +17,8 @@ function HomePage(props) {
       </Head>
       {user ? (
         <>
+          <br></br>
+          <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
           {Table(props)}
         </>
