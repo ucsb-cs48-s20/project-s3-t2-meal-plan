@@ -20,6 +20,7 @@ AUTH0_DOMAIN=
 AUTH0_CLIENT_ID=
 AUTH0_CLIENT_SECRET=
 MONGODB_URI=
+MONGODB_COLLECTION=
 ```
 
 Now, you need to get your unique Auth0 values
