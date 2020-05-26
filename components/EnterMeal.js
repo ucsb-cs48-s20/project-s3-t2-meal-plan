@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import { requiredAuth } from "../utils/ssr";
-
+import Container from "react-bootstrap/Container";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
 
@@ -39,7 +39,7 @@ function EnterMeal(props) {
   };
 
   return (
-    <Layout user={user}>
+    <Container user={user}>
       {user ? (
         <div>
           <Head>
@@ -131,7 +131,7 @@ function EnterMeal(props) {
       ) : (
         <div></div>
       )}
-    </Layout>
+    </Container>
   );
 }
 

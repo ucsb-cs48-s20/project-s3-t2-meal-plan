@@ -1,6 +1,7 @@
 import { optionalAuth } from "../utils/ssr";
 import useSWR from "swr";
 import Layout from "../components/Layout";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
 export const getServerSideProps = optionalAuth;
@@ -53,7 +54,7 @@ function Table(props) {
     }
   }
   return (
-    <Layout user={user}>
+    <Container user={user}>
       {user ? (
         <>
           <table>
@@ -324,7 +325,7 @@ function Table(props) {
       ) : (
         <div></div>
       )}
-    </Layout>
+    </Container>
   );
 }
 export default Table;

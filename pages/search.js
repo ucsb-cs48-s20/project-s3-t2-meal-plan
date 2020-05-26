@@ -68,7 +68,7 @@ function Search(props) {
               margin-bottom: 20px;
             }
             .search-bar {
-              width: 75%;
+              width: 100%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;

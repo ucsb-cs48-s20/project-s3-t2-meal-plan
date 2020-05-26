@@ -13,7 +13,7 @@ export const loggedOutEmpty = () => {
 };
 
 export const loggedInWithContentInContainer = () => {
-  const content = text("Sample Content", "This is sample content");
+  const content = text("Sample Content", "Weekly Meal Planner goes here");
   const name = text("Name", "Phill Conrad");
   const picture = text(
     "Image URL",
