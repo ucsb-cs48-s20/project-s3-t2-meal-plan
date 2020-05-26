@@ -60,6 +60,7 @@ https://ucsb-cs48.github.io/topics/mongodb_cloud_atlas_setup/
 * After completing these instructions, you should have your unique database's URI string in your .env file, but you are not finished.
 * You will need to include this uri in your Heroku's config vars, just like you have done with other secrets, with the field as "MONGODB_URI"
 * Also you must add your database's collection name to your .env file. Make sure you have created a new collection if you have not done so already and add "MONGODB_COLLECTION=<your_collection_name>" to the .env file
+* Add this same data to your Heroku config vars once again
 ### Changing some code to connect to your newly created database instead of ours
 * In your repository, follow pages/utils/mongodb.js. In this file, on line 15 you should see:
 ```
