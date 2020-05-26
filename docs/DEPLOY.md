@@ -35,7 +35,7 @@ Now, you need to register a new application under your account
 - Scroll down on the same page and enter the following values under "Application URI's"
 
 Application Login URI : (leave this blank)                        
-Allowed Callback URLs : `http://localhost:3000/api/callback`                                                                            |  
+Allowed Callback URLs : `http://localhost:3000/api/callback`                                                              
 Allowed Logout URLs   : `http://localhost:3000`   
 ### For every field that references http://localhost:3000:
 * Add a comma-separated entry after the existing entry referencing your new production url. It is important you include both localhost and production urls so that both your localhost and production apps will work properly.
