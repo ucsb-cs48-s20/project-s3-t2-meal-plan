@@ -69,7 +69,7 @@ return client.db("s3-t2-mealplan-db");
 ```
 * "s3-t2-mealplan-db" should be replaced by the name of your database, so that your app connects to your database.
 Once this is completed you should be able to run the app on localhost and deploy your master branch on Heroku!
-##Edamam Recipe Search API
+## Edamam Recipe Search API
 * This API is free and allows for up to five searches per minute for each account. If you would like to use your own account go to https://developer.edamam.com/edamam-recipe-api and create a "Developer" account.
 * Click on the "Get an API key now!" button in the nav bar and then choose Recipe Search API and enter your app name and info.
 * Then delete the current API_ID and API_KEY and enter the Application ID and Application Key given from Edamam onto line 17 and 18 of pages/search.js.
