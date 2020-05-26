@@ -1,4 +1,7 @@
-function Top() {
+import Layout from "../components/Layout";
+
+function Top(props) {
+  const user = props.user;
   return (
     <tr>
       <style jsx>
