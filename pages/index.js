@@ -22,8 +22,8 @@ function HomePage(props) {
 
   const removeRecipe = async (e) => {
     e.preventDefault();
-    console.log(e.target.id.slice(0, 3));
-    console.log(e.target.id.slice(3, 12));
+    //console.log(e.target.id.slice(0, 3));
+    //console.log(e.target.id.slice(3, 12));
     await fetch("/api/meal", {
       method: "DELETE",
       headers: {

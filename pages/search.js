@@ -31,6 +31,7 @@ function Search(props) {
     );
     //const data = await response.json();
     setRecipe(response.hits);
+    console.log(allRecipe);
   };
 
   const updateSearch = (e) => {
