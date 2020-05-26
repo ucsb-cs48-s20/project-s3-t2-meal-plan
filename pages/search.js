@@ -29,8 +29,8 @@ function Search(props) {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
     );
-    //const data = await response.json();
     setRecipe(response.hits);
+    //console.log(response.hits.toArray()[0].recipe.label);
   };
 
   const updateSearch = (e) => {
