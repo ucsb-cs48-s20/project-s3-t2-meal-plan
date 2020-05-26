@@ -1,10 +1,11 @@
 import validate from "validate.js";
 import { authenticatedAction } from "../../utils/api";
 import { initDatabase } from "../../utils/mongodb";
+import config from "../../utils/config.js";
 
 export async function getRecipe(username) {
   const client = await initDatabase();
-  const recipes = client.collection("recipes");
+  const recipes = client.collection(config.MONGODB_COLLECTION);
 
   let query = recipes.find({ username: { $eq: username } });
   const recipeArray = await query.toArray();
@@ -14,7 +15,7 @@ export async function getRecipe(username) {
 
 export async function removeRecipe(username, day, type) {
   const client = await initDatabase();
-  const recipes = client.collection("recipes");
+  const recipes = client.collection(config.MONGODB_COLLECTION);
   // Check for clear all
   if (day == "cle" && type == "arall") {
     recipes.remove({
@@ -66,7 +67,7 @@ async function createRecipe(req, user) {
   }
 
   const client = await initDatabase();
-  const recipes = client.collection("recipes");
+  const recipes = client.collection(config.MONGODB_COLLECTION);
 
   await recipes.insertOne(newRecipe);
 

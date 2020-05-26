@@ -15,6 +15,7 @@ if (typeof window === "undefined") {
     SESSION_COOKIE_SECRET: process.env.SESSION_COOKIE_SECRET,
     SESSION_COOKIE_LIFETIME: process.env.SESSION_COOKIE_LIFETIME,
     MONGODB_URI: process.env.MONGODB_URI,
+    MONGODB_COLLECTION: process.env.MONGODB_COLLECTION,
     REACT_APP_API_ID: process.env.REACT_APP_API_ID,
     REACT_APP_API_KEY: process.env.REACT_APP_API_KEY,
   };
