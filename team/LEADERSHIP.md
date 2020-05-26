@@ -8,7 +8,7 @@
 | Thur 05/07 | ChanChan Mao | Will demo MVP                                          |
 | Mon 05/11  | Arun Ryu     | Will lead Second Retro                                 |
 | Tue 05/12  | Amanda Serex | Will lead Sprint Goal Discussion                       |
-| Thur 05/19 | ChanChan Mao | Will demo 2nd iteration                                |
+| Thur 05/19 | Amanda Serex | Will demo 2nd iteration                                |
 | Tue 05/26  | Peter Brede  | Will lead Third Retro                                  |
-| Wed 06/10  | Amanda Serex | Will demo 3rd iteration                                |
+| Wed 06/10  | ChanChan Mao | Will demo 3rd iteration                                |
 
