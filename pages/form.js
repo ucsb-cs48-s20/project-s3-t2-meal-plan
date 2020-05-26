@@ -11,7 +11,15 @@ import fetch from "isomorphic-unfetch";
 export const getServerSideProps = requiredAuth;
 
 function form(props) {
-  return <div> {EnterMeal(props)} </div>;
+  const user = props.user;
+  return (
+    <Layout user={user}>
+      <Head>
+        <title>Enter a Meal</title>
+      </Head>
+      <div> {EnterMeal(props)} </div>
+    </Layout>
+  );
 }
 
 export default form;
