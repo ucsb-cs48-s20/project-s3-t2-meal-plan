@@ -1,4 +1,3 @@
-import Top from "./Top";
 import { optionalAuth } from "../utils/ssr";
 import useSWR from "swr";
 import Layout from "../components/Layout";
@@ -97,7 +96,29 @@ function Table(props) {
                 }
               `}
             </style>
-            {Top(props)}
+            <tr>
+              <th>
+                <h3>MON</h3>
+              </th>
+              <th>
+                <h3>TUES</h3>
+              </th>
+              <th>
+                <h3>WED</h3>
+              </th>
+              <th>
+                <h3>THUR</h3>
+              </th>
+              <th>
+                <h3>FRI</h3>
+              </th>
+              <th>
+                <h3>SAT</h3>
+              </th>
+              <th>
+                <h3>SUN</h3>
+              </th>
+            </tr>
             <tr>
               <td>
                 <h5>

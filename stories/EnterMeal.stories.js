@@ -1,14 +1,14 @@
 import React from "react";
 import { select, text } from "@storybook/addon-knobs";
-import Top from "../components/Top";
+import EnterMeal from "../components/EnterMeal";
 
 export default {
-  title: "Top",
-  component: Top,
+  title: "EnterMeal",
+  component: EnterMeal,
 };
 
 export const loggedOut = () => {
-  return <Top />;
+  return <EnterMeal />;
 };
 
 export const loggedIn = () => {
@@ -18,5 +18,5 @@ export const loggedIn = () => {
     "https://avatars3.githubusercontent.com/u/1119017"
   );
   const user = { name, picture };
-  return <Top user={user} />;
+  return <EnterMeal user={user} />;
 };
