@@ -81,7 +81,6 @@ function EnterMeal(props) {
                 <option value="sun">Sunday</option>
               </select>
               <br></br>
-
               <label htmlFor="meal">
                 <b>Meal of the Day</b>
               </label>
@@ -93,7 +92,6 @@ function EnterMeal(props) {
                 <option value="dinnr">Dinner</option>
               </select>
               <br></br>
-
               <label htmlFor="name">
                 <b>Name of Recipe</b>
               </label>
