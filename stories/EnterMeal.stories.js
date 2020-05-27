@@ -8,15 +8,14 @@ export default {
   component: EnterMeal,
 };
 
-export const loggedOut = (props) => {
-  console.log(props.user);
+export const loggedOutEmpty = () => {
   return <AppNavbar />;
   // this ^ is not right. this line is supposed to be
   // return <EnterMeal />;
   // but it's having an issue with "nickname" in EnterMeal.js
 };
 
-export const loggedIn = () => {
+export const loggedInDisplaysForm = () => {
   const name = text("Name", "Phill Conrad");
   const picture = text(
     "Image URL",

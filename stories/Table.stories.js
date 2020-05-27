@@ -7,11 +7,11 @@ export default {
   component: Table,
 };
 
-export const loggedOut = () => {
+export const loggedOutEmpty = () => {
   return <Table />;
 };
 
-export const loggedIn = () => {
+export const loggedInDisplaysPlanner = () => {
   const name = text("Name", "Phill Conrad");
   const picture = text(
     "Image URL",
