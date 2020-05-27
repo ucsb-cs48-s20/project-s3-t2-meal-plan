@@ -7,16 +7,13 @@ export default {
   component: Table,
 };
 
-export const loggedOutEmpty = () => {
-  return <Table />;
-};
-
 export const loggedInDisplaysPlanner = () => {
   const name = text("Name", "Phill Conrad");
   const picture = text(
     "Image URL",
     "https://avatars3.githubusercontent.com/u/1119017"
   );
-  const user = { name, picture };
+  const mealname = text("Mealname", "eggs");
+  const user = { name, picture, mealname };
   return <Table user={user} />;
 };
