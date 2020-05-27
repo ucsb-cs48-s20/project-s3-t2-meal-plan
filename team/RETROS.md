@@ -56,6 +56,6 @@
 
 ## Action item
 
-- a goal: 
-- a change:
-- a measurement:
+- a goal: Fixing a lot of issues/concerns that were brought up during our last demo (search->recipe add, cleaning up code and UI)
+- a change: Our group has decided to work more consistently and as a group more. We will meet up and work on our issues as groups (3 or more)
+- a measurement: To determine our success in this upcoming sprint, we will implement a cleaner web app, with our current functions, that are a lot more user friendly and efficient.
