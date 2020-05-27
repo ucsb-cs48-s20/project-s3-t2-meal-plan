@@ -90,12 +90,15 @@ the codebase will automatically be reflected in the browser.
 
 ## Commands
 
-| Command                | Description                              |
-| ---------------------- | ---------------------------------------- |
-| `npm run test`         | Runs entire test suite                   |
-| `npm run test:format`  | Checks the project for formatting issues |
-| `npm run test:cypress` | Runs Cypress integration tests           |
-| `npm run fix:format`   | Reformats all project files              |
+| Command                  | Description                                           |
+| ------------------------ | ----------------------------------------------------- |
+| `npm install `           | Install Dependencies                                  |
+| `npm run test`           | Runs entire test suite                                |
+| `npm run test:format`    | Checks the project for formatting issues              |
+| `npm run test:cypress`   | Runs Cypress integration tests                        |
+| `npm run fix:format`     | Reformats all project files                           |
+| `npm run storybook`      | Run React Storybook (made available at localhost:6006)|
+| `npm run build-storybook`| Create static react storybook for GitHub Pages        |
 
 ## Configuring secrets for GitHub Actions
 
