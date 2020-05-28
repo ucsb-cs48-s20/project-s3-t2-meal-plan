@@ -39,7 +39,6 @@ function HomePage(props) {
         if (dayy != -1 && typee != -1) mealMatrix[dayy][typee] = data[i];
       }
     }
-    console.log(JSON.stringify(mealMatrix));
   }
 
   return (
