@@ -60,7 +60,6 @@ function HomePage(props) {
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
 
-          {/* {Table(props, mealMatrix)} */}
           <Table user={user} mealMatrix={mealMatrix}></Table>
         </>
       ) : (
