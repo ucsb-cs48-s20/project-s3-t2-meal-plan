@@ -57,7 +57,7 @@ function Table(props) {
                   border-radius: 50%;
                 }
                 button:hover {
-                  background-color: red;
+                  background-color: crimson;
                 }
                 td {
                   vertical-align: top;
