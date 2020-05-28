@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
-import { select, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 export default {
   title: "Layout",
