@@ -10,5 +10,5 @@
 | Tue 05/12  | Amanda Serex | Will lead Sprint Goal Discussion                       |
 | Thur 05/19 | Amanda Serex | Will demo 2nd iteration                                |
 | Tue 05/26  | Peter Brede  | Will lead Third Retro                                  |
+| Tue 05/26  | Arun Ryu     | Will lead Sprint Planning                              |
 | Wed 06/10  | ChanChan Mao | Will demo 3rd iteration                                |
-

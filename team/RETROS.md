@@ -47,3 +47,15 @@
 
 - We used a five step retro, started with three words describing last iteration to reminds ourselves. Next, we do the Genie in a Bottle and The Worst We could Do to gather our concern and ideas to improve the next iteration. Finally, we did Divide the Dollar to evaluate how much the idea worth and conclude the most important idea. At the end, we close the retro by appreciations.
 - Maybe focus on step 4 more because I feel we can talk a bit more about the most important idea, and figure out more specific solutions. Ex. Instead of all team members learn about API, what can we do to learn API more successfully.
+
+# Retro 05/26/20
+
+- Let by: Peter Brede
+- Present: Everyone
+- Absent: None
+
+## Action item
+
+- a goal: Fixing a lot of issues/concerns that were brought up during our last demo (search->recipe add, cleaning up code and UI)
+- a change: Our group has decided to work more consistently and as a group more. We will meet up and work on our issues as groups (3 or more)
+- a measurement: To determine our success in this upcoming sprint, we will implement a cleaner web app, with our current functions, that are a lot more user friendly and efficient.
