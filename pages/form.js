@@ -11,7 +11,7 @@ export const getServerSideProps = requiredAuth;
 
 function EnterMeal(props) {
   const user = props.user;
-  const [username, setUsername] = useState(props.user.nickname);
+  const [username, setUsername] = useState(user.nickname);
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");

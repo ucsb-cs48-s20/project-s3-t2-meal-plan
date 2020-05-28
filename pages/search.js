@@ -5,12 +5,12 @@ import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
-import config from "../utils/config";
 import EnterMeal from "./form";
+import saveRecipe from "./form";
 
 export const getServerSideProps = optionalAuth;
 
-function Search(props) {
+export default function Search(props) {
   const user = props.user;
   //const API_ID= config.REACT_APP_API_ID;
   //const API_KEY = config.REACT_APP_API_KEY;
@@ -30,7 +30,12 @@ function Search(props) {
       `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
     );
     setRecipe(response.hits);
-    //console.log(response.hits.toArray()[0].recipe.label);
+    const recipeOptions = [];
+    for (var i = 0; i < 10; i++) {
+      if (response.hits[i]) {
+        recipeOptions[i] = response.hits[i].recipe.label;
+      }
+    }
   };
 
   const updateSearch = (e) => {
@@ -66,6 +71,10 @@ function Search(props) {
               justify-content: left;
               align-items: left;
               margin-bottom: 20px;
+              padding: 10px;
+            }
+            .formmm {
+              padding: 20px;
             }
             .search-bar {
               width: 75%;
@@ -115,11 +124,8 @@ function Search(props) {
               ))}
             </div>
           </div>
-          <div> {EnterMeal(props)} </div>
         </div>
       </div>
     </Layout>
   );
 }
-
-export default Search;
