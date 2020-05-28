@@ -6,8 +6,9 @@ import Button from "react-bootstrap/Button";
 
 export const getServerSideProps = optionalAuth;
 
-function Table(props, mealMatrix) {
+function Table(props) {
   const user = props.user;
+  const mealMatrix = props.mealMatrix;
   // const mealMatrix = [
   //   ["", "", ""],
   //   ["", "", ""],
@@ -53,6 +54,7 @@ function Table(props, mealMatrix) {
   //     }
   //   }
   // }
+
   return (
     <Container user={user}>
       {user ? (

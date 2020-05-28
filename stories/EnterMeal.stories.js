@@ -1,5 +1,5 @@
 import React from "react";
-import { select, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 import EnterMeal from "../components/EnterMeal";
 
 export default {

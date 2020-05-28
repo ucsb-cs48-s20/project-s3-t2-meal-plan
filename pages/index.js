@@ -39,6 +39,7 @@ function HomePage(props) {
         if (dayy != -1 && typee != -1) mealMatrix[dayy][typee] = data[i];
       }
     }
+    console.log(JSON.stringify(mealMatrix));
   }
 
   return (
@@ -59,7 +60,8 @@ function HomePage(props) {
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
 
-          {Table(props, mealMatrix)}
+          {/* {Table(props, mealMatrix)} */}
+          <Table user={user} mealMatrix={mealMatrix}></Table>
         </>
       ) : (
         <div>
