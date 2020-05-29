@@ -12,10 +12,11 @@ export const getServerSideProps = optionalAuth;
 
 function Search(props) {
   const user = props.user;
-  //const API_ID= config.REACT_APP_API_ID;
-  //const API_KEY = config.REACT_APP_API_KEY;
-  const API_ID = `392fb82a`;
-  const API_KEY = `4b6ad0674d6814b6f219705f6a4183ea`;
+  require("dotenv").config();
+  const API_ID = config.REACT_APP_API_ID;
+  const API_KEY = config.REACT_APP_API_KEY;
+  //const API_ID = `392fb82a`;
+  //const API_KEY = `4b6ad0674d6814b6f219705f6a4183ea`;
 
   const [allRecipe, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
@@ -27,7 +28,8 @@ function Search(props) {
 
   const getRecipe = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=` +
+        `${API_ID}&app_key=${API_KEY}`
     );
     setRecipe(response.hits);
     //console.log(response.hits.toArray()[0].recipe.label);
@@ -48,22 +50,16 @@ function Search(props) {
       <Head>
         <title>Search for Recipes</title>
       </Head>
-      <div className="App">
+      <div className="Search_page">
         <style jsx>
           {`
-             {
-              margin: 0;
-              padding: 0;
-              background-color: rgb(255, 255, 255);
-            }
-            .App {
-              min-height: 100vh;
+            .Search_page {
+              min-height: 950px;
               background-color: rgb(255, 255, 255);
             }
             .form {
-              min-height: 10vh;
+              min-height: 50px;
               display: flex;
-              justify-content: left;
               align-items: left;
               margin-bottom: 20px;
             }
@@ -78,10 +74,10 @@ function Search(props) {
               display: flex;
               flex-direction: row;
             }
-            .formm {
-              height: 80vh;
+            .form_search {
+              height: 770px;
               overflow-y: auto;
-              width: 90vh;
+              width: 860px;
             }
           `}
         </style>
@@ -99,7 +95,7 @@ function Search(props) {
           <Button type="submit">Search</Button>
         </form>
         <div className="piece">
-          <div className="formm">
+          <div className="form_search">
             <h1 className="text-center mt-4 mb-3">Recipe List</h1>
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
@@ -115,7 +111,7 @@ function Search(props) {
               ))}
             </div>
           </div>
-          <div> {EnterMeal(props)} </div>
+          {/*<div> {EnterMeal(props)} </div>*/}
         </div>
       </div>
     </Layout>
