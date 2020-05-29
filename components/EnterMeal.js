@@ -35,6 +35,7 @@ function EnterMeal(props) {
     });
     location.reload();
     alert("Added Meal");
+    window.location.href = "/";
   };
 
   return (
@@ -121,7 +122,6 @@ function EnterMeal(props) {
               <Button type="submit">Add to Planner</Button>
               <br></br>
               <br></br>
-              <Button href="/">Back to Planner</Button>
             </form>
           </div>
         </div>

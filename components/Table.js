@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import form2 from "../pages/form2";
 
 export const getServerSideProps = optionalAuth;
 
@@ -51,8 +52,12 @@ function Table(props) {
                 button {
                   color: black;
                   background-color: lightgray;
-                  font-size: 20px;
+                  font-size: 15px;
                   text-align: right;
+                  border-radius: 50%;
+                }
+                button:hover {
+                  background-color: crimson;
                 }
                 td {
                   vertical-align: top;
@@ -66,6 +71,11 @@ function Table(props) {
                 h6 {
                   font-size: 20px;
                   color: #4863a0;
+                }
+                a {
+                  font-size: 20px;
+                  color: black;
+                  padding: 2px;
                 }
               `}
             </style>
@@ -101,6 +111,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[0][0].mealname}</h6>
+                <a href="/form2?day=mon&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -110,6 +121,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[1][0].mealname}</h6>
+                <a href="/form2?day=tue&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -119,6 +131,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[2][0].mealname}</h6>
+                <a href="/form2?day=wed&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -128,6 +141,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[3][0].mealname}</h6>
+                <a href="/form2?day=thu&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -137,6 +151,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[4][0].mealname}</h6>
+                <a href="/form2?day=fri&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -146,6 +161,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[5][0].mealname}</h6>
+                <a href="/form2?day=sat&type=break">+</a>
               </td>
               <td>
                 <h5>
@@ -155,6 +171,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[6][0].mealname}</h6>
+                <a href="/form2?day=sun&type=break">+</a>
               </td>
             </tr>
 
@@ -167,6 +184,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[0][1].mealname}</h6>
+                <a href="/form2?day=mon&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -176,6 +194,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[1][1].mealname}</h6>
+                <a href="/form2?day=tue&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -185,6 +204,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[2][1].mealname}</h6>
+                <a href="/form2?day=wed&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -194,6 +214,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[3][1].mealname}</h6>
+                <a href="/form2?day=thu&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -203,6 +224,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[4][1].mealname}</h6>
+                <a href="/form2?day=fri&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -212,6 +234,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[5][1].mealname}</h6>
+                <a href="/form2?day=sat&type=lunch">+</a>
               </td>
               <td>
                 <h5>
@@ -221,6 +244,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[6][1].mealname}</h6>
+                <a href="/form2?day=sun&type=lunch">+</a>
               </td>
             </tr>
 
@@ -233,6 +257,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[0][2].mealname}</h6>
+                <a href="/form2?day=mon&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -242,6 +267,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[1][2].mealname}</h6>
+                <a href="/form2?day=tue&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -251,6 +277,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[2][2].mealname}</h6>
+                <a href="/form2?day=wed&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -260,6 +287,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[3][2].mealname}</h6>
+                <a href="/form2?day=thu&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -269,6 +297,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[4][2].mealname}</h6>
+                <a href="/form2?day=fri&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -278,6 +307,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[5][2].mealname}</h6>
+                <a href="/form2?day=sat&type=dinner">+</a>
               </td>
               <td>
                 <h5>
@@ -287,6 +317,7 @@ function Table(props) {
                   </button>
                 </h5>
                 <h6>{mealMatrix[6][2].mealname}</h6>
+                <a href="/form2?day=sun&type=dinner">+</a>
               </td>
             </tr>
           </table>
