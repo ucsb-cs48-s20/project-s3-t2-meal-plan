@@ -5,7 +5,7 @@ import config from "../../utils/config.js";
 
 export async function getIngredient(username) {
   const client = await initDatabase();
-  const ingredients = client.collection(config.shoppinglists);
+  const ingredients = client.collection(shoppinglists);
 
   let query = ingredients.find({ username: { $eq: username } });
   const ingredientArray = await query.toArray();
@@ -15,8 +15,11 @@ export async function getIngredient(username) {
 
 export async function removeIngredient(username, ingredient) {
   const client = await initDatabase();
-  const ingredients = client.collection(config.shoppinglists);
+  const ingredients = client.collection(shoppinglists);
   // Check for clear all
+  if (err) {
+    alert("theres an issue");
+  }
   if (ingredient == "all") {
     ingredients.remove({
       username: { $eq: username },
@@ -44,19 +47,20 @@ async function createIngredient(req, user) {
   let newIngredient;
 
   try {
+    console.log("trying to create ing");
     newIngredient = await validate.async(req.body, ingredientConstraints, {
       cleanAttributes: true,
       format: "flat",
     });
   } catch (err) {
-    console.log("err = " + err);
+    console.log("HEYO, We have an error = " + err);
     throw {
       status: 400,
     };
   }
 
   const client = await initDatabase();
-  const ingredients = client.collection(config.shoppinglist);
+  const ingredients = client.collection(shoppinglists);
 
   await ingredients.insertOne(newIngredient);
 

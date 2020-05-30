@@ -13,11 +13,12 @@ export const getServerSideProps = requiredAuth;
 
 function List(props) {
   const user = props.user;
-  const { data } = useSWR("/api/list");
+  //const { data } = useSWR("/api/list");
   //db.collection.find( { username: { $eq: this.state.username } } )
-  const [username, setUsername] = useState(props.user.nickname);
+  const username = useState(props.user.nickname);
   const [ingredient, setIngredient] = useState("");
   const saveIngredient = async (e) => {
+    console.log(ingredient);
     e.preventDefault();
     await fetch("/api/list", {
       method: "POST",
@@ -29,7 +30,6 @@ function List(props) {
         ingredient: ingredient,
       }),
     });
-    location.reload();
     alert("Added Ingredient");
   };
   return (
