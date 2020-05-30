@@ -31,6 +31,7 @@ function List(props) {
       }),
     });
     console.log(username, ingredient);
+    location.reload();
     alert("Added Ingredient");
   };
   return (

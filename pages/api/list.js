@@ -5,7 +5,7 @@ import config from "../../utils/config.js";
 
 export async function getIngredient(username) {
   const client = await initDatabase();
-  const ingredients = client.collection(shoppinglists);
+  const ingredients = client.collection("shoppinglists");
 
   let query = ingredients.find({ username: { $eq: username } });
   const ingredientArray = await query.toArray();
@@ -15,7 +15,7 @@ export async function getIngredient(username) {
 
 export async function removeIngredient(username, ingredient) {
   const client = await initDatabase();
-  const ingredients = client.collection(shoppinglists);
+  const ingredients = client.collection("shoppinglists");
   // Check for clear all
   if (err) {
     alert("theres an issue");
@@ -60,7 +60,7 @@ async function createIngredient(req, user) {
   }
 
   const client = await initDatabase();
-  const ingredients = client.collection(shoppinglists);
+  const ingredients = client.collection("shoppinglists");
 
   await ingredients.insertOne(newIngredient);
 
