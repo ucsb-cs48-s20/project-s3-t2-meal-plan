@@ -53,8 +53,8 @@ http://localhost:3000, https://cs48-cgaucho.herokuapp.com
 - Now scroll up on the same page, and under "Basic Information" you will find your personal values for your Auth0 keys, which you need to copy and paste into the respective areas in your ".env" file
 * **Additionally**, you must copy and paste these values into your heroku app's "config secrets", giving them the exact same fields as your .env file
 * Add two more fields and their respective values to your config secrets: "POST_LOGOUT_REDIRECT_URI" with value of your production url (same as your second allowed logout URL) and "REDIRECT_URI" with the value of your production URL + "/api/callback" (same as your second allowed callback URL)
-* You have one last field (for now) to add to your config secrets: "SESSION_COOKIE_SECRET". Give this field a random assortment of characters in order to ensure security and copy the value.
-* Lastly insert this secret into your own .env file, matching the style of "SESSION_COOKIE_SECRET=RAnDOMAsSORtEDLETTerS"
+* You have one last field (for now) to add to your config secrets: "SESSION_COOKIE_SECRET". Give this field a random assortment **of 32 or more characters** in order to ensure security and copy the value.
+* Lastly insert this secret into your own .env file, matching the style of "SESSION_COOKIE_SECRET=RAnDOMAsSORtEDLETTerSMoreThan32LETters"
 ## Mongodb
 * In order to connect to a mongodb database, you will need to follow these terrific instructions:
 https://ucsb-cs48.github.io/topics/mongodb_cloud_atlas_setup/
