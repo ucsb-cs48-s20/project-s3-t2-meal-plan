@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import { useRouter } from "next/router";
 import React, { Component, useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
-import { redirectTo } from "@reach/router";
 
 export const getServerSideProps = requiredAuth;
 
