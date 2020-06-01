@@ -5,14 +5,14 @@ import fetch from "isomorphic-unfetch";
 
 export const getServerSideProps = requiredAuth;
 
-async function addButton(label, ingreds, dayy, typee, props) {
+async function addButton(label, ingreds, dayy, typee, username) {
   await fetch("/api/meal", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username: props,
+      username: username,
       mealname: label,
       day: dayy,
       type: typee,
@@ -72,7 +72,7 @@ function Recipe(props) {
               props.ingredients.map((i) => i.text),
               dayy,
               typee,
-              "peterbrede"
+              props.user
             )
           }
         >

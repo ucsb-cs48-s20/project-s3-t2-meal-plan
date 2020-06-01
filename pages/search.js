@@ -120,6 +120,7 @@ export default function Search(props) {
                   image={r.recipe.image}
                   ingredients={r.recipe.ingredients}
                   url={r.recipe.url}
+                  user={user.nickname}
                 />
               ))}
             </div>
