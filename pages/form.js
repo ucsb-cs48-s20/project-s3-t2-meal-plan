@@ -12,6 +12,32 @@ export const getServerSideProps = requiredAuth;
 
 function form(props) {
   const user = props.user;
+  const [username, setUsername] = useState(user.nickname);
+  const [mealname, setMealname] = useState("");
+  const [day, setDay] = useState("");
+  const [type, setType] = useState("");
+  const [ingredients, setIngredients] = useState("");
+
+  const saveRecipe = async (e) => {
+    e.preventDefault();
+    //console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
+    await fetch("/api/meal", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        mealname: mealname,
+        day: day,
+        type: type,
+        ingredients: ingredients.split(/[ ,]+/),
+      }),
+    });
+    location.reload();
+    alert("Added Meal");
+  };
+
   return (
     <Layout user={user}>
       <Head>
