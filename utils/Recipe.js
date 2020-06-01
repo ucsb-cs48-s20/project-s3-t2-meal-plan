@@ -35,7 +35,7 @@ function Recipe(props) {
         <form>
           <div className="formmm">
             <label htmlFor="day">
-              <b>Day of the Week</b>
+              <b>Day of the Week : </b>
             </label>
             <select onChange={(event) => setDay(event.target.value)}>
               <option>Select Day</option>
@@ -52,9 +52,8 @@ function Recipe(props) {
 
           <div className="formmm">
             <label htmlFor="meal">
-              <b>Meal of the Day</b>
+              <b>Meal of the Day : </b>
             </label>
-            <br></br>
             <select onChange={(event) => setType(event.target.value)}>
               <option>Select Meal</option>
               <option value="break">Breakfast</option>

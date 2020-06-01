@@ -3,38 +3,44 @@
 This project allows people to plan their meals of the week and take note of the ingredients included. Users can also find recipes and set reminders and timers.
 
 # Members:
-* Arun Ryu - arunryu
-* Amanda Serex - amandaserex
-* Peter Brede - peterbrede
-* ChanChan Mao - chanchanmao
+
+- Arun Ryu - arunryu
+- Amanda Serex - amandaserex
+- Peter Brede - peterbrede
+- ChanChan Mao - chanchanmao
 
 # Links:
-* https://cs48-s20-s3-t2-qa.herokuapp.com/
-* https://cs48-s20-s3-t2-prod.herokuapp.com/
-* [Deployment Instructions](./docs/DEPLOY.md)
+
+- https://cs48-s20-s3-t2-qa.herokuapp.com/
+- https://cs48-s20-s3-t2-prod.herokuapp.com/
+- [Deployment Instructions](./docs/DEPLOY.md)
 
 # Tech Stack:
-* Next.js/React
+
+- Next.js/React
 
 # Initial Planning Ideas
+
 With this weekly meal planner, users are able to view their personalized planner via log in and are able to edit/add/remove meals/ingredients/etc. Users can list ingredients that they're gong to use for their dishes/meals. Users are able to search for recipes given ingredients that they already or search for specific recipes (via Spoonacular API). There will also be a shopping list feature where the user can add/edit/remove ingredients or select ingredients from a recipe and have it automatically added to the list.
 
 Example Case
-* Users can start planning their meals on Sunday and write out their plans for breakfast/lunch/dinner for the week and plan out the entire list of ingredients so that user can shop accordingly. User can input the amount of servings needed for each meal and the amount ingredients will be calculated according to ammount of servings
+
+- Users can start planning their meals on Sunday and write out their plans for breakfast/lunch/dinner for the week and plan out the entire list of ingredients so that user can shop accordingly. User can input the amount of servings needed for each meal and the amount ingredients will be calculated according to ammount of servings
 
 For later:
-* users can favorite recipes and collect it in a "favorites" section
-* set up a reminder/push notification system 
-* as a developer, we can have a "recipe of the day"
+
+- users can favorite recipes and collect it in a "favorites" section
+- set up a reminder/push notification system
+- as a developer, we can have a "recipe of the day"
 
 # Roles and Permissions
-* As a logged-in user, I can create a weekly planner and look at past weeks
-* As a user, I can search recipes without having to log in
+
+- As a logged-in user, I can create a weekly planner and look at past weeks
+- As a user, I can search recipes without having to log in
 
 # Below this line is stuff from the demo app
 
 ---
-
 
 # Demo Next.js App
 
@@ -90,12 +96,15 @@ the codebase will automatically be reflected in the browser.
 
 ## Commands
 
-| Command                | Description                              |
-| ---------------------- | ---------------------------------------- |
-| `npm run test`         | Runs entire test suite                   |
-| `npm run test:format`  | Checks the project for formatting issues |
-| `npm run test:cypress` | Runs Cypress integration tests           |
-| `npm run fix:format`   | Reformats all project files              |
+| Command                   | Description                                            |
+| ------------------------- | ------------------------------------------------------ |
+| `npm install`             | Install Dependencies                                   |
+| `npm run test`            | Runs entire test suite                                 |
+| `npm run test:format`     | Checks the project for formatting issues               |
+| `npm run test:cypress`    | Runs Cypress integration tests                         |
+| `npm run fix:format`      | Reformats all project files                            |
+| `npm run storybook`       | Run React Storybook (made available at localhost:6006) |
+| `npm run build-storybook` | Create static react storybook for GitHub Pages         |
 
 ## Configuring secrets for GitHub Actions
 

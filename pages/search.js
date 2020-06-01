@@ -5,8 +5,7 @@ import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
-import EnterMeal from "./form";
-import saveRecipe from "./form";
+import EnterMeal from "../components/EnterMeal";
 
 export const getServerSideProps = optionalAuth;
 
@@ -77,7 +76,7 @@ export default function Search(props) {
               padding: 20px;
             }
             .search-bar {
-              width: 75%;
+              width: 100%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;
