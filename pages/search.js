@@ -12,11 +12,12 @@ export const getServerSideProps = optionalAuth;
 
 function Search(props) {
   const user = props.user;
-  require("dotenv").config();
-  const API_ID = config.REACT_APP_API_ID;
-  const API_KEY = config.REACT_APP_API_KEY;
-  //const API_ID = `392fb82a`;
-  //const API_KEY = `4b6ad0674d6814b6f219705f6a4183ea`;
+  //require('dotenv').config();
+  //console.log(process.env);
+  //const API_ID = config.REACT_APP_API_ID;
+  //const API_KEY = config.REACT_APP_API_KEY;
+  const API_ID = `392fb82a`;
+  const API_KEY = `4b6ad0674d6814b6f219705f6a4183ea`;
 
   const [allRecipe, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
