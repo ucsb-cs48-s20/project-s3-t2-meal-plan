@@ -10,7 +10,7 @@ describe("Home Page", () => {
   });
 
   it("has an links in nav bar says Meal Planner", () => {
-    cy.get("a").its(0).should("have.text", "Meal Planner");
+    cy.get("a").should("have.text", "Meal Planner");
   });
 
   it("has links in nav bar says Search for recipes", () => {
@@ -18,10 +18,10 @@ describe("Home Page", () => {
   });
 
   it("has links in nav bar says Shopping lists", () => {
-    cy.get("a").its(0).should("have.text", "Shopping List");
+    cy.get("a").its(1).should("have.text", "Shopping List");
   });
 
-  context("When I am not logged in", () => {
+  context("When User did not logged in", () => {
     it("has a login button", () => {
       cy.visit("http://localhost:3000");
 
