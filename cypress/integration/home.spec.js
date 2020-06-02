@@ -13,11 +13,7 @@ describe("Home Page", () => {
     cy.get("a").its(0).should("have.text", "Meal Planner");
   });
 
-  it("has links in nav bar says Search for recipes", () => {
-    cy.get("a").its(1).should("have.text", "Search for Recipes");
-  });
-
-  it("has links in nav bar says shoppinglist ", () => {
-    cy.get("a").its(2).should("have.text", "Shopping List");
+  it("has links in nav bar says login", () => {
+    cy.get("a").its(1).should("have.text", "login");
   });
 });
