@@ -14,6 +14,6 @@ describe("Home Page", () => {
   });
 
   it("has links in nav bar says login", () => {
-    cy.get("a").its(1).should("have.text", "login");
+    cy.get("a").its(1).should("have.text", "Login");
   });
 });
