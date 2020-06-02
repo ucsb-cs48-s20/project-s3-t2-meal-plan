@@ -10,14 +10,17 @@ describe("Home Page", () => {
   });
 
   it("has an links in nav bar says Meal Planner", () => {
-    cy.get("a").its(0).should("have.text", "Meal Planner");
+    cy.get("nav").its(0).should("have.text", "Meal Planner");
   });
 
   it("has links in nav bar says Search for recipes", () => {
-    cy.get("a").its(1).should("have.text", "Search for Recipes");
+    cy.get("nav").its(1).should("have.text", "Login");
   });
 
-  it("has links in nav bar says Shopping lists", () => {
-    cy.get("a").its(2).should("have.text", "Shopping List");
+  it("has a message that user did not login", () => {
+    cy.get("message").should(
+      "have.text",
+      "You're not logged in !Login to see your personal meal planner!"
+    );
   });
 });
