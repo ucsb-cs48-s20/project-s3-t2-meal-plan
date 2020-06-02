@@ -10,26 +10,26 @@ describe("Home Page", () => {
   });
 
   it("has an links in nav bar says Meal Planner", () => {
-    cy.get("navh1").should("have.text", "Meal Planner");
+    cy.get("h1").should("have.text", "Meal Planner");
   });
 
   it("has links in nav bar says Search for recipes", () => {
-    cy.get("nav").its(0).should("have.text", "Search for Recipes");
+    cy.get("a").its(0).should("have.text", "Search for Recipes");
   });
 
   it("has links in nav bar says shoppinglist ", () => {
-    cy.get("nav").its(1).should("have.text", "Shopping List");
+    cy.get("a").its(1).should("have.text", "Shopping List");
   });
 
-  it("has links in nav bar says shoppinglist ", () => {
+  it("has links in nav bar says Weekly Meal Planner ", () => {
     cy.get("h1").should("have.text", "Weekly Meal Planner");
   });
 
   it("has a button to enter meal", () => {
-    cy.get("button").should("have.text", "Enter Meal");
+    cy.get('button[id="Enter Meal"]');
   });
 
-  it("has a button to clear all meall", () => {
-    cy.get("button").should("have.text", "Clear all");
+  it("has a button to clear all meal", () => {
+    cy.get('button[id="Clear all"]');
   });
 });
