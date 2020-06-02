@@ -6,6 +6,6 @@ describe("Home Page", () => {
 
   it("has a nav bar", () => {
     // a nav element with class navbar
-    cy.get("title").should("have.text", "Meal Planner");
+    cy.get("nav.navbar").should("exist");
   });
 });
