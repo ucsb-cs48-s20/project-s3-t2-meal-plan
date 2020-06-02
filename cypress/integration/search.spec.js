@@ -1,7 +1,7 @@
-describe("Home Page", () => {
+describe("Search Page", () => {
   beforeEach(() => {
     // runs before each test in the block
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/search");
   });
 
   it("has a nav bar", () => {
@@ -21,11 +21,5 @@ describe("Home Page", () => {
     cy.get("a").its(0).should("have.text", "Shopping List");
   });
 
-  context("When I am not logged in", () => {
-    it("has a login button", () => {
-      cy.visit("http://localhost:3000");
-
-      cy.get("[data-cy=login]").should("exist");
-    });
-  });
+  it();
 });
