@@ -2,6 +2,7 @@ import style from "../utils/recipe.module.css";
 import { requiredAuth } from "../utils/ssr";
 import React, { useState } from "react";
 import fetch from "isomorphic-unfetch";
+import calculateCalories from "../utils/calculation";
 
 export const getServerSideProps = requiredAuth;
 
@@ -52,7 +53,7 @@ function Recipe(props) {
 
           <div className="formmm">
             <label htmlFor="meal">
-              <b>Meal of the Day : </b>
+              <b margin-right="6px">Meal of the Day : </b>
             </label>
             <select onChange={(event) => setType(event.target.value)}>
               <option>Select Meal</option>
@@ -83,7 +84,7 @@ function Recipe(props) {
             <li>{i.text}</li>
           ))}
         </ul>
-        <p> Calories: {Math.round(props.calory)}</p>
+        <p> Calories: {calculateCalories(props.calory)}</p>
       </div>
       <a href={props.url} role="button">
         View Recipe
