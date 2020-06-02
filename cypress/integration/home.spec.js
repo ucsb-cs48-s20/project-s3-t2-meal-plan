@@ -8,4 +8,13 @@ describe("Home Page", () => {
     // a nav element with class navbar
     cy.get("nav.navbar").should("exist");
   });
+
+  it("has an links in nav bar says Meal Planner", () => {
+    cy.get("a").its(0).should("have.text", " Meal Planner ");
+  });
+
+  //it("has links in nav bar under titles Listings and Map", () => {
+  //cy.get("a").its(0).should('have.text', 'Listings');
+  //cy.get("a").its(1).should('have.text', 'Map');
+  //});
 });
