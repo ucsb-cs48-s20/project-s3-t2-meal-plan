@@ -1,7 +1,6 @@
 describe("Home Page", () => {
   beforeEach(() => {
     // runs before each test in the block
-    cy.loginAsUser();
     cy.visit("http://localhost:3000");
   });
 
