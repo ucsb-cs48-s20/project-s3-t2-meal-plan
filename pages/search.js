@@ -5,7 +5,6 @@ import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
-import EnterMeal from "../components/EnterMeal";
 
 export const getServerSideProps = optionalAuth;
 
