@@ -50,14 +50,16 @@ function HomePage(props) {
         <>
           <style jsx>
             {`
-              h1 {
+              h2 {
                 padding-top: 15px;
                 padding-bottom: 15px;
               }
             `}
           </style>
-          <h1>Weekly Meal Planner</h1>
-          <Button href="/form">Enter Meal</Button>
+          <h2>Weekly Meal Planner</h2>
+          <Button variant="outline-primary" href="/form">
+            Enter Meal
+          </Button>
 
           <Table user={user} mealMatrix={mealMatrix}></Table>
         </>

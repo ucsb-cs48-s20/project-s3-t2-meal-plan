@@ -96,7 +96,9 @@ export default function Search(props) {
             value={search}
             onChange={updateSearch}
           ></input>
-          <Button type="submit">Search</Button>
+          <Button type="submit" variant="outline-primary">
+            Search
+          </Button>
         </form>
         <div className="piece">
           <div className="form_search">

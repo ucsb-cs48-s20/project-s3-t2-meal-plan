@@ -37,33 +37,36 @@ function Table(props) {
                   padding-top: 15px;
                   padding-bottom: 15px;
                 }
-                td {
-                  padding-bottom: 20px;
-                }
                 h3 {
                   padding-top: 20px;
-                  width: 160px;
+                  width: 155px;
                   color: #151b54;
                 }
                 h5 {
                   text-decoration: underline;
                   color: #151b54;
+                  text-align: center;
                 }
                 button {
                   color: black;
                   background-color: lightgray;
-                  font-size: 15px;
-                  text-align: right;
-                  border-radius: 50%;
+                  font-size: 13px;
+                  text-align: left;
+                  // border-radius: 50%;
+                  border: 2px solid lightgray;
+                  margin-left: 2px;
+                  margin-top: 2px;
+                  position: absolute;
                 }
                 button:hover {
-                  background-color: crimson;
+                  background-color: #e76969;
+                  border: 2px solid #e76969;
+                  color: white;
                 }
                 td {
                   vertical-align: top;
-                  height: 150px;
+                  height: 130px;
                   border: 2px solid #151b54;
-                  text-align: center;
                 }
                 th {
                   text-align: center;
@@ -71,11 +74,24 @@ function Table(props) {
                 h6 {
                   font-size: 20px;
                   color: #4863a0;
+                  text-align: center;
+                }
+                p {
+                  text-align: center;
                 }
                 a {
                   font-size: 20px;
                   color: black;
                   padding: 2px;
+                }
+                a:hover {
+                  background-color: lightblue;
+                  font-size: 20px;
+                  text-decoration: none;
+                  padding-left: 7px;
+                  padding-right: 7px;
+                  color: white;
+                  font-weight: 700;
                 }
               `}
             </style>
@@ -104,224 +120,229 @@ function Table(props) {
             </tr>
             <tr>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="monbreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="monbreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[0][0].mealname}</h6>
-                <a href="/form2?day=mon&type=break">+</a>
+                <p>
+                  <a href="/form2?day=mon&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="tuebreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="tuebreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[1][0].mealname}</h6>
-                <a href="/form2?day=tue&type=break">+</a>
+                <p>
+                  <a href="/form2?day=tue&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="wedbreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="wedbreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[2][0].mealname}</h6>
-                <a href="/form2?day=wed&type=break">+</a>
+                <p>
+                  <a href="/form2?day=wed&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="thubreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="thubreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[3][0].mealname}</h6>
-                <a href="/form2?day=thu&type=break">+</a>
+                <p>
+                  <a href="/form2?day=thu&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="fribreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="fribreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[4][0].mealname}</h6>
-                <a href="/form2?day=fri&type=break">+</a>
+                <p>
+                  <a href="/form2?day=fri&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="satbreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="satbreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[5][0].mealname}</h6>
-                <a href="/form2?day=sat&type=break">+</a>
+                <p>
+                  <a href="/form2?day=sat&type=break">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Breakfast
-                  <button id="sunbreak" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="sunbreak" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Breakfast</h5>
                 <h6>{mealMatrix[6][0].mealname}</h6>
-                <a href="/form2?day=sun&type=break">+</a>
+                <p>
+                  <a href="/form2?day=sun&type=break">+</a>
+                </p>
               </td>
             </tr>
 
             <tr>
               <td>
-                <h5>
-                  Lunch
-                  <button id="monlunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="monlunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[0][1].mealname}</h6>
-                <a href="/form2?day=mon&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=mon&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="tuelunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="tuelunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[1][1].mealname}</h6>
-                <a href="/form2?day=tue&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=tue&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="wedlunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="wedlunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[2][1].mealname}</h6>
-                <a href="/form2?day=wed&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=wed&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="thulunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="thulunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[3][1].mealname}</h6>
-                <a href="/form2?day=thu&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=thu&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="frilunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="frilunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[4][1].mealname}</h6>
-                <a href="/form2?day=fri&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=fri&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="satlunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="satlunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[5][1].mealname}</h6>
-                <a href="/form2?day=sat&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=sat&type=lunch">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Lunch
-                  <button id="sunlunch" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="sunlunch" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Lunch</h5>
                 <h6>{mealMatrix[6][1].mealname}</h6>
-                <a href="/form2?day=sun&type=lunch">+</a>
+                <p>
+                  <a href="/form2?day=sun&type=lunch">+</a>
+                </p>
               </td>
             </tr>
 
             <tr>
               <td>
-                <h5>
-                  Dinner
-                  <button id="mondinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="mondinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[0][2].mealname}</h6>
-                <a href="/form2?day=mon&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=mon&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="tuedinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="tuedinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[1][2].mealname}</h6>
-                <a href="/form2?day=tue&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=tue&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="weddinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="weddinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[2][2].mealname}</h6>
-                <a href="/form2?day=wed&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=wed&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="thudinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="thudinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[3][2].mealname}</h6>
-                <a href="/form2?day=thu&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=thu&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="fridinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="fridinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[4][2].mealname}</h6>
-                <a href="/form2?day=fri&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=fri&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="satdinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="satdinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[5][2].mealname}</h6>
-                <a href="/form2?day=sat&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=sat&type=dinner">+</a>
+                </p>
               </td>
               <td>
-                <h5>
-                  Dinner
-                  <button id="sundinnr" onClick={removeRecipe}>
-                    X
-                  </button>
-                </h5>
+                <button id="sundinnr" onClick={removeRecipe}>
+                  X
+                </button>
+                <h5>Dinner</h5>
                 <h6>{mealMatrix[6][2].mealname}</h6>
-                <a href="/form2?day=sun&type=dinner">+</a>
+                <p>
+                  <a href="/form2?day=sun&type=dinner">+</a>
+                </p>
               </td>
             </tr>
           </table>
-          <Button id="clearall" onClick={removeRecipe}>
+          <Button
+            id="clearall"
+            onClick={removeRecipe}
+            variant="outline-info"
+            style={{ marginTop: "10px" }}
+          >
             Clear all
           </Button>
         </>
