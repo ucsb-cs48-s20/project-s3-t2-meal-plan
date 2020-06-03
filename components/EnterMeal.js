@@ -19,7 +19,10 @@ function EnterMeal(props) {
 
   const saveRecipe = async (e) => {
     e.preventDefault();
-    //console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
+    if (mealname == "" || day == "" || type == "" || ingredients == "") {
+      alert("Please fill out all fields");
+      return;
+    }
     await fetch("/api/meal", {
       method: "POST",
       headers: {
@@ -71,7 +74,7 @@ function EnterMeal(props) {
               </label>
               <br></br>
               <select onChange={(event) => setDay(event.target.value)}>
-                <option>Select Day</option>
+                <option value="">Select Day</option>
                 <option value="mon">Monday</option>
                 <option value="tue">Tuesday</option>
                 <option value="wed">Wednesday</option>
@@ -86,7 +89,7 @@ function EnterMeal(props) {
               </label>
               <br></br>
               <select onChange={(event) => setType(event.target.value)}>
-                <option>Select Meal</option>
+                <option value="">Select Meal</option>
                 <option value="break">Breakfast</option>
                 <option value="lunch">Lunch</option>
                 <option value="dinnr">Dinner</option>
