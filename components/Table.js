@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import form2 from "../pages/form2";
+import Popup from "reactjs-popup";
 
 export const getServerSideProps = optionalAuth;
 
@@ -71,6 +72,10 @@ function Table(props) {
                 h6 {
                   font-size: 20px;
                   color: #4863a0;
+                  text-decoration: underline;
+                }
+                h7 {
+                  font-size: 20px;
                 }
                 a {
                   font-size: 20px;
@@ -110,7 +115,20 @@ function Table(props) {
                     X
                   </button>
                 </h5>
-                <h6>{mealMatrix[0][0].mealname}</h6>
+                <Popup
+                  trigger={<h6 role="button"> {mealMatrix[0][0].mealname} </h6>}
+                  modal
+                  closeOnDocumentClick
+                >
+                  <h7 style={{ fontWeight: "bold" }}>Ingredients</h7>
+                  <br></br>
+                  <h7>{mealMatrix[0][0].ingredients}</h7>
+                  {/*<ul>
+                    {mealMatrix[0][0].ingredients.map((i) => (
+                      <li>{i.text}</li>
+                    ))}
+                    </ul>*/}
+                </Popup>
                 <a href="/form2?day=mon&type=break">+</a>
               </td>
               <td>
@@ -321,6 +339,7 @@ function Table(props) {
               </td>
             </tr>
           </table>
+          <br></br>
           <Button id="clearall" onClick={removeRecipe}>
             Clear all
           </Button>
