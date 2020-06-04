@@ -13,7 +13,6 @@ function form2(props) {
   const router = useRouter();
   const user = props.user;
   const [username, setUsername] = useState(props.user.nickname);
-  // issue with nickname in storybook
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");
