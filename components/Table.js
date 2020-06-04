@@ -73,7 +73,7 @@ function Table(props) {
                 }
                 h6 {
                   font-size: 20px;
-                  color: #4863a0;
+                  color: #699ee7;
                   text-align: center;
                 }
                 p {
@@ -340,7 +340,7 @@ function Table(props) {
           <Button
             id="clearall"
             onClick={removeRecipe}
-            variant="outline-info"
+            variant="outline-primary"
             style={{ marginTop: "10px" }}
           >
             Clear all
