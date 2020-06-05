@@ -14,39 +14,34 @@ export async function getIngredient(username) {
 }
 
 export async function updateIngredient(name, item, status) {
-  console.log("made it to update ingredient");
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
   const result = ingredients.updateOne(
     { username: name, ingredient: item },
-    { $set: { "deleteStatus.$": status } }
+    { $set: { deleteStatus: status } }
   );
   console.log("Updated status");
-  console.log("result=" + JSON.stringify(result));
   return result;
 }
 
 export async function removeIngredient(username, amount) {
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
-  if (err) {
-    console.log("theres an issue");
+  console.log("Inside remove");
+  if (amount == "some") {
+    const answer = ingredients.removeMany({
+      username: { $eq: username },
+      deleteStatus: { $eq: true },
+    });
+    console.log("Ran removeSomeIngredients");
+    return answer;
   } else {
-    if (amount == "some") {
-      ingredients.remove({
-        username: { $eq: username },
-        deleteStatus: { $eq: true },
-      });
-      console.log("Ran removeSomeIngredients");
-    } else {
-      ingredients.remove({
-        username: { $eq: username },
-      });
-      console.log("Ran removeAllIngredients");
-    }
-    answer = {};
+    const answer2 = ingredients.removeMany({
+      username: { $eq: username },
+    });
+    console.log("Ran removeAllIngredients");
+    return answer2;
   }
-  return answer;
 }
 
 const ingredientConstraints = {
@@ -56,12 +51,15 @@ const ingredientConstraints = {
   ingredient: {
     presence: true,
   },
-  delete: {
+  deleteStatus: {
     presence: true,
   },
 };
 
 async function createIngredient(req, user) {
+  const client = await initDatabase();
+  const ingredients = client.collection("shoppinglists");
+
   let newIngredient;
 
   try {
@@ -76,13 +74,17 @@ async function createIngredient(req, user) {
     };
   }
 
-  const client = await initDatabase();
-  const ingredients = client.collection("shoppinglists");
-
   await ingredients.insertOne(newIngredient);
 
   console.log("newIngredient: " + JSON.stringify(newIngredient));
-
+  console.log(
+    ingredients
+      .find({
+        username: { $eq: req.body.username },
+        ingredient: { $eq: req.body.ingredient },
+      })
+      .count(true)
+  );
   return newIngredient;
 }
 

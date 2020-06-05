@@ -27,7 +27,7 @@ function List(props) {
         amount: "some",
       }),
     });
-    //location.reload();
+    location.reload();
   };
   const removeAll = async (e) => {
     e.preventDefault;
@@ -41,11 +41,10 @@ function List(props) {
         amount: "all",
       }),
     });
-    //location.reload();
+    location.reload();
   };
 
   const HandleList = async (e) => {
-    console.log(document.getElementById(e.target.id).checked);
     await fetch("/api/list", {
       method: "PUT",
       headers: {
@@ -53,7 +52,7 @@ function List(props) {
       },
       body: JSON.stringify({
         username: username,
-        ingredient: ingredient,
+        ingredient: e.target.id,
         deleteStatus: document.getElementById(e.target.id).checked,
       }),
     });
@@ -61,9 +60,8 @@ function List(props) {
 
   const printIt = () => {
     const { data } = useSWR("/api/list");
-    console.log(data);
     if (!data) {
-      return <p>No items</p>;
+      return <li>Empty List</li>;
     }
     return (
       <ul>
@@ -85,7 +83,6 @@ function List(props) {
   };
 
   const saveIngredient = async (e) => {
-    console.log(ingredient);
     e.preventDefault();
     await fetch("/api/list", {
       method: "POST",
@@ -95,12 +92,10 @@ function List(props) {
       body: JSON.stringify({
         username: username,
         ingredient: ingredient,
-        delete: "false",
+        deleteStatus: false,
       }),
     });
-    console.log(username, ingredient);
     location.reload();
-    alert("Added Ingredient");
   };
 
   return (
