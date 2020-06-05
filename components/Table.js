@@ -44,6 +44,49 @@ function Table(props) {
     }
   }
 
+  function dayBox(dayy, typee, dayString) {
+    // Find the type of meal to output at top of box
+    let typeName = "Breakfast";
+    if (typee == 1) {
+      typeName = "Lunch";
+    } else {
+      if (typee == 2) {
+        typeName = "Dinner";
+      }
+    }
+    // Form string for href
+    let stringLink =
+      "/form2?day=" + dayString.slice(0, 3) + "&type=" + dayString.slice(3, 9);
+    // Return html
+    return (
+      <div>
+        <style jsx>
+          {`
+            h5 {
+              text-decoration: underline;
+              color: #151b54;
+            }
+            h6 {
+              font-size: 20px;
+              color: #4863a0;
+            }
+            a {
+              font-size: 20px;
+              color: black;
+              padding: 2px;
+            }
+          `}
+        </style>
+        <h5>
+          {typeName}
+          {checkButton(dayy, typee, "thubreak")}
+        </h5>
+        <h6>{mealMatrix[dayy][typee].mealname}</h6>
+        <a href={stringLink}>+</a>
+      </div>
+    );
+  }
+
   return (
     <Container user={user}>
       {user ? (
@@ -63,10 +106,6 @@ function Table(props) {
                   width: 160px;
                   color: #151b54;
                 }
-                h5 {
-                  text-decoration: underline;
-                  color: #151b54;
-                }
                 button:hover {
                   background-color: crimson;
                 }
@@ -78,15 +117,6 @@ function Table(props) {
                 }
                 th {
                   text-align: center;
-                }
-                h6 {
-                  font-size: 20px;
-                  color: #4863a0;
-                }
-                a {
-                  font-size: 20px;
-                  color: black;
-                  padding: 2px;
                 }
               `}
             </style>
@@ -114,14 +144,7 @@ function Table(props) {
               </th>
             </tr>
             <tr>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(0, 0, "monbreak")}
-                </h5>
-                <h6>{mealMatrix[0][0].mealname}</h6>
-                <a href="/form2?day=mon&type=break">+</a>
-              </td>
+              <td>{dayBox(0, 0, "monbreak")}</td>
               <td>
                 <h5>
                   Breakfast
