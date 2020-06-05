@@ -62,6 +62,7 @@ function Table(props) {
                 vertical-align: top;
                 height: 120px;
                 border: 2px solid #151b54;
+                background-color: white;
               }
               th {
                 text-align: center;
@@ -77,7 +78,7 @@ function Table(props) {
               a {
                 font-size: 20px;
                 color: black;
-                padding: 2px;
+                padding: 0px 2px 2px 2px;
               }
               a:hover {
                 background-color: #95baee;
