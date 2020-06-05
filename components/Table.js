@@ -23,6 +23,27 @@ function Table(props) {
     location.reload();
   };
 
+  function checkButton(dayy, typee, dayString) {
+    if (mealMatrix[dayy][typee].mealname) {
+      return (
+        <button id={dayString} onClick={removeRecipe}>
+          <style jsx>
+            {`
+              button {
+                color: black;
+                background-color: lightgray;
+                font-size: 15px;
+                text-align: right;
+                border-radius: 50%;
+              }
+            `}
+          </style>
+          X
+        </button>
+      );
+    }
+  }
+
   return (
     <Container user={user}>
       {user ? (
@@ -45,13 +66,6 @@ function Table(props) {
                 h5 {
                   text-decoration: underline;
                   color: #151b54;
-                }
-                button {
-                  color: black;
-                  background-color: lightgray;
-                  font-size: 15px;
-                  text-align: right;
-                  border-radius: 50%;
                 }
                 button:hover {
                   background-color: crimson;
@@ -103,9 +117,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="monbreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(0, 0, "monbreak")}
                 </h5>
                 <h6>{mealMatrix[0][0].mealname}</h6>
                 <a href="/form2?day=mon&type=break">+</a>
@@ -113,9 +125,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="tuebreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(1, 0, "tuebreak")}
                 </h5>
                 <h6>{mealMatrix[1][0].mealname}</h6>
                 <a href="/form2?day=tue&type=break">+</a>
@@ -123,9 +133,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="wedbreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(2, 0, "wedbreak")}
                 </h5>
                 <h6>{mealMatrix[2][0].mealname}</h6>
                 <a href="/form2?day=wed&type=break">+</a>
@@ -133,9 +141,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="thubreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(3, 0, "thubreak")}
                 </h5>
                 <h6>{mealMatrix[3][0].mealname}</h6>
                 <a href="/form2?day=thu&type=break">+</a>
@@ -143,9 +149,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="fribreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(4, 0, "fribreak")}
                 </h5>
                 <h6>{mealMatrix[4][0].mealname}</h6>
                 <a href="/form2?day=fri&type=break">+</a>
@@ -153,9 +157,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="satbreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(5, 0, "satbreak")}
                 </h5>
                 <h6>{mealMatrix[5][0].mealname}</h6>
                 <a href="/form2?day=sat&type=break">+</a>
@@ -163,9 +165,7 @@ function Table(props) {
               <td>
                 <h5>
                   Breakfast
-                  <button id="sunbreak" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(6, 0, "sunbreak")}
                 </h5>
                 <h6>{mealMatrix[6][0].mealname}</h6>
                 <a href="/form2?day=sun&type=break">+</a>
@@ -176,9 +176,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="monlunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(0, 1, "monlunch")}
                 </h5>
                 <h6>{mealMatrix[0][1].mealname}</h6>
                 <a href="/form2?day=mon&type=lunch">+</a>
@@ -186,9 +184,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="tuelunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(1, 1, "tuelunch")}
                 </h5>
                 <h6>{mealMatrix[1][1].mealname}</h6>
                 <a href="/form2?day=tue&type=lunch">+</a>
@@ -196,9 +192,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="wedlunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(2, 1, "wedlunch")}
                 </h5>
                 <h6>{mealMatrix[2][1].mealname}</h6>
                 <a href="/form2?day=wed&type=lunch">+</a>
@@ -206,9 +200,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="thulunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(3, 1, "thulunch")}
                 </h5>
                 <h6>{mealMatrix[3][1].mealname}</h6>
                 <a href="/form2?day=thu&type=lunch">+</a>
@@ -216,9 +208,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="frilunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(4, 1, "frilunch")}
                 </h5>
                 <h6>{mealMatrix[4][1].mealname}</h6>
                 <a href="/form2?day=fri&type=lunch">+</a>
@@ -226,9 +216,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="satlunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(5, 1, "satlunch")}
                 </h5>
                 <h6>{mealMatrix[5][1].mealname}</h6>
                 <a href="/form2?day=sat&type=lunch">+</a>
@@ -236,9 +224,7 @@ function Table(props) {
               <td>
                 <h5>
                   Lunch
-                  <button id="sunlunch" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(6, 1, "sunlunch")}
                 </h5>
                 <h6>{mealMatrix[6][1].mealname}</h6>
                 <a href="/form2?day=sun&type=lunch">+</a>
@@ -249,9 +235,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="mondinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(0, 2, "mondinnr")}
                 </h5>
                 <h6>{mealMatrix[0][2].mealname}</h6>
                 <a href="/form2?day=mon&type=dinner">+</a>
@@ -259,9 +243,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="tuedinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(1, 2, "tuedinnr")}
                 </h5>
                 <h6>{mealMatrix[1][2].mealname}</h6>
                 <a href="/form2?day=tue&type=dinner">+</a>
@@ -269,9 +251,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="weddinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(2, 2, "weddinnr")}
                 </h5>
                 <h6>{mealMatrix[2][2].mealname}</h6>
                 <a href="/form2?day=wed&type=dinner">+</a>
@@ -279,9 +259,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="thudinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(3, 2, "thudinnr")}
                 </h5>
                 <h6>{mealMatrix[3][2].mealname}</h6>
                 <a href="/form2?day=thu&type=dinner">+</a>
@@ -289,9 +267,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="fridinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(4, 2, "fridinnr")}
                 </h5>
                 <h6>{mealMatrix[4][2].mealname}</h6>
                 <a href="/form2?day=fri&type=dinner">+</a>
@@ -299,9 +275,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="satdinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(5, 2, "satdinnr")}
                 </h5>
                 <h6>{mealMatrix[5][2].mealname}</h6>
                 <a href="/form2?day=sat&type=dinner">+</a>
@@ -309,9 +283,7 @@ function Table(props) {
               <td>
                 <h5>
                   Dinner
-                  <button id="sundinnr" onClick={removeRecipe}>
-                    X
-                  </button>
+                  {checkButton(6, 2, "sundinnr")}
                 </h5>
                 <h6>{mealMatrix[6][2].mealname}</h6>
                 <a href="/form2?day=sun&type=dinner">+</a>
