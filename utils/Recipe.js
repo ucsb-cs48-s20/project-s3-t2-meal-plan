@@ -21,7 +21,7 @@ async function addButton(label, ingreds, dayy, typee, username) {
       mealname: label,
       day: dayy,
       type: typee,
-      ingredients: ingreds.toString().split(/[,]/),
+      ingredients: ingreds,
     }),
   });
   location.reload();

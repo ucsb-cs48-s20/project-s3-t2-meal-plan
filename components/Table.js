@@ -1,9 +1,6 @@
 import { optionalAuth } from "../utils/ssr";
-import useSWR from "swr";
-import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import form2 from "../pages/form2";
 
 export const getServerSideProps = optionalAuth;
 

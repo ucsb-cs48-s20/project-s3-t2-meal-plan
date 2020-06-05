@@ -1,4 +1,3 @@
-import Layout from "../components/Layout";
 import { requiredAuth } from "../utils/ssr";
 import Container from "react-bootstrap/Container";
 import Head from "next/head";

@@ -9,6 +9,7 @@ export const getServerSideProps = optionalAuth;
 
 function HomePage(props) {
   const user = props.user;
+  // Initializing Matrix
   const mealMatrix = [
     ["", "", ""],
     ["", "", ""],
@@ -20,7 +21,7 @@ function HomePage(props) {
   ];
 
   const { data } = useSWR("/api/meal");
-
+  // Iniitializing day and type values for matrix
   if (data) {
     for (let i = 0; i < 21; i++) {
       if (data[i]) {
@@ -46,6 +47,7 @@ function HomePage(props) {
       <Head>
         <title>Meal Planner</title>
       </Head>
+      {/* If logged in: */}
       {user ? (
         <>
           <style jsx>
@@ -58,10 +60,10 @@ function HomePage(props) {
           </style>
           <h1>Weekly Meal Planner</h1>
           <Button href="/form">Enter Meal</Button>
-
           <Table user={user} mealMatrix={mealMatrix}></Table>
         </>
       ) : (
+        /* If not logged in: */
         <div>
           You're not logged in! Login to see your personal meal planner!
         </div>
