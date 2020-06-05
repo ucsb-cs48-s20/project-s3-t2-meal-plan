@@ -145,172 +145,32 @@ function Table(props) {
             </tr>
             <tr>
               <td>{dayBox(0, 0, "monbreak")}</td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(1, 0, "tuebreak")}
-                </h5>
-                <h6>{mealMatrix[1][0].mealname}</h6>
-                <a href="/form2?day=tue&type=break">+</a>
-              </td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(2, 0, "wedbreak")}
-                </h5>
-                <h6>{mealMatrix[2][0].mealname}</h6>
-                <a href="/form2?day=wed&type=break">+</a>
-              </td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(3, 0, "thubreak")}
-                </h5>
-                <h6>{mealMatrix[3][0].mealname}</h6>
-                <a href="/form2?day=thu&type=break">+</a>
-              </td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(4, 0, "fribreak")}
-                </h5>
-                <h6>{mealMatrix[4][0].mealname}</h6>
-                <a href="/form2?day=fri&type=break">+</a>
-              </td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(5, 0, "satbreak")}
-                </h5>
-                <h6>{mealMatrix[5][0].mealname}</h6>
-                <a href="/form2?day=sat&type=break">+</a>
-              </td>
-              <td>
-                <h5>
-                  Breakfast
-                  {checkButton(6, 0, "sunbreak")}
-                </h5>
-                <h6>{mealMatrix[6][0].mealname}</h6>
-                <a href="/form2?day=sun&type=break">+</a>
-              </td>
+              <td>{dayBox(1, 0, "tuebreak")}</td>
+              <td>{dayBox(2, 0, "wedbreak")}</td>
+              <td>{dayBox(3, 0, "thubreak")}</td>
+              <td>{dayBox(4, 0, "fribreak")}</td>
+              <td>{dayBox(5, 0, "satbreak")}</td>
+              <td>{dayBox(6, 0, "sunbreak")}</td>
             </tr>
 
             <tr>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(0, 1, "monlunch")}
-                </h5>
-                <h6>{mealMatrix[0][1].mealname}</h6>
-                <a href="/form2?day=mon&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(1, 1, "tuelunch")}
-                </h5>
-                <h6>{mealMatrix[1][1].mealname}</h6>
-                <a href="/form2?day=tue&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(2, 1, "wedlunch")}
-                </h5>
-                <h6>{mealMatrix[2][1].mealname}</h6>
-                <a href="/form2?day=wed&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(3, 1, "thulunch")}
-                </h5>
-                <h6>{mealMatrix[3][1].mealname}</h6>
-                <a href="/form2?day=thu&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(4, 1, "frilunch")}
-                </h5>
-                <h6>{mealMatrix[4][1].mealname}</h6>
-                <a href="/form2?day=fri&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(5, 1, "satlunch")}
-                </h5>
-                <h6>{mealMatrix[5][1].mealname}</h6>
-                <a href="/form2?day=sat&type=lunch">+</a>
-              </td>
-              <td>
-                <h5>
-                  Lunch
-                  {checkButton(6, 1, "sunlunch")}
-                </h5>
-                <h6>{mealMatrix[6][1].mealname}</h6>
-                <a href="/form2?day=sun&type=lunch">+</a>
-              </td>
+              <td>{dayBox(0, 1, "monlunch")}</td>
+              <td>{dayBox(1, 1, "tuelunch")}</td>
+              <td>{dayBox(2, 1, "wedlunch")}</td>
+              <td>{dayBox(3, 1, "thulunch")}</td>
+              <td>{dayBox(4, 1, "frilunch")}</td>
+              <td>{dayBox(5, 1, "satlunch")}</td>
+              <td>{dayBox(6, 1, "sunlunch")}</td>
             </tr>
 
             <tr>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(0, 2, "mondinnr")}
-                </h5>
-                <h6>{mealMatrix[0][2].mealname}</h6>
-                <a href="/form2?day=mon&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(1, 2, "tuedinnr")}
-                </h5>
-                <h6>{mealMatrix[1][2].mealname}</h6>
-                <a href="/form2?day=tue&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(2, 2, "weddinnr")}
-                </h5>
-                <h6>{mealMatrix[2][2].mealname}</h6>
-                <a href="/form2?day=wed&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(3, 2, "thudinnr")}
-                </h5>
-                <h6>{mealMatrix[3][2].mealname}</h6>
-                <a href="/form2?day=thu&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(4, 2, "fridinnr")}
-                </h5>
-                <h6>{mealMatrix[4][2].mealname}</h6>
-                <a href="/form2?day=fri&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(5, 2, "satdinnr")}
-                </h5>
-                <h6>{mealMatrix[5][2].mealname}</h6>
-                <a href="/form2?day=sat&type=dinner">+</a>
-              </td>
-              <td>
-                <h5>
-                  Dinner
-                  {checkButton(6, 2, "sundinnr")}
-                </h5>
-                <h6>{mealMatrix[6][2].mealname}</h6>
-                <a href="/form2?day=sun&type=dinner">+</a>
-              </td>
+              <td>{dayBox(0, 2, "mondinnr")}</td>
+              <td>{dayBox(1, 2, "tuedinnr")}</td>
+              <td>{dayBox(2, 2, "weddinnr")}</td>
+              <td>{dayBox(3, 2, "thudinnr")}</td>
+              <td>{dayBox(4, 2, "fridinnr")}</td>
+              <td>{dayBox(5, 2, "satdinnr")}</td>
+              <td>{dayBox(6, 2, "sundinnr")}</td>
             </tr>
           </table>
           <Button id="clearall" onClick={removeRecipe}>
