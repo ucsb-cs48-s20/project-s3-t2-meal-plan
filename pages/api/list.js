@@ -17,29 +17,36 @@ export async function updateIngredient(name, item, status) {
   console.log("made it to update ingredient");
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
-  if (err) {
-    alert("theres an issue");
-  } else {
-    ingredients.updateOne(
-      { username: name, ingredient: item },
-      { $set: { "deleteStatus.$": status } }
-    );
-    console.log("Updated status");
-  }
+  const result = ingredients.updateOne(
+    { username: name, ingredient: item },
+    { $set: { "deleteStatus.$": status } }
+  );
+  console.log("Updated status");
+  console.log("result=" + JSON.stringify(result));
+  return result;
 }
 
-export async function removeIngredient(username) {
+export async function removeIngredient(username, amount) {
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
   if (err) {
-    alert("theres an issue");
+    console.log("theres an issue");
   } else {
-    ingredients.remove({
-      username: { $eq: username },
-      deleteStatus: { $eq: true },
-    });
-    console.log("Ran removeAllIngredients");
+    if (amount == "some") {
+      ingredients.remove({
+        username: { $eq: username },
+        deleteStatus: { $eq: true },
+      });
+      console.log("Ran removeSomeIngredients");
+    } else {
+      ingredients.remove({
+        username: { $eq: username },
+      });
+      console.log("Ran removeAllIngredients");
+    }
+    answer = {};
   }
+  return answer;
 }
 
 const ingredientConstraints = {
@@ -81,7 +88,7 @@ async function createIngredient(req, user) {
 
 async function performAction(req, user) {
   switch (req.method) {
-    case "PATCH":
+    case "PUT":
       return updateIngredient(
         req.body.username,
         req.body.ingredient,
@@ -92,7 +99,7 @@ async function performAction(req, user) {
     case "POST":
       return createIngredient(req, user);
     case "DELETE":
-      return removeIngredient(user.nickname);
+      return removeIngredient(user.nickname, req.body.amount);
   }
 
   throw { status: 405 };

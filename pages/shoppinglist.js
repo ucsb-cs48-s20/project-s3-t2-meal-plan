@@ -24,6 +24,21 @@ function List(props) {
       },
       body: JSON.stringify({
         username: username,
+        amount: "some",
+      }),
+    });
+    //location.reload();
+  };
+  const removeAll = async (e) => {
+    e.preventDefault;
+    await fetch("/api/list", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        amount: "all",
       }),
     });
     //location.reload();
@@ -32,7 +47,7 @@ function List(props) {
   const HandleList = async (e) => {
     console.log(document.getElementById(e.target.id).checked);
     await fetch("/api/list", {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -134,6 +149,9 @@ function List(props) {
           </div>
           {printIt()}
           <Button onClick={removeSelected}>Remove Selected</Button>
+          <br></br>
+          <br></br>
+          <Button onClick={removeAll}>Clear List</Button>
         </div>
       ) : (
         <div></div>
