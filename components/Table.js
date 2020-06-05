@@ -23,7 +23,7 @@ function Table(props) {
     location.reload();
   };
 
-  function checkButton(dayy, typee, dayString) {
+  function checkDeleteButton(dayy, typee, dayString) {
     if (mealMatrix[dayy][typee].mealname) {
       return (
         <button id={dayString} onClick={removeRecipe}>
@@ -40,6 +40,25 @@ function Table(props) {
           </style>
           X
         </button>
+      );
+    }
+  }
+
+  function checkAddButton(dayy, typee, stringLink) {
+    if (!mealMatrix[dayy][typee]) {
+      return (
+        <a href={stringLink}>
+          <style jsx>
+            {`
+              a {
+                font-size: 20px;
+                color: black;
+                padding: 2px;
+              }
+            `}
+          </style>
+          +
+        </a>
       );
     }
   }
@@ -70,19 +89,14 @@ function Table(props) {
               font-size: 20px;
               color: #4863a0;
             }
-            a {
-              font-size: 20px;
-              color: black;
-              padding: 2px;
-            }
           `}
         </style>
         <h5>
           {typeName}
-          {checkButton(dayy, typee, "thubreak")}
+          {checkDeleteButton(dayy, typee, "thubreak")}
         </h5>
         <h6>{mealMatrix[dayy][typee].mealname}</h6>
-        <a href={stringLink}>+</a>
+        {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
   }
