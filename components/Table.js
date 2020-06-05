@@ -43,19 +43,19 @@ function Table(props) {
                 text-align: center;
               }
               button {
-                color: #e76969;
-                background-color: white;
-                font-size: 13px;
-                font-weight: 700;
+                color: black;
+                background-color: lightgray;
+                font-size: 12px;
+                font-weight: 500;
                 text-align: left;
-                border: 2px solid #e76969;
+                border: 1px solid lightgray;
                 margin-left: 2px;
                 margin-top: 2px;
                 position: absolute;
               }
               button:hover {
                 background-color: #e76969;
-                border: 2px solid #e76969;
+                border: 1px solid #e76969;
                 color: white;
               }
               td {
@@ -68,7 +68,7 @@ function Table(props) {
               }
               h6 {
                 font-size: 20px;
-                color: #699ee7;
+                color: #5390e3;
                 text-align: center;
               }
               p {
@@ -80,7 +80,7 @@ function Table(props) {
                 padding: 2px;
               }
               a:hover {
-                background-color: lightblue;
+                background-color: #95baee;
                 font-size: 20px;
                 text-decoration: none;
                 padding-left: 7px;

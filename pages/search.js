@@ -56,7 +56,7 @@ export default function Search(props) {
           {`
             .Search_page {
               min-height: 950px;
-              background-color: rgb(255, 255, 255);
+              // background-color: rgb(255, 255, 255);
             }
             .form {
               min-height: 50px;
@@ -83,10 +83,22 @@ export default function Search(props) {
               overflow-y: auto;
               width: 850px;
             }
+            button {
+              background-color: white;
+              border-radius: 4px;
+              border: 2px solid #699ee7;
+              color: #699ee7;
+              padding: 7px;
+              font-weight: 500;
+            }
+            button:hover {
+              background-color: #699ee7;
+              color: white;
+            }
           `}
         </style>
         <label htmlFor="ingredients">
-          <h3 className="mt-2">Search for Recipes</h3>
+          <h2 className="mt-2">Search for Recipes</h2>
         </label>
         <br></br>
         <form onSubmit={getSearch} className="form">
@@ -96,9 +108,7 @@ export default function Search(props) {
             value={search}
             onChange={updateSearch}
           ></input>
-          <Button type="submit" variant="outline-primary">
-            Search
-          </Button>
+          <button type="submit">Search</button>
         </form>
         <div className="piece">
           <div className="form_search">

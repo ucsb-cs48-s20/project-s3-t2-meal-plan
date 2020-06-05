@@ -54,7 +54,7 @@ function HomePage(props) {
                 margin-top: 10px;
                 margin-bottom: 10px;
                 letter-spacing: 1px;
-                font-size: 40px;
+                font-size: 38px;
               }
               button {
                 background-color: white;
