@@ -30,71 +30,81 @@ function Table(props) {
     <Container user={user}>
       {user ? (
         <>
+          <style jsx>
+            {`
+              h3 {
+                padding-top: 15px;
+                width: 155px;
+                color: #151b54;
+              }
+              h5 {
+                text-decoration: underline;
+                color: #151b54;
+                text-align: center;
+              }
+              button {
+                color: #e76969;
+                background-color: white;
+                font-size: 13px;
+                font-weight: 700;
+                text-align: left;
+                border: 2px solid #e76969;
+                margin-left: 2px;
+                margin-top: 2px;
+                position: absolute;
+              }
+              button:hover {
+                background-color: #e76969;
+                border: 2px solid #e76969;
+                color: white;
+              }
+              td {
+                vertical-align: top;
+                height: 120px;
+                border: 2px solid #151b54;
+              }
+              th {
+                text-align: center;
+              }
+              h6 {
+                font-size: 20px;
+                color: #699ee7;
+                text-align: center;
+              }
+              p {
+                text-align: center;
+              }
+              a {
+                font-size: 20px;
+                color: black;
+                padding: 2px;
+              }
+              a:hover {
+                background-color: lightblue;
+                font-size: 20px;
+                text-decoration: none;
+                padding-left: 7px;
+                padding-right: 7px;
+                color: white;
+                font-weight: 700;
+              }
+              .clear {
+                background-color: white;
+                border-radius: 4px;
+                padding: 7px;
+                border: 2px solid #e76969;
+                font-size: 16px;
+                color: #e76969;
+                margin-top: 10px;
+                font-weight: 500;
+              }
+              .clear:hover {
+                background-color: #e76969;
+                color: white;
+              }
+            `}
+          </style>
           <table>
-            <style jsx>
-              {`
-                h1 {
-                  padding-top: 15px;
-                  padding-bottom: 15px;
-                }
-                h3 {
-                  padding-top: 20px;
-                  width: 155px;
-                  color: #151b54;
-                }
-                h5 {
-                  text-decoration: underline;
-                  color: #151b54;
-                  text-align: center;
-                }
-                button {
-                  color: black;
-                  background-color: lightgray;
-                  font-size: 13px;
-                  text-align: left;
-                  // border-radius: 50%;
-                  border: 2px solid lightgray;
-                  margin-left: 2px;
-                  margin-top: 2px;
-                  position: absolute;
-                }
-                button:hover {
-                  background-color: #e76969;
-                  border: 2px solid #e76969;
-                  color: white;
-                }
-                td {
-                  vertical-align: top;
-                  height: 130px;
-                  border: 2px solid #151b54;
-                }
-                th {
-                  text-align: center;
-                }
-                h6 {
-                  font-size: 20px;
-                  color: #699ee7;
-                  text-align: center;
-                }
-                p {
-                  text-align: center;
-                }
-                a {
-                  font-size: 20px;
-                  color: black;
-                  padding: 2px;
-                }
-                a:hover {
-                  background-color: lightblue;
-                  font-size: 20px;
-                  text-decoration: none;
-                  padding-left: 7px;
-                  padding-right: 7px;
-                  color: white;
-                  font-weight: 700;
-                }
-              `}
-            </style>
             <tr>
               <th>
                 <h3>MON</h3>
@@ -337,14 +347,9 @@ function Table(props) {
               </td>
             </tr>
           </table>
-          <Button
-            id="clearall"
-            onClick={removeRecipe}
-            variant="outline-primary"
-            style={{ marginTop: "10px" }}
-          >
+          <button id="clearall" onClick={removeRecipe} className="clear">
             Clear all
-          </Button>
+          </button>
         </>
       ) : (
         <div></div>

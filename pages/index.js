@@ -51,15 +51,32 @@ function HomePage(props) {
           <style jsx>
             {`
               h2 {
-                padding-top: 15px;
-                padding-bottom: 15px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+                font-size: 40px;
+              }
+              button {
+                background-color: white;
+                border-radius: 4px;
+                border: 2px solid #699ee7;
+                color: #699ee7;
+                padding: 7px;
+                font-weight: 500;
+              }
+              button:hover {
+                background-color: #699ee7;
+                color: white;
+              }
+              a {
+                text-decoration: none;
               }
             `}
           </style>
           <h2>Weekly Meal Planner</h2>
-          <Button variant="outline-primary" href="/form">
-            Enter Meal
-          </Button>
+          <a href="/form">
+            <button>Enter Meal</button>
+          </a>
 
           <Table user={user} mealMatrix={mealMatrix}></Table>
         </>

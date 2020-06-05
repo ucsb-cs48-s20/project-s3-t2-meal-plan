@@ -67,6 +67,18 @@ function EnterMeal(props) {
                   margin-left: 5px;
                   margin-bottom: 10px;
                 }
+                button {
+                  background-color: white;
+                  border-radius: 4px;
+                  border: 2px solid #699ee7;
+                  color: #699ee7;
+                  padding: 7px;
+                  font-weight: 400;
+                }
+                button:hover {
+                  background-color: #699ee7;
+                  color: white;
+                }
               `}
             </style>
             <form onSubmit={saveRecipe}>
@@ -116,9 +128,7 @@ function EnterMeal(props) {
                 required
               ></textarea>
               <br></br>
-              <Button type="submit" variant="outline-primary">
-                Add to Planner
-              </Button>
+              <button type="submit">Add to Planner</button>
             </form>
           </div>
         </div>
