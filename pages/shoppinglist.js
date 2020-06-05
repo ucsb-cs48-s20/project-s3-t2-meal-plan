@@ -1,22 +1,74 @@
 import React, { Component, useState, useEffect } from "react";
 import useSWR from "swr";
-import Spinner from "react-bootstrap/Spinner";
-import Image from "react-bootstrap/Image";
 import { fetch } from "../utils/fetch";
 import Layout from "../components/Layout";
 import { requiredAuth } from "../utils/ssr";
 import Button from "react-bootstrap/Button";
 import Head from "next/head";
-import Container from "react-bootstrap/Container";
 
 export const getServerSideProps = requiredAuth;
 
 function List(props) {
   const user = props.user;
-  //const { data } = useSWR("/api/list");
-  //db.collection.find( { username: { $eq: this.state.username } } )
   const [username, setUsername] = useState(props.user.nickname);
   const [ingredient, setIngredient] = useState("");
+  const [list, setList] = useState("");
+  const { data } = useSWR("/api/list");
+
+  const removeSelected = async (e) => {
+    e.preventDefault;
+    await fetch("/api/list", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+      }),
+    });
+    //location.reload();
+  };
+
+  const HandleList = async (e) => {
+    console.log(document.getElementById(e.target.id).checked);
+    await fetch("/api/list", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        ingredient: ingredient,
+        deleteStatus: document.getElementById(e.target.id).checked,
+      }),
+    });
+  };
+
+  const printIt = () => {
+    const { data } = useSWR("/api/list");
+    console.log(data);
+    if (!data) {
+      return <p>No items</p>;
+    }
+    return (
+      <ul>
+        {data.map(function (item, index) {
+          return (
+            <li key={index}>
+              <input
+                type="checkbox"
+                id={item.ingredient}
+                onChange={HandleList}
+                value={item.ingredient}
+              />{" "}
+              {item.ingredient}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   const saveIngredient = async (e) => {
     console.log(ingredient);
     e.preventDefault();
@@ -28,12 +80,14 @@ function List(props) {
       body: JSON.stringify({
         username: username,
         ingredient: ingredient,
+        delete: "false",
       }),
     });
     console.log(username, ingredient);
     location.reload();
     alert("Added Ingredient");
   };
+
   return (
     <Layout user={user}>
       {user ? (
@@ -78,6 +132,8 @@ function List(props) {
               <br></br>
             </form>
           </div>
+          {printIt()}
+          <Button onClick={removeSelected}>Remove Selected</Button>
         </div>
       ) : (
         <div></div>

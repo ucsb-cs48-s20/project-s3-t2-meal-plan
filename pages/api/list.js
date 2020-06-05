@@ -13,24 +13,32 @@ export async function getIngredient(username) {
   return ingredientArray;
 }
 
-export async function removeIngredient(username, ingredient) {
+export async function updateIngredient(name, item, status) {
+  console.log("made it to update ingredient");
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
-  // Check for clear all
   if (err) {
     alert("theres an issue");
+  } else {
+    ingredients.updateOne(
+      { username: name, ingredient: item },
+      { $set: { "deleteStatus.$": status } }
+    );
+    console.log("Updated status");
   }
-  if (ingredient == "all") {
+}
+
+export async function removeIngredient(username) {
+  const client = await initDatabase();
+  const ingredients = client.collection("shoppinglists");
+  if (err) {
+    alert("theres an issue");
+  } else {
     ingredients.remove({
       username: { $eq: username },
+      deleteStatus: { $eq: true },
     });
     console.log("Ran removeAllIngredients");
-  } else {
-    recipes.remove({
-      username: { $eq: username },
-      ingredient: { $eq: ingredient },
-    });
-    console.log("Ran removeSingleIngredient");
   }
 }
 
@@ -41,19 +49,21 @@ const ingredientConstraints = {
   ingredient: {
     presence: true,
   },
+  delete: {
+    presence: true,
+  },
 };
 
 async function createIngredient(req, user) {
   let newIngredient;
 
   try {
-    console.log("trying to create ing");
     newIngredient = await validate.async(req.body, ingredientConstraints, {
       cleanAttributes: true,
       format: "flat",
     });
   } catch (err) {
-    console.log("HEYO, We have an error = " + err);
+    console.log("Error = " + err);
     throw {
       status: 400,
     };
@@ -71,12 +81,18 @@ async function createIngredient(req, user) {
 
 async function performAction(req, user) {
   switch (req.method) {
+    case "PATCH":
+      return updateIngredient(
+        req.body.username,
+        req.body.ingredient,
+        req.body.deleteStatus
+      );
     case "GET":
       return getIngredient(user.nickname);
     case "POST":
       return createIngredient(req, user);
     case "DELETE":
-      return removeIngredient(user.nickname, req.body.ingredient);
+      return removeIngredient(user.nickname);
   }
 
   throw { status: 405 };
