@@ -3,7 +3,6 @@ import { requiredAuth } from "../utils/ssr";
 import EnterMeal from "../components/EnterMeal";
 
 import Head from "next/head";
-import Button from "react-bootstrap/Button";
 
 import React, { Component, useState } from "react";
 import fetch from "isomorphic-unfetch";
@@ -20,7 +19,6 @@ function form(props) {
 
   const saveRecipe = async (e) => {
     e.preventDefault();
-    //console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
     await fetch("/api/meal", {
       method: "POST",
       headers: {

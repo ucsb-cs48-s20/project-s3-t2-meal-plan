@@ -7,6 +7,10 @@ import calculateCalories from "../utils/calculation";
 export const getServerSideProps = requiredAuth;
 
 async function addButton(label, ingreds, dayy, typee, username) {
+  if (dayy == "" || typee == "") {
+    alert("Please specify where to add this meal to!");
+    return;
+  }
   await fetch("/api/meal", {
     method: "POST",
     headers: {
@@ -17,7 +21,7 @@ async function addButton(label, ingreds, dayy, typee, username) {
       mealname: label,
       day: dayy,
       type: typee,
-      ingredients: ingreds.toString().split(/[,]/),
+      ingredients: ingreds,
     }),
   });
   location.reload();
@@ -39,7 +43,7 @@ function Recipe(props) {
               <b>Day of the Week : </b>
             </label>
             <select onChange={(event) => setDay(event.target.value)}>
-              <option>Select Day</option>
+              <option value="">Select Day</option>
               <option value="mon">Monday</option>
               <option value="tue">Tuesday</option>
               <option value="wed">Wednesday</option>
@@ -56,7 +60,7 @@ function Recipe(props) {
               <b margin-right="6px">Meal of the Day : </b>
             </label>
             <select onChange={(event) => setType(event.target.value)}>
-              <option>Select Meal</option>
+              <option value="">Select Meal</option>
               <option value="break">Breakfast</option>
               <option value="lunch">Lunch</option>
               <option value="dinnr">Dinner</option>

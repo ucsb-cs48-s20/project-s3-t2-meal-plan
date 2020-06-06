@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
 import { useRouter } from "next/router";
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 
 export const getServerSideProps = requiredAuth;
@@ -12,7 +12,7 @@ export const getServerSideProps = requiredAuth;
 function form2(props) {
   const router = useRouter();
   const user = props.user;
-  const [username, setUsername] = useState(props.user.nickname);
+  const [username] = useState(props.user.nickname);
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");
@@ -23,7 +23,10 @@ function form2(props) {
   }, [router.query.day, router.query.type]);
   const saveRecipe = async (e) => {
     e.preventDefault();
-    //console.log(username, day, type, mealname, ingredients.split(/[ ,]+/));
+    if (mealname == "" || day == "" || type == "" || ingredients == "") {
+      alert("Please fill out all fields");
+      return;
+    }
     await fetch("/api/meal", {
       method: "POST",
       headers: {
@@ -85,7 +88,7 @@ function form2(props) {
                   value={day}
                   onChange={(event) => setDay(event.target.value)}
                 >
-                  <option>Select Day</option>
+                  <option value="">Select Day</option>
                   <option value="mon">Monday</option>
                   <option value="tue">Tuesday</option>
                   <option value="wed">Wednesday</option>
@@ -101,7 +104,7 @@ function form2(props) {
                   value={type}
                   onChange={(event) => setType(event.target.value)}
                 >
-                  <option>Select Meal</option>
+                  <option value="">Select Meal</option>
                   <option value="break">Breakfast</option>
                   <option value="lunch">Lunch</option>
                   <option value="dinnr">Dinner</option>
