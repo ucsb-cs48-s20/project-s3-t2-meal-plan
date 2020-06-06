@@ -45,6 +45,9 @@ function Table(props) {
                 border: 1px solid #e76969;
                 color: white;
               }
+              button:hover {
+                background-color: Crimson;
+              }
             `}
           </style>
           X
@@ -75,6 +78,10 @@ function Table(props) {
                 padding-right: 7px;
                 color: white;
                 font-weight: 700;
+              }
+              a:hover {
+                font-size: 25px;
+                text-decoration: none;
               }
             `}
           </style>
