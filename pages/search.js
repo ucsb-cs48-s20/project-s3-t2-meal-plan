@@ -5,12 +5,10 @@ import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
-import config from "../utils/config";
-import EnterMeal from "../components/EnterMeal";
 
 export const getServerSideProps = optionalAuth;
 
-function Search(props) {
+export default function Search(props) {
   const user = props.user;
   //const API_ID= config.REACT_APP_API_ID;
   //const API_KEY = config.REACT_APP_API_KEY;
@@ -30,7 +28,12 @@ function Search(props) {
       `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
     );
     setRecipe(response.hits);
-    //console.log(response.hits.toArray()[0].recipe.label);
+    const recipeOptions = [];
+    for (var i = 0; i < 10; i++) {
+      if (response.hits[i]) {
+        recipeOptions[i] = response.hits[i].recipe.label;
+      }
+    }
   };
 
   const updateSearch = (e) => {
@@ -48,27 +51,24 @@ function Search(props) {
       <Head>
         <title>Search for Recipes</title>
       </Head>
-      <div className="App">
+      <div className="Search_page">
         <style jsx>
           {`
-             {
-              margin: 0;
-              padding: 0;
-              background-color: rgb(255, 255, 255);
-            }
-            .App {
-              min-height: 100vh;
+            .Search_page {
+              min-height: 950px;
               background-color: rgb(255, 255, 255);
             }
             .form {
-              min-height: 10vh;
+              min-height: 50px;
               display: flex;
-              justify-content: left;
               align-items: left;
               margin-bottom: 20px;
             }
+            .formmm {
+              padding: 20px;
+            }
             .search-bar {
-              width: 100%;
+              width: 75%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;
@@ -78,10 +78,10 @@ function Search(props) {
               display: flex;
               flex-direction: row;
             }
-            .formm {
-              height: 80vh;
+            .form_search {
+              height: 770px;
               overflow-y: auto;
-              width: 90vh;
+              width: 850px;
             }
           `}
         </style>
@@ -99,7 +99,7 @@ function Search(props) {
           <Button type="submit">Search</Button>
         </form>
         <div className="piece">
-          <div className="formm">
+          <div className="form_search">
             <h1 className="text-center mt-4 mb-3">Recipe List</h1>
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
@@ -111,15 +111,13 @@ function Search(props) {
                   image={r.recipe.image}
                   ingredients={r.recipe.ingredients}
                   url={r.recipe.url}
+                  user={user.nickname}
                 />
               ))}
             </div>
           </div>
-          <div> {EnterMeal(props)} </div>
         </div>
       </div>
     </Layout>
   );
 }
-
-export default Search;
