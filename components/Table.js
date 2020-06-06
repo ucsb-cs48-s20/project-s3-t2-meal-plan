@@ -32,9 +32,18 @@ function Table(props) {
               button {
                 color: black;
                 background-color: lightgray;
-                font-size: 15px;
-                text-align: right;
-                border-radius: 50%;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: left;
+                border: 1px solid lightgray;
+                margin-left: 2px;
+                margin-top: 2px;
+                position: absolute;
+              }
+              button:hover {
+                background-color: #e76969;
+                border: 1px solid #e76969;
+                color: white;
               }
             `}
           </style>
@@ -47,18 +56,32 @@ function Table(props) {
   function checkAddButton(dayy, typee, stringLink) {
     if (!mealMatrix[dayy][typee]) {
       return (
-        <a href={stringLink}>
+        <>
           <style jsx>
             {`
+              p {
+                text-align: center;
+              }
               a {
                 font-size: 20px;
                 color: black;
-                padding: 2px;
+                padding: 0px 2px 2px 2px;
+              }
+              a:hover {
+                background-color: #95baee;
+                font-size: 20px;
+                text-decoration: none;
+                padding-left: 7px;
+                padding-right: 7px;
+                color: white;
+                font-weight: 700;
               }
             `}
           </style>
-          +
-        </a>
+          <p>
+            <a href={stringLink}>+</a>
+          </p>
+        </>
       );
     }
   }
@@ -84,16 +107,19 @@ function Table(props) {
             h5 {
               text-decoration: underline;
               color: #151b54;
+              text-align: center;
             }
             h6 {
               font-size: 20px;
-              color: #4863a0;
+              color: #5390e3;
+              text-align: center;
             }
           `}
         </style>
+        {checkDeleteButton(dayy, typee, dayString)}
         <h5>
           {typeName}
-          {checkDeleteButton(dayy, typee, dayString)}
+          {/* {checkDeleteButton(dayy, typee, dayString)} */}
         </h5>
         <h6>{mealMatrix[dayy][typee].mealname}</h6>
         {checkAddButton(dayy, typee, stringLink)}
@@ -112,27 +138,6 @@ function Table(props) {
                 width: 155px;
                 color: #151b54;
               }
-              h5 {
-                text-decoration: underline;
-                color: #151b54;
-                text-align: center;
-              }
-              button {
-                color: black;
-                background-color: lightgray;
-                font-size: 12px;
-                font-weight: 500;
-                text-align: left;
-                border: 1px solid lightgray;
-                margin-left: 2px;
-                margin-top: 2px;
-                position: absolute;
-              }
-              button:hover {
-                background-color: #e76969;
-                border: 1px solid #e76969;
-                color: white;
-              }
               td {
                 vertical-align: top;
                 height: 120px;
@@ -141,28 +146,6 @@ function Table(props) {
               }
               th {
                 text-align: center;
-              }
-              h6 {
-                font-size: 20px;
-                color: #5390e3;
-                text-align: center;
-              }
-              p {
-                text-align: center;
-              }
-              a {
-                font-size: 20px;
-                color: black;
-                padding: 0px 2px 2px 2px;
-              }
-              a:hover {
-                background-color: #95baee;
-                font-size: 20px;
-                text-decoration: none;
-                padding-left: 7px;
-                padding-right: 7px;
-                color: white;
-                font-weight: 700;
               }
               .clear {
                 background-color: white;
@@ -181,34 +164,6 @@ function Table(props) {
             `}
           </style>
           <table>
-            <style jsx>
-              {`
-                h1 {
-                  padding-top: 15px;
-                  padding-bottom: 15px;
-                }
-                td {
-                  padding-bottom: 20px;
-                }
-                h3 {
-                  padding-top: 20px;
-                  width: 160px;
-                  color: #151b54;
-                }
-                button:hover {
-                  background-color: crimson;
-                }
-                td {
-                  vertical-align: top;
-                  height: 150px;
-                  border: 2px solid #151b54;
-                  text-align: center;
-                }
-                th {
-                  text-align: center;
-                }
-              `}
-            </style>
             <tr>
               <th>
                 <h3>MON</h3>

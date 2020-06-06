@@ -75,7 +75,7 @@ function EnterMeal(props) {
                   border: 2px solid #699ee7;
                   color: #699ee7;
                   padding: 7px;
-                  font-weight: 400;
+                  font-weight: 500;
                 }
                 button:hover {
                   background-color: #699ee7;

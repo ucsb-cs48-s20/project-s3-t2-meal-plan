@@ -78,6 +78,18 @@ function form2(props) {
                     margin-left: 5px;
                     margin-bottom: 10px;
                   }
+                  button {
+                    background-color: white;
+                    border-radius: 4px;
+                    border: 2px solid #699ee7;
+                    color: #699ee7;
+                    padding: 7px;
+                    font-weight: 500;
+                  }
+                  button:hover {
+                    background-color: #699ee7;
+                    color: white;
+                  }
                 `}
               </style>
               <form onSubmit={saveRecipe}>
@@ -133,9 +145,9 @@ function form2(props) {
                   required
                 ></textarea>
                 <br></br>
-                <Button type="submit" variant="outline-primary">
+                <button type="submit" variant="outline-primary">
                   Add to Planner
-                </Button>
+                </button>
               </form>
             </div>
           </div>

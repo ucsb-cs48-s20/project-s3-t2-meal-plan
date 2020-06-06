@@ -75,8 +75,10 @@ function HomePage(props) {
               }
             `}
           </style>
-          <h1>Weekly Meal Planner</h1>
-          <Button href="/form">Enter Meal</Button>
+          <h2>Weekly Meal Planner</h2>
+          <a href="/form">
+            <button> Enter Meal</button>
+          </a>
           <Table user={user} mealMatrix={mealMatrix}></Table>
         </>
       ) : (
