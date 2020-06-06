@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Head from "next/head";
 import Button from "react-bootstrap/Button";
 import { useRouter } from "next/router";
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 
 export const getServerSideProps = requiredAuth;
@@ -12,7 +12,7 @@ export const getServerSideProps = requiredAuth;
 function form2(props) {
   const router = useRouter();
   const user = props.user;
-  const [username, setUsername] = useState(props.user.nickname);
+  const [username] = useState(props.user.nickname);
   const [mealname, setMealname] = useState("");
   const [day, setDay] = useState("");
   const [type, setType] = useState("");
