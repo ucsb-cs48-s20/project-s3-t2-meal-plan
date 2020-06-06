@@ -55,11 +55,12 @@ export default function Search(props) {
         <style jsx>
           {`
             .Search_page {
-              min-height: 950px;
-              // background-color: rgb(255, 255, 255);
+              // min-height: 950px;
+              height: 440px;
             }
             .form {
-              min-height: 50px;
+              // min-height: 50px;
+              height: 50px;
               display: flex;
               align-items: left;
               margin-bottom: 20px;
@@ -68,20 +69,21 @@ export default function Search(props) {
               padding: 20px;
             }
             .search-bar {
-              width: 75%;
+              width: 90%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;
               display: flex;
             }
-            .piece {
-              display: flex;
-              flex-direction: row;
-            }
+            // .piece {
+            //   display: flex;
+            //   flex-direction: row;
+            // }
             .form_search {
-              height: 770px;
+              height: 400px;
+              // height: auto;
               overflow-y: auto;
-              width: 850px;
+              width: 100%;
             }
             button {
               background-color: white;
@@ -95,6 +97,11 @@ export default function Search(props) {
               background-color: #699ee7;
               color: white;
             }
+            .rec {
+              text-align: center;
+              font-size: 40px;
+              text-decoration: underline;
+            }
           `}
         </style>
         <label htmlFor="ingredients">
@@ -107,12 +114,15 @@ export default function Search(props) {
             className="search-bar"
             value={search}
             onChange={updateSearch}
+            required
           ></input>
           <button type="submit">Search</button>
         </form>
-        <div className="piece">
+        {/* <div className="piece"> */}
+        <div>
+          <h2 className="rec">Recipe List</h2>
           <div className="form_search">
-            <h1 className="text-center mt-4 mb-3">Recipe List</h1>
+            {/* <h1 className="text-center mt-4 mb-3">Recipe List</h1> */}
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
                 <Recipe
