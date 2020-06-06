@@ -114,7 +114,7 @@ function Recipe(props) {
         </ul>
         <p> Calories: {calculateCalories(props.calory)}</p>
       </div>
-      <a href={props.url} role="button">
+      <a href={props.url} role="button" target="_blank">
         View Recipe
       </a>
     </div>
