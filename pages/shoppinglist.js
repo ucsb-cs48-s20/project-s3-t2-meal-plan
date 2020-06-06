@@ -61,7 +61,7 @@ function List(props) {
   const printIt = () => {
     const { data } = useSWR("/api/list");
     if (!data) {
-      return <li>Empty List</li>;
+      return <li></li>;
     }
     return (
       <ul>
