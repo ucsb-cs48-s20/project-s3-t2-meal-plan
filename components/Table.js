@@ -37,11 +37,22 @@ function Table(props) {
         .length;
       i++
     ) {
-      console.log(
-        mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)]
-          .ingredients[i]
+      alert(
+        <li>
+          {
+            mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)]
+              .ingredients[i]
+          }
+        </li>
       );
     }
+  };
+
+  const showIngred2 = (e) => {
+    e.preventDefault();
+    mealMatrix[e.target.id.slice(0, 1)][
+      e.target.id.slice(1, 2)
+    ].ingredients.map((i) => alert(JSON.stringify({ i })));
   };
 
   return (
@@ -134,9 +145,12 @@ function Table(props) {
                 <Popup
                   trigger={<h6 role="button"> {mealMatrix[0][0].mealname} </h6>}
                   modal
-                  closeOnDocumentClick
+                  closeOnDocumentClicksho
                 >
                   <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
+                  <h2 role="Button" onClick={showIngred} id="00">
+                    click
+                  </h2>
                 </Popup>
                 <a href="/form2?day=mon&type=break">+</a>
               </td>
@@ -351,9 +365,6 @@ function Table(props) {
           <br></br>
           <Button id="clearall" onClick={removeRecipe}>
             Clear all
-          </Button>
-          <Button id="00" onClick={showIngred}>
-            test
           </Button>
         </>
       ) : (
