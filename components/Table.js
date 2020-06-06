@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import form2 from "../pages/form2";
 import Popup from "reactjs-popup";
+//import showIngred from "../utils/showIngred"
 
 export const getServerSideProps = optionalAuth;
 
@@ -25,6 +26,22 @@ function Table(props) {
       }),
     });
     location.reload();
+  };
+
+  const showIngred = (e) => {
+    e.preventDefault();
+    for (
+      var i = 0;
+      i <
+      mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)].ingredients
+        .length;
+      i++
+    ) {
+      console.log(
+        mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)]
+          .ingredients[i]
+      );
+    }
   };
 
   return (
@@ -72,9 +89,8 @@ function Table(props) {
                 h6 {
                   font-size: 20px;
                   color: #4863a0;
-                  text-decoration: underline;
                 }
-                h7 {
+                h2 {
                   font-size: 20px;
                 }
                 a {
@@ -120,14 +136,7 @@ function Table(props) {
                   modal
                   closeOnDocumentClick
                 >
-                  <h7 style={{ fontWeight: "bold" }}>Ingredients</h7>
-                  <br></br>
-                  <h7>{mealMatrix[0][0].ingredients}</h7>
-                  {/*<ul>
-                    {mealMatrix[0][0].ingredients.map((i) => (
-                      <li>{i.text}</li>
-                    ))}
-                    </ul>*/}
+                  <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
                 </Popup>
                 <a href="/form2?day=mon&type=break">+</a>
               </td>
@@ -342,6 +351,9 @@ function Table(props) {
           <br></br>
           <Button id="clearall" onClick={removeRecipe}>
             Clear all
+          </Button>
+          <Button id="00" onClick={showIngred}>
+            test
           </Button>
         </>
       ) : (
