@@ -36,6 +36,9 @@ function Table(props) {
                 text-align: right;
                 border-radius: 50%;
               }
+              button:hover {
+                background-color: Crimson;
+              }
             `}
           </style>
           X
@@ -54,6 +57,10 @@ function Table(props) {
                 font-size: 20px;
                 color: black;
                 padding: 2px;
+              }
+              a:hover {
+                font-size: 25px;
+                text-decoration: none;
               }
             `}
           </style>

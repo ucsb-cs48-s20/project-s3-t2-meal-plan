@@ -12,8 +12,6 @@ function List(props) {
   const user = props.user;
   const [username, setUsername] = useState(props.user.nickname);
   const [ingredient, setIngredient] = useState("");
-  const [list, setList] = useState("");
-  const { data } = useSWR("/api/list");
 
   const removeSelected = async (e) => {
     e.preventDefault;
@@ -67,7 +65,7 @@ function List(props) {
       <ul>
         {data.map(function (item, index) {
           return (
-            <li key={index}>
+            <h6 key={index}>
               <input
                 type="checkbox"
                 id={item.ingredient}
@@ -75,7 +73,8 @@ function List(props) {
                 value={item.ingredient}
               />{" "}
               {item.ingredient}
-            </li>
+              <br></br>
+            </h6>
           );
         })}
       </ul>
@@ -137,11 +136,13 @@ function List(props) {
                 name="ingredient"
                 required
               ></input>
+              {"    "}
               <Button type="submit">Add</Button>
               <br></br>
               <br></br>
             </form>
           </div>
+          <h3>To Buy:</h3>
           {printIt()}
           <Button onClick={removeSelected}>Remove Selected</Button>
           <br></br>
