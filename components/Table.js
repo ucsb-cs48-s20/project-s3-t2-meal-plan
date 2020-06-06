@@ -93,7 +93,7 @@ function Table(props) {
         </style>
         <h5>
           {typeName}
-          {checkDeleteButton(dayy, typee, "thubreak")}
+          {checkDeleteButton(dayy, typee, dayString)}
         </h5>
         <h6>{mealMatrix[dayy][typee].mealname}</h6>
         {checkAddButton(dayy, typee, stringLink)}
