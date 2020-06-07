@@ -121,6 +121,9 @@ function Table(props) {
             h2 {
               font-size: 20px;
             }
+            h2 {
+              font-size: 20px;
+            }
           `}
         </style>
         <h5>
