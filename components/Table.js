@@ -193,7 +193,7 @@ function Table(props) {
       <ul>
         <style jsx>
           {`
-            li {
+            div {
               text-align: left;
             }
             input {
@@ -203,15 +203,15 @@ function Table(props) {
         </style>
         {data.map((item, index) => {
           return (
-            <li key={index}>
-              {item}{" "}
+            <div key={index}>
               <input
                 type="checkbox"
                 id={item}
                 onChange={AddToList}
                 value={item}
               />
-            </li>
+              {item} <br></br>
+            </div>
           );
         })}
       </ul>
