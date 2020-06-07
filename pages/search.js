@@ -55,11 +55,9 @@ export default function Search(props) {
         <style jsx>
           {`
             .Search_page {
-              // min-height: 950px;
               height: 440px;
             }
             .form {
-              // min-height: 50px;
               height: 50px;
               display: flex;
               align-items: left;
@@ -75,10 +73,6 @@ export default function Search(props) {
               margin-left: 6px;
               display: flex;
             }
-            // .piece {
-            //   display: flex;
-            //   flex-direction: row;
-            // }
             .form_search {
               height: 400px;
               // height: auto;
@@ -118,11 +112,9 @@ export default function Search(props) {
           ></input>
           <button type="submit">Search</button>
         </form>
-        {/* <div className="piece"> */}
         <div>
           <h2 className="rec">Recipe List</h2>
           <div className="form_search">
-            {/* <h1 className="text-center mt-4 mb-3">Recipe List</h1> */}
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
                 <Recipe

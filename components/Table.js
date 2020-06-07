@@ -119,11 +119,7 @@ function Table(props) {
             }
           `}
         </style>
-        {/* {checkDeleteButton(dayy, typee, dayString)} */}
-        <h5>
-          {typeName}
-          {/* {checkDeleteButton(dayy, typee, dayString)} */}
-        </h5>
+        <h5>{typeName}</h5>
 
         <h6>{mealMatrix[dayy][typee].mealname}</h6>
         {checkDeleteButton(dayy, typee, dayString)}
