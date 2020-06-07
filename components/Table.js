@@ -109,12 +109,16 @@ function Table(props) {
         <Popup
           trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
           modal
-          closeOnDocumentClicksho
+          closeOnDocumentClick
         >
           <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
-          <button onClick={showIngred3} id="00">
+          <button
+            onClick={(document.getElementById("demo").innerHTML = showIngred3)}
+            id="00"
+          >
             click
           </button>
+          <p id="demo"></p>
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
