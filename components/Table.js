@@ -1,6 +1,7 @@
 import { optionalAuth } from "../utils/ssr";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import Popup from "reactjs-popup";
 
 export const getServerSideProps = optionalAuth;
 
@@ -96,17 +97,65 @@ function Table(props) {
               font-size: 20px;
               color: #4863a0;
             }
+            h2 {
+              font-size: 20px;
+            }
           `}
         </style>
         <h5>
           {typeName}
           {checkDeleteButton(dayy, typee, dayString)}
         </h5>
-        <h6>{mealMatrix[dayy][typee].mealname}</h6>
+        <Popup
+          trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
+          modal
+          closeOnDocumentClicksho
+        >
+          <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
+          <button onClick={showIngred3} id="00">
+            click
+          </button>
+        </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
   }
+
+  const showIngred = (e) => {
+    e.preventDefault();
+    for (
+      var i = 0;
+      i <
+      mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)].ingredients
+        .length;
+      i++
+    ) {
+      document.write(
+        mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)]
+          .ingredients[i]
+      );
+    }
+  };
+
+  const showIngred2 = (e) => {
+    e.preventDefault();
+    mealMatrix[e.target.id.slice(0, 1)][
+      e.target.id.slice(1, 2)
+    ].ingredients.map((i) => JSON.stringify({ i }));
+  };
+
+  const showIngred3 = (e) => {
+    const data =
+      mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)].ingredients;
+    console.log(data);
+    return (
+      <ul>
+        {data.map(function (item, index) {
+          return <li key={index}>{item}</li>;
+        })}
+      </ul>
+    );
+  };
 
   return (
     <Container user={user}>
