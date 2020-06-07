@@ -21,7 +21,7 @@ This project allows people to plan their meals of the week and take note of the 
 
 # Initial Planning Ideas
 
-With this weekly meal planner, users are able to view their personalized planner via log in and are able to edit/add/remove meals/ingredients/etc. Users can list ingredients that they're gong to use for their dishes/meals. Users are able to search for recipes given ingredients that they already or search for specific recipes (via Spoonacular API). There will also be a shopping list feature where the user can add/edit/remove ingredients or select ingredients from a recipe and have it automatically added to the list.
+With this weekly meal planner, users are able to view their personalized planner via log in and are able to edit/add/remove meals/ingredients/etc. Users can list ingredients that they're gong to use for their dishes/meals. Users are able to search for recipes given ingredients that they already or search for specific recipes (via Edamam API). There will also be a shopping list feature where the user can add/edit/remove ingredients or select ingredients from a recipe and have it automatically added to the list.
 
 Example Case
 
