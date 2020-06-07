@@ -11,40 +11,9 @@ function AppNavbar(props) {
 
   return (
     <Navbar style={{ backgroundColor: "white" }} expand="lg">
-      <style jsx>
-        {`
-          h3 {
-            padding: 12px;
-            margin-top: -9px;
-            margin-bottom: -9px;
-            color: #5390e3;
-            cursor: pointer;
-            background-color: white;
-          }
-          h3:hover {
-            color: white;
-            background-color: #90bdfb;
-          }
-          h5 {
-            color: #5390e3;
-            font-weight: 400;
-            font-size: 17px;
-            cursor: pointer;
-            margin-top: -18px;
-            margin-bottom: -18px;
-            padding: 19px;
-            background-color: white;
-          }
-          h5:hover {
-            color: white;
-            background-color: #90bdfb;
-          }
-        `}
-      </style>
       <Container>
         <Link href="/" passHref={true}>
-          {/* <Navbar.Brand>Meal Planner</Navbar.Brand> */}
-          <h3>Meal Planner</h3>
+          <Navbar.Brand style={{ color: "#5390e3" }}>Meal Planner</Navbar.Brand>
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
@@ -52,10 +21,10 @@ function AppNavbar(props) {
             {user && (
               <>
                 <Link href="/search" passHref={true}>
-                  <h5>Search for Recipes</h5>
+                  <Nav.Link>Search for Recipes</Nav.Link>
                 </Link>
                 <Link href="/shoppinglist" passHref={true}>
-                  <h5>Shopping List</h5>
+                  <Nav.Link>Shopping List</Nav.Link>
                 </Link>
               </>
             )}

@@ -73,13 +73,19 @@ function HomePage(props) {
               a {
                 text-decoration: none;
               }
+              .scrollTable {
+                width: auto;
+                overflow-x: auto;
+              }
             `}
           </style>
           <h2>Weekly Meal Planner</h2>
           <a href="/form">
             <button> Enter Meal</button>
           </a>
-          <Table user={user} mealMatrix={mealMatrix}></Table>
+          <div className="scrollTable">
+            <Table user={user} mealMatrix={mealMatrix}></Table>
+          </div>
         </>
       ) : (
         /* If not logged in: */

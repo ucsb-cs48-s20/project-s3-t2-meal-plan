@@ -34,11 +34,10 @@ function Table(props) {
                 background-color: lightgray;
                 font-size: 12px;
                 font-weight: 500;
-                text-align: left;
+                text-align: center;
                 border: 1px solid lightgray;
                 margin-left: 2px;
                 margin-top: 2px;
-                position: absolute;
               }
               button:hover {
                 background-color: #e76969;
@@ -79,10 +78,6 @@ function Table(props) {
                 color: white;
                 font-weight: 700;
               }
-              a:hover {
-                font-size: 25px;
-                text-decoration: none;
-              }
             `}
           </style>
           <p>
@@ -120,15 +115,18 @@ function Table(props) {
               font-size: 20px;
               color: #5390e3;
               text-align: center;
+              positive: relative;
             }
           `}
         </style>
-        {checkDeleteButton(dayy, typee, dayString)}
+        {/* {checkDeleteButton(dayy, typee, dayString)} */}
         <h5>
           {typeName}
           {/* {checkDeleteButton(dayy, typee, dayString)} */}
         </h5>
+
         <h6>{mealMatrix[dayy][typee].mealname}</h6>
+        {checkDeleteButton(dayy, typee, dayString)}
         {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
@@ -142,16 +140,15 @@ function Table(props) {
             {`
               h3 {
                 padding-top: 15px;
-                width: 155px;
+                width: 150px;
                 color: #151b54;
+                text-align: center;
               }
               td {
                 vertical-align: top;
                 height: 120px;
                 border: 2px solid #151b54;
                 background-color: white;
-              }
-              th {
                 text-align: center;
               }
               .clear {
