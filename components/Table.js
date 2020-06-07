@@ -112,54 +112,26 @@ function Table(props) {
           closeOnDocumentClick
         >
           <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
-          <button
-            onClick={(document.getElementById("demo").innerHTML = showIngred3)}
-            id="00"
-          >
-            click
-          </button>
-          <p id="demo"></p>
+          <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
   }
 
-  const showIngred = (e) => {
-    e.preventDefault();
-    for (
-      var i = 0;
-      i <
-      mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)].ingredients
-        .length;
-      i++
-    ) {
-      document.write(
-        mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)]
-          .ingredients[i]
-      );
+  function ingredList(e) {
+    const data = e;
+    if (e == undefined) {
+      return null;
     }
-  };
-
-  const showIngred2 = (e) => {
-    e.preventDefault();
-    mealMatrix[e.target.id.slice(0, 1)][
-      e.target.id.slice(1, 2)
-    ].ingredients.map((i) => JSON.stringify({ i }));
-  };
-
-  const showIngred3 = (e) => {
-    const data =
-      mealMatrix[e.target.id.slice(0, 1)][e.target.id.slice(1, 2)].ingredients;
-    console.log(data);
     return (
       <ul>
-        {data.map(function (item, index) {
+        {data.map((item, index) => {
           return <li key={index}>{item}</li>;
         })}
       </ul>
     );
-  };
+  }
 
   return (
     <Container user={user}>
