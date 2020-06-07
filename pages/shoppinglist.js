@@ -164,6 +164,10 @@ function List(props) {
                 background-color: #e76969;
                 color: white;
               }
+              .scrollList {
+                overflow-y: auto;
+                height: 55vh;
+              }
             `}
           </style>
           <div>
@@ -186,7 +190,7 @@ function List(props) {
             </form>
           </div>
           <h3>To Buy:</h3>
-          {printIt()}
+          <div className="scrollList">{printIt()}</div>
           <button onClick={removeSelected} className="del">
             Remove Selected
           </button>
