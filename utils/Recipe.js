@@ -33,40 +33,64 @@ function Recipe(props) {
   const [typee, setType] = useState("");
   return (
     <div className={style.recipe}>
+      <style jsx>
+        {`
+          label {
+            padding-right: 10px;
+            font-size: 16px;
+          }
+          select {
+            font-size: 16px;
+          }
+          ul {
+            margin-top: 5px;
+            font-size: 14px;
+          }
+          button {
+            background-color: white;
+            border-radius: 4px;
+            border: 2px solid #699ee7;
+            color: #699ee7;
+            padding: 5px;
+            font-weight: 500;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+          button:hover {
+            background-color: #699ee7;
+            color: white;
+          }
+        `}
+      </style>
       <img src={props.image} className={style.image} alt={props.label}></img>
       <br></br>
       <div>
-        <h2>{props.title}</h2>
-        <form>
-          <div className="formmm">
-            <label htmlFor="day">
-              <b>Day of the Week : </b>
-            </label>
-            <select onChange={(event) => setDay(event.target.value)}>
-              <option value="">Select Day</option>
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-            <br></br>
-          </div>
-
-          <div className="formmm">
-            <label htmlFor="meal">
-              <b margin-right="6px">Meal of the Day : </b>
-            </label>
-            <select onChange={(event) => setType(event.target.value)}>
-              <option value="">Select Meal</option>
-              <option value="break">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinnr">Dinner</option>
-            </select>
-            <br></br>
-          </div>
+        <h3>{props.title}</h3>
+        <form className="formmm">
+          {/* <div className="formmm"> */}
+          <label htmlFor="day">Day of the Week: </label>
+          <select onChange={(event) => setDay(event.target.value)}>
+            <option value="">Select Day</option>
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+          <br></br>
+          {/* </div> */}
+          {/* <div className="formmm"> */}
+          <label htmlFor="meal">Meal of the Week:</label>
+          <select onChange={(event) => setType(event.target.value)}>
+            <option value="">Select Meal</option>
+            <option value="break">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinnr">Dinner</option>
+          </select>
+          {/* </div> */}
         </form>
         <button
           type="submit"
@@ -90,7 +114,7 @@ function Recipe(props) {
         </ul>
         <p> Calories: {calculateCalories(props.calory)}</p>
       </div>
-      <a href={props.url} role="button">
+      <a href={props.url} role="button" target="_blank">
         View Recipe
       </a>
     </div>

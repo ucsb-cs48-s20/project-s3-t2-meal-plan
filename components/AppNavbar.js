@@ -10,10 +10,10 @@ function AppNavbar(props) {
   const user = props.user;
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar style={{ backgroundColor: "white" }} expand="lg">
       <Container>
         <Link href="/" passHref={true}>
-          <Navbar.Brand>Meal Planner</Navbar.Brand>
+          <Navbar.Brand style={{ color: "#5390e3" }}>Meal Planner</Navbar.Brand>
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">

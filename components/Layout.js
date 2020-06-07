@@ -7,7 +7,7 @@ function Layout(props) {
   return (
     <>
       <AppNavbar user={user} />
-      <Container>{props.children}</Container>
+      <Container variant="success">{props.children}</Container>
     </>
   );
 }

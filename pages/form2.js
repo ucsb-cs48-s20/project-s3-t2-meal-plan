@@ -60,26 +60,41 @@ function form2(props) {
               <style jsx>
                 {`
                   form {
-                    padding: 10px;
+                    padding-top: 10px;
                   }
                   label {
-                    padding: 10px;
+                    padding-top: 10px;
+                    font-weight: 500;
                   }
                   input,
                   textarea {
                     padding: 5px;
+                    margin-left: 5px;
                     width: 500px;
+                    margin-bottom: 10px;
                   }
                   select {
                     padding: 5px;
+                    margin-left: 5px;
+                    margin-bottom: 10px;
+                  }
+                  button {
+                    background-color: white;
+                    border-radius: 4px;
+                    border: 2px solid #699ee7;
+                    color: #699ee7;
+                    padding: 7px;
+                    font-weight: 500;
+                  }
+                  button:hover {
+                    background-color: #699ee7;
+                    color: white;
                   }
                 `}
               </style>
               <form onSubmit={saveRecipe}>
                 <h1>Enter a Meal </h1>
-                <label htmlFor="day">
-                  <b>Day of the Week</b>
-                </label>
+                <label htmlFor="day">Day of the Week</label>
                 <br></br>
                 <select
                   value={day}
@@ -95,9 +110,7 @@ function form2(props) {
                   <option value="sun">Sunday</option>
                 </select>
                 <br></br>
-                <label htmlFor="meal">
-                  <b>Meal of the Day</b>
-                </label>
+                <label htmlFor="meal">Meal of the Day</label>
                 <br></br>
                 <select
                   value={type}
@@ -109,9 +122,7 @@ function form2(props) {
                   <option value="dinnr">Dinner</option>
                 </select>
                 <br></br>
-                <label htmlFor="name">
-                  <b>Name of Recipe</b>
-                </label>
+                <label htmlFor="name">Name of Recipe</label>
                 <br></br>
                 <input
                   value={mealname}
@@ -123,9 +134,7 @@ function form2(props) {
                 ></input>
                 <br></br>
 
-                <label htmlFor="ingredients">
-                  <b>Ingredients</b>
-                </label>
+                <label htmlFor="ingredients">Ingredients</label>
                 <br></br>
                 <textarea
                   value={ingredients}
@@ -136,8 +145,9 @@ function form2(props) {
                   required
                 ></textarea>
                 <br></br>
-                <Button type="submit">Add to Planner</Button>
-                <br></br>
+                <button type="submit" variant="outline-primary">
+                  Add to Planner
+                </button>
               </form>
             </div>
           </div>

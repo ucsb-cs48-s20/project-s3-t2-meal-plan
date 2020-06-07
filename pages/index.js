@@ -52,15 +52,40 @@ function HomePage(props) {
         <>
           <style jsx>
             {`
-              h1 {
-                padding-top: 15px;
-                padding-bottom: 15px;
+              h2 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+                font-size: 38px;
+              }
+              button {
+                background-color: white;
+                border-radius: 4px;
+                border: 2px solid #699ee7;
+                color: #699ee7;
+                padding: 7px;
+                font-weight: 500;
+              }
+              button:hover {
+                background-color: #699ee7;
+                color: white;
+              }
+              a {
+                text-decoration: none;
+              }
+              .scrollTable {
+                width: auto;
+                overflow-x: auto;
               }
             `}
           </style>
-          <h1>Weekly Meal Planner</h1>
-          <Button href="/form">Enter Meal</Button>
-          <Table user={user} mealMatrix={mealMatrix}></Table>
+          <h2>Weekly Meal Planner</h2>
+          <a href="/form">
+            <button> Enter Meal</button>
+          </a>
+          <div className="scrollTable">
+            <Table user={user} mealMatrix={mealMatrix}></Table>
+          </div>
         </>
       ) : (
         /* If not logged in: */

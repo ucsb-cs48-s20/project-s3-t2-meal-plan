@@ -55,11 +55,10 @@ export default function Search(props) {
         <style jsx>
           {`
             .Search_page {
-              min-height: 950px;
-              background-color: rgb(255, 255, 255);
+              height: 440px;
             }
             .form {
-              min-height: 50px;
+              height: 50px;
               display: flex;
               align-items: left;
               margin-bottom: 20px;
@@ -68,25 +67,39 @@ export default function Search(props) {
               padding: 20px;
             }
             .search-bar {
-              width: 75%;
+              width: 90%;
               padding: 10px;
               margin-right: 6px;
               margin-left: 6px;
               display: flex;
             }
-            .piece {
-              display: flex;
-              flex-direction: row;
-            }
             .form_search {
-              height: 770px;
+              height: 62vh;
+              // height: auto;
               overflow-y: auto;
-              width: 850px;
+              width: 100%;
+            }
+            button {
+              background-color: white;
+              border-radius: 4px;
+              border: 2px solid #699ee7;
+              color: #699ee7;
+              padding: 7px;
+              font-weight: 500;
+            }
+            button:hover {
+              background-color: #699ee7;
+              color: white;
+            }
+            .rec {
+              text-align: center;
+              font-size: 40px;
+              text-decoration: underline;
             }
           `}
         </style>
         <label htmlFor="ingredients">
-          <h3 className="mt-2">Search for Recipes</h3>
+          <h2 className="mt-2">Search for Recipes</h2>
         </label>
         <br></br>
         <form onSubmit={getSearch} className="form">
@@ -95,12 +108,13 @@ export default function Search(props) {
             className="search-bar"
             value={search}
             onChange={updateSearch}
+            required
           ></input>
-          <Button type="submit">Search</Button>
+          <button type="submit">Search</button>
         </form>
-        <div className="piece">
+        <div>
+          <h2 className="rec">Recipe List</h2>
           <div className="form_search">
-            <h1 className="text-center mt-4 mb-3">Recipe List</h1>
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
                 <Recipe
