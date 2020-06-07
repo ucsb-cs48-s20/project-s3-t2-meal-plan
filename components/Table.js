@@ -1,6 +1,7 @@
 import { optionalAuth } from "../utils/ssr";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import Popup from "reactjs-popup";
 
 export const getServerSideProps = optionalAuth;
 
@@ -117,14 +118,39 @@ function Table(props) {
               text-align: center;
               positive: relative;
             }
+            h2 {
+              font-size: 20px;
+            }
           `}
         </style>
-        <h5>{typeName}</h5>
-
-        <h6>{mealMatrix[dayy][typee].mealname}</h6>
-        {checkDeleteButton(dayy, typee, dayString)}
+        <h5>
+          {typeName}
+          {checkDeleteButton(dayy, typee, dayString)}
+        </h5>
+        <Popup
+          trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
+          modal
+          closeOnDocumentClick
+        >
+          <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
+          <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
+        </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
+    );
+  }
+
+  function ingredList(e) {
+    const data = e;
+    if (e == undefined) {
+      return null;
+    }
+    return (
+      <ul>
+        {data.map((item, index) => {
+          return <li key={index}>{item}</li>;
+        })}
+      </ul>
     );
   }
 
