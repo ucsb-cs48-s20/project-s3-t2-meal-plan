@@ -210,6 +210,7 @@ function Table(props) {
                 onChange={AddToList}
                 value={item}
               />
+              {"  "}
               {item} <br></br>
             </div>
           );
