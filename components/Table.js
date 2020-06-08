@@ -134,10 +134,23 @@ function Table(props) {
         >
           <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
           <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
+          {checkLink(dayy, typee)}
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
+  }
+
+  function checkLink(day, type) {
+    if (mealMatrix[day][type].link) {
+      return (
+        <div>
+          <a href={mealMatrix[day][type].link} role="button" target="_blank">
+            Link to Recipe
+          </a>
+        </div>
+      );
+    }
   }
 
   function ingredList(e) {

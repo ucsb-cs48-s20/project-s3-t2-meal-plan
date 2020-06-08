@@ -6,7 +6,7 @@ import calculateCalories from "../utils/calculation";
 
 export const getServerSideProps = requiredAuth;
 
-async function addButton(label, ingreds, dayy, typee, username) {
+async function addButton(label, ingreds, dayy, typee, username, link) {
   if (dayy == "" || typee == "") {
     alert("Please specify where to add this meal to!");
     return;
@@ -22,6 +22,7 @@ async function addButton(label, ingreds, dayy, typee, username) {
       day: dayy,
       type: typee,
       ingredients: ingreds,
+      link,
     }),
   });
   location.reload();
@@ -100,7 +101,8 @@ function Recipe(props) {
               props.ingredients.map((i) => i.text),
               dayy,
               typee,
-              props.user
+              props.user,
+              props.url
             )
           }
         >
