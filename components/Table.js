@@ -102,6 +102,20 @@ function Table(props) {
     // Form string for href
     let stringLink =
       "/form2?day=" + dayString.slice(0, 3) + "&type=" + dayString.slice(3, 9);
+    const UpdateList = async (e) => {
+      e.preventDefault;
+      await fetch("/api/list", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: user.nickname,
+          amount: "some",
+        }),
+      });
+      location.reload();
+    };
     // Return html
     return (
       <div>
@@ -134,6 +148,9 @@ function Table(props) {
         >
           <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
           <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
+          <Button onClick={UpdateList} className="del">
+            Add Selected to Shopping List
+          </Button>
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
       </div>
@@ -141,14 +158,62 @@ function Table(props) {
   }
 
   function ingredList(e) {
+    const AddToList = async (e) => {
+      if (document.getElementById(e.target.id).checked == true) {
+        await fetch("/api/list", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: user.nickname,
+            ingredient: e.target.id,
+            deleteStatus: !document.getElementById(e.target.id).checked,
+          }),
+        });
+      } else {
+        await fetch("/api/list", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: user.nickname,
+            ingredient: e.target.id,
+            deleteStatus: !document.getElementById(e.target.id).checked,
+          }),
+        });
+      }
+    };
     const data = e;
     if (e == undefined) {
       return null;
     }
     return (
       <ul>
+        <style jsx>
+          {`
+            div {
+              text-align: left;
+            }
+            input {
+              text-align: right;
+            }
+          `}
+        </style>
         {data.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return (
+            <div key={index}>
+              <input
+                type="checkbox"
+                id={item}
+                onChange={AddToList}
+                value={item}
+              />
+              {"  "}
+              {item} <br></br>
+            </div>
+          );
         })}
       </ul>
     );

@@ -74,7 +74,7 @@ export default function Search(props) {
               display: flex;
             }
             .form_search {
-              height: 62vh;
+              height: 65vh;
               // height: auto;
               overflow-y: auto;
               width: 100%;
@@ -113,7 +113,7 @@ export default function Search(props) {
           <button type="submit">Search</button>
         </form>
         <div>
-          <h2 className="rec">Recipe List</h2>
+          <h3 className="rec">Recipe List</h3>
           <div className="form_search">
             <div className="d-flex justify-content-around flex-wrap">
               {allRecipe.map((r) => (
