@@ -48,6 +48,7 @@ const recipeConstraints = {
   ingredients: {
     presence: true,
   },
+  link: {},
 };
 
 async function createRecipe(req, user) {
