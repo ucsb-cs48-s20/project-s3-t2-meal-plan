@@ -145,8 +145,10 @@ function Table(props) {
           trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
           modal
           closeOnDocumentClick
+          style={{ width: "20vh" }}
         >
           <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
+          {checkLink(dayy, typee)}
           <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
           <Button onClick={UpdateList} className="del">
             Add Selected to Shopping List
@@ -155,6 +157,18 @@ function Table(props) {
         {checkAddButton(dayy, typee, stringLink)}
       </div>
     );
+  }
+
+  function checkLink(day, type) {
+    if (mealMatrix[day][type].link) {
+      return (
+        <div>
+          <a href={mealMatrix[day][type].link} role="button" target="_blank">
+            Link to Recipe
+          </a>
+        </div>
+      );
+    }
   }
 
   function ingredList(e) {
