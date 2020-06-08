@@ -74,7 +74,7 @@ export default function Search(props) {
               display: flex;
             }
             .form_search {
-              height: 65vh;
+              height: 62vh;
               // height: auto;
               overflow-y: auto;
               width: 100%;

@@ -139,7 +139,7 @@ function Table(props) {
         </style>
         <h5>
           {typeName}
-          {checkDeleteButton(dayy, typee, dayString)}
+          {/* {checkDeleteButton(dayy, typee, dayString)} */}
         </h5>
         <Popup
           trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
@@ -155,6 +155,7 @@ function Table(props) {
           </Button>
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
+        {checkDeleteButton(dayy, typee, dayString)}
       </div>
     );
   }
