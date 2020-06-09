@@ -2,7 +2,6 @@ import Layout from "../components/Layout";
 import { optionalAuth } from "../utils/ssr";
 import Table from "../components/Table";
 import Head from "next/head";
-import Button from "react-bootstrap/Button";
 import useSWR from "swr";
 
 export const getServerSideProps = optionalAuth;

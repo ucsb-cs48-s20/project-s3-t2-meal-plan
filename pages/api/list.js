@@ -1,7 +1,6 @@
 import validate from "validate.js";
 import { authenticatedAction } from "../../utils/api";
 import { initDatabase } from "../../utils/mongodb";
-import config from "../../utils/config.js";
 
 export async function getIngredient(username) {
   const client = await initDatabase();
@@ -20,26 +19,22 @@ export async function updateIngredient(name, item, status) {
     { username: name, ingredient: item },
     { $set: { deleteStatus: status } }
   );
-  console.log("Updated status");
   return result;
 }
 
 export async function removeIngredient(username, amount) {
   const client = await initDatabase();
   const ingredients = client.collection("shoppinglists");
-  console.log("Inside remove");
   if (amount == "some") {
     const answer = ingredients.removeMany({
       username: { $eq: username },
       deleteStatus: { $eq: true },
     });
-    console.log("Ran removeSomeIngredients");
     return answer;
   } else {
     const answer2 = ingredients.removeMany({
       username: { $eq: username },
     });
-    console.log("Ran removeAllIngredients");
     return answer2;
   }
 }
@@ -73,18 +68,7 @@ async function createIngredient(req, user) {
       status: 400,
     };
   }
-
   await ingredients.insertOne(newIngredient);
-
-  console.log("newIngredient: " + JSON.stringify(newIngredient));
-  console.log(
-    ingredients
-      .find({
-        username: { $eq: req.body.username },
-        ingredient: { $eq: req.body.ingredient },
-      })
-      .count(true)
-  );
   return newIngredient;
 }
 
