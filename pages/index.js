@@ -23,7 +23,7 @@ function HomePage(props) {
   const { data } = useSWR("/api/meal");
   // Iniitializing day and type values for matrix
   if (data) {
-    for (let i = 0; i < 21; i++) {
+    for (let i = 0; i < data.length; i++) {
       if (data[i]) {
         let dayy = -1;
         let typee = -1;
