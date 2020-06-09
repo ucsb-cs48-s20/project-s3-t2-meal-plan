@@ -4,16 +4,13 @@ import Layout from "../components/Layout";
 import { optionalAuth } from "../utils/ssr";
 import Recipe from "../utils/Recipe";
 import Head from "next/head";
-import Button from "react-bootstrap/Button";
 
 export const getServerSideProps = optionalAuth;
 
 export default function Search(props) {
   const user = props.user;
-  //const API_ID= config.REACT_APP_API_ID;
-  //const API_KEY = config.REACT_APP_API_KEY;
-  const API_ID = `392fb82a`;
-  const API_KEY = `4b6ad0674d6814b6f219705f6a4183ea`;
+  const API_ID = process.env.API_ID;
+  const API_KEY = process.env.API_KEY;
 
   const [allRecipe, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
@@ -40,7 +37,7 @@ export default function Search(props) {
     setSearch(e.target.value);
   };
 
-  const getSearch = (e) => {
+  const getsearch = (e) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
@@ -75,7 +72,6 @@ export default function Search(props) {
             }
             .form_search {
               height: 62vh;
-              // height: auto;
               overflow-y: auto;
               width: 100%;
             }
@@ -102,7 +98,7 @@ export default function Search(props) {
           <h2 className="mt-2">Search for Recipes</h2>
         </label>
         <br></br>
-        <form onSubmit={getSearch} className="form">
+        <form onSubmit={getsearch} className="form">
           <input
             type="text"
             className="search-bar"

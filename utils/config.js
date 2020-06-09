@@ -16,8 +16,8 @@ if (typeof window === "undefined") {
     SESSION_COOKIE_LIFETIME: process.env.SESSION_COOKIE_LIFETIME,
     MONGODB_URI: process.env.MONGODB_URI,
     MONGODB_COLLECTION: process.env.MONGODB_COLLECTION,
-    REACT_APP_API_ID: process.env.REACT_APP_API_ID,
-    REACT_APP_API_KEY: process.env.REACT_APP_API_KEY,
+    API_ID: process.env.API_ID,
+    API_KEY: process.env.API_KEY,
   };
 } else {
   /**
@@ -29,5 +29,7 @@ if (typeof window === "undefined") {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     REDIRECT_URI: process.env.REDIRECT_URI,
     POST_LOGOUT_REDIRECT_URI: process.env.POST_LOGOUT_REDIRECT_URI,
+    API_ID: process.env.API_ID,
+    API_KEY: process.env.API_KEY,
   };
 }
