@@ -21,6 +21,25 @@ function form2(props) {
     setDay(router.query.day);
     setType(router.query.type);
   }, [router.query.day, router.query.type]);
+
+  const hm = (name, value) => {
+    if (value == day || value == type) {
+      return (
+        <input
+          className="changeType"
+          type="radio"
+          name={name}
+          value={value}
+          checked
+        />
+      );
+    }
+
+    return (
+      <input className="changeType" type="radio" name={name} value={value} />
+    );
+  };
+
   const saveRecipe = async (e) => {
     e.preventDefault();
     if (mealname == "" || day == "" || type == "" || ingredients == "") {
@@ -90,37 +109,64 @@ function form2(props) {
                     background-color: #699ee7;
                     color: white;
                   }
+                  .changeType {
+                    width: 12px;
+                  }
+                  label {
+                    padding: 3px;
+                  }
+                  .segmented-control {
+                    display: inline;
+                  }
                 `}
               </style>
               <form onSubmit={saveRecipe}>
                 <h1>Enter a Meal </h1>
                 <label htmlFor="day">Day of the Week</label>
                 <br></br>
-                <select
+                <div
+                  className="segmented-control"
+                  id="day"
                   value={day}
                   onChange={(event) => setDay(event.target.value)}
                 >
-                  <option value="">Select Day</option>
-                  <option value="mon">Monday</option>
-                  <option value="tue">Tuesday</option>
-                  <option value="wed">Wednesday</option>
-                  <option value="thu">Thursday</option>
-                  <option value="fri">Friday</option>
-                  <option value="sat">Saturday</option>
-                  <option value="sun">Sunday</option>
-                </select>
+                  {hm("day", "mon")}
+                  <label for="mon" name="day">
+                    Monday
+                  </label>
+                  {hm("day", "tue")}
+                  <label for="tue">Tuesday</label>
+                  {hm("day", "wed")}
+                  <label for="wed">Wednesday</label>
+                  {hm("day", "thu")}
+                  <label for="thu" name="day">
+                    Thursday
+                  </label>
+                  {hm("day", "fri")}
+                  <label for="fri">Friday</label>
+                  {hm("day", "sat")}
+                  <label for="sat">Saturday</label>
+                  {hm("day", "sun")}
+                  <label for="sun">Sunday</label>
+                </div>
                 <br></br>
                 <label htmlFor="meal">Meal of the Day</label>
                 <br></br>
-                <select
+                <div
+                  className="segmented-control"
+                  id={type}
                   value={type}
-                  onChange={(event) => setType(event.target.value)}
+                  onChange={(event) => setType(event.target.id)}
                 >
-                  <option value="">Select Meal</option>
-                  <option value="break">Breakfast</option>
-                  <option value="lunch">Lunch</option>
-                  <option value="dinnr">Dinner</option>
-                </select>
+                  {hm("type", "break")}
+                  <label for="break" name="type">
+                    Breakfast
+                  </label>
+                  {hm("type", "lunch")}
+                  <label for="lunch">Lunch</label>
+                  {hm("type", "dinnr")}
+                  <label for="dinnr">Dinner</label>
+                </div>
                 <br></br>
                 <label htmlFor="name">Name of Recipe</label>
                 <br></br>

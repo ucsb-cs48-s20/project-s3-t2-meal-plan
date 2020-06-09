@@ -40,6 +40,10 @@ function EnterMeal(props) {
     window.location.href = "/";
   };
 
+  const dayFunc = (e) => {
+    setDay(e.target.value);
+  };
+
   return (
     <Container user={user}>
       {user ? (
@@ -81,31 +85,112 @@ function EnterMeal(props) {
                   background-color: #699ee7;
                   color: white;
                 }
+                .changeType {
+                  width: 12px;
+                }
+                label {
+                  padding: 3px;
+                }
+                .segmented-control {
+                  display: inline;
+                }
               `}
             </style>
             <form onSubmit={saveRecipe}>
               <h1>Enter a Meal</h1>
               <label htmlFor="day">Day of the Week</label>
               <br></br>
-              <select onChange={(event) => setDay(event.target.value)}>
-                <option value="">Select Day</option>
-                <option value="mon">Monday</option>
-                <option value="tue">Tuesday</option>
-                <option value="wed">Wednesday</option>
-                <option value="thu">Thursday</option>
-                <option value="fri">Friday</option>
-                <option value="sat">Saturday</option>
-                <option value="sun">Sunday</option>
-              </select>
+              <div
+                className="segmented-control"
+                id="day"
+                onChange={(event) => setDay(event.target.id)}
+              >
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="mon"
+                />
+                <label for="mon" name="day">
+                  Monday
+                </label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="tue"
+                />
+                <label for="tue">Tuesday</label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="wed"
+                />
+                <label for="wed">Wednesday</label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="thu"
+                />
+                <label for="mon" name="day">
+                  Thursday
+                </label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="fri"
+                />
+                <label for="tue">Friday</label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="sat"
+                />
+                <label for="wed">Saturday</label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="day"
+                  id="sun"
+                />
+                <label for="wed">Sunday</label>
+              </div>
               <br></br>
               <label htmlFor="meal">Meal of the Day</label>
               <br></br>
-              <select onChange={(event) => setType(event.target.value)}>
-                <option value="">Select Meal</option>
-                <option value="break">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinnr">Dinner</option>
-              </select>
+              <div
+                className="segmented-control"
+                id="type"
+                onChange={(event) => setType(event.target.id)}
+              >
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="type"
+                  id="break"
+                />
+                <label for="break" name="type">
+                  Breakfast
+                </label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="type"
+                  id="lunch"
+                />
+                <label for="lunch">Lunch</label>
+                <input
+                  className="changeType"
+                  type="radio"
+                  name="type"
+                  id="dinnr"
+                />
+                <label for="dinner">Dinner</label>
+              </div>
               <br></br>
               <label htmlFor="name">Name of Recipe</label>
               <br></br>
