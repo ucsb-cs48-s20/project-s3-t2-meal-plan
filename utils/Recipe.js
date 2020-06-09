@@ -69,7 +69,6 @@ function Recipe(props) {
       <div>
         <h3>{props.title}</h3>
         <form className="formmm">
-          {/* <div className="formmm"> */}
           <label htmlFor="day">Day of the Week: </label>
           <select onChange={(event) => setDay(event.target.value)}>
             <option value="">Select Day</option>
@@ -82,8 +81,6 @@ function Recipe(props) {
             <option value="sun">Sunday</option>
           </select>
           <br></br>
-          {/* </div> */}
-          {/* <div className="formmm"> */}
           <label htmlFor="meal">Meal of the Week:</label>
           <select onChange={(event) => setType(event.target.value)}>
             <option value="">Select Meal</option>
@@ -91,7 +88,6 @@ function Recipe(props) {
             <option value="lunch">Lunch</option>
             <option value="dinnr">Dinner</option>
           </select>
-          {/* </div> */}
         </form>
         <button
           type="submit"

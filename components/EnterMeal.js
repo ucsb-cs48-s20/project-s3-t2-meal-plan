@@ -1,9 +1,8 @@
 import { requiredAuth } from "../utils/ssr";
 import Container from "react-bootstrap/Container";
 import Head from "next/head";
-import Button from "react-bootstrap/Button";
 
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import fetch from "isomorphic-unfetch";
 
 export const getServerSideProps = requiredAuth;
@@ -38,10 +37,6 @@ function EnterMeal(props) {
     location.reload();
     alert("Added Meal");
     window.location.href = "/";
-  };
-
-  const dayFunc = (e) => {
-    setDay(e.target.value);
   };
 
   return (

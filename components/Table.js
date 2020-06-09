@@ -1,6 +1,5 @@
 import { optionalAuth } from "../utils/ssr";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import Popup from "reactjs-popup";
 
 export const getServerSideProps = optionalAuth;

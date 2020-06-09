@@ -21,14 +21,12 @@ export async function removeRecipe(username, day, type) {
     recipes.remove({
       username: { $eq: username },
     });
-    console.log("Ran removeAllRecipes");
   } else {
     recipes.remove({
       username: { $eq: username },
       day: { $eq: day },
       type: { $eq: type },
     });
-    console.log("Ran removeSingleRecipe");
   }
 }
 
@@ -71,9 +69,6 @@ async function createRecipe(req, user) {
   const recipes = client.collection(config.MONGODB_COLLECTION);
 
   await recipes.insertOne(newRecipe);
-
-  console.log("newRecipe: " + JSON.stringify(newRecipe));
-
   return newRecipe;
 }
 
