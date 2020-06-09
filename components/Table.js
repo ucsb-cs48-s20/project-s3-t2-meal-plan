@@ -45,9 +45,6 @@ function Table(props) {
                 border: 1px solid #e76969;
                 color: white;
               }
-              button:hover {
-                background-color: Crimson;
-              }
             `}
           </style>
           X
@@ -135,24 +132,34 @@ function Table(props) {
             h2 {
               font-size: 20px;
             }
+            button {
+              background-color: white;
+              border-radius: 4px;
+              border: 2px solid #699ee7;
+              color: #699ee7;
+              padding: 7px;
+              font-weight: 500;
+              font-size: 14px;
+            }
+            button:hover {
+              background-color: #699ee7;
+              color: white;
+            }
           `}
         </style>
-        <h5>
-          {typeName}
-          {/* {checkDeleteButton(dayy, typee, dayString)} */}
-        </h5>
+        <h5>{typeName}</h5>
         <Popup
           trigger={<h6 role="button"> {mealMatrix[dayy][typee].mealname} </h6>}
           modal
           closeOnDocumentClick
           style={{ width: "20vh" }}
         >
-          <h2 style={{ fontWeight: "bold" }}>Ingredients</h2>
+          <h2>Ingredients</h2>
           {checkLink(dayy, typee)}
           <div>{ingredList(mealMatrix[dayy][typee].ingredients)}</div>
-          <Button onClick={UpdateList} className="del">
+          <button onClick={UpdateList} className="del">
             Add Selected to Shopping List
-          </Button>
+          </button>
         </Popup>
         {checkAddButton(dayy, typee, stringLink)}
         {checkDeleteButton(dayy, typee, dayString)}
@@ -211,9 +218,9 @@ function Table(props) {
             div {
               text-align: left;
             }
-            input {
-              text-align: right;
-            }
+            // input {
+            //   text-align: right;
+            // }
           `}
         </style>
         {data.map((item, index) => {
