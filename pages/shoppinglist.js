@@ -148,6 +148,7 @@ function List(props) {
               }
               h3 {
                 margin-left: 10px;
+                margin-bottom: 15px;
               }
               .del {
                 background-color: white;
@@ -166,7 +167,7 @@ function List(props) {
               }
               .scrollList {
                 overflow-y: auto;
-                height: 55vh;
+                height: 52vh;
               }
             `}
           </style>
