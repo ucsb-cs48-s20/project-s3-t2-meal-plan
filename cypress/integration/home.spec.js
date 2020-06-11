@@ -1,19 +1,26 @@
-// describe("Home Page", () => {
-//   beforeEach(() => {
-//     // runs before each test in the block
-//     cy.visit("http://localhost:3000");
-//   });
+/*describe("Home Page", () => {
+  context("when I am login as user", () => {
+    beforeEach(() => {
+      // runs before each test in the block
+      cy.loginAsUser();
+      cy.visit("http://localhost:3000");
+    });
 
-//   it("has a nav bar", () => {
-//     // a nav element with class navbar
-//     cy.get("nav.navbar").should("exist");
-//   });
+    it("shows user navbar and it's options", () => {
+      cy.get("nav.navbar").should("exist");
+      cy.get("nav.navbar").contains("Search for Recipes");
+      cy.get("nav.navbar").contains("Shopping List");
+    });
 
-//   it("has an links in nav bar says Meal Planner", () => {
-//     cy.get("a").its(0).should("have.text", "Meal Planner");
-//   });
+    it("check table exists", () => {
+      cy.get('table[id="mealMatrix"]');
+    });
+  });
 
-//   it("has links in nav bar says login", () => {
-//     cy.get("a").its(1).should("have.text", "Login");
-//   });
-// });
+  context("when I am not login as user", () => {
+    it("has login button on navbar", () => {
+      cy.visit("http://localhost:3000");
+      cy.get("a").its(1).should("have.text", "Login");
+    });
+  });
+});*/
