@@ -1,25 +1,22 @@
 /*describe("Search Page", () => {
-  beforeEach(() => {
-    // runs before each test in the block
-    cy.visit("http://localhost:3000/search");
-  });
+  context("When I am login as user", () => {
+    beforeEach(() => {
+      cy.loginAsUser();
+      cy.visit("http://localhost:3000/search");
+    });
 
-  it("has a nav bar", () => {
-    // a nav element with class navbar
-    cy.get("nav.navbar").should("exist");
-  });
+    it("has title search for recipes", () => {
+      cy.get("title").contains("Search for Recipes");
+    });
 
-  it("has an links in nav bar says Meal Planner", () => {
-    cy.get("a").should("have.text", "Meal Planner");
+    it("has title recipe list", () => {
+      cy.get("h3").contains("Recipe List");
+    });
+    
+    it("has search bar and able to search it", () => {
+      cy.get("input[type='text']").type("mango");
+      cy.get("button[type='submit']").click();
+      cy.contains('Mango Lassi');
+    })
   });
-
-  it("has links in nav bar says Search for recipes", () => {
-    cy.get("a").its(0).should("have.text", "Search for Recipes");
-  });
-
-  it("has links in nav bar says Shopping lists", () => {
-    cy.get("a").its(0).should("have.text", "Shopping List");
-  });
-
-  it();
 });*/
